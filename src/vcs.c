@@ -5,3 +5,9 @@
 # include "init.h"
 # include "add.h"
 
+int main(int argc, char const *argv[])
+{
+    
+    return 0;
+}
+

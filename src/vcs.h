@@ -13,14 +13,19 @@ struct commit {
     char *hash;
     char *message;
     char *date;
-    Files *files;
-    Commit *next;
-    Commit *prev;
+    Files *files;  // head file
+    int byte_start; // start byte on commits.txt
+    int byte_end; // end byte on commits.txt
+    Commit *next;  // next commit
+    Commit *prev;  // previous commit
 };
 
 struct files {
-    char *path;
-    FILE* file;
+    char *file_path;
+    char *content;
+    int byte_size;
+    int byte_start;
+    int byte_end;
     Files *next;
     Files *prev;
 };

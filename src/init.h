@@ -7,6 +7,10 @@
 # include "vcs.h"
 
 # define INIT 'init'
+# define VCS_FOLDER ".vcs"
+# define COMMITS_FILE ".vcs/commits.txt"
+# define CONTENTS_FILE ".vcs/contents.txt"
+# define LOGS_FILE ".vcs/logs.txt"
 
 void init();
 

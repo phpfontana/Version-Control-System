@@ -1,4 +1,4 @@
 references/
 *.dSYM
 .vcs
-.vscode/
+/.vscode
