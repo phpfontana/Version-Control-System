@@ -1,6 +1,6 @@
 # ifndef __ADD_H__
 # define __ADD_H__
 
-void add(char *file_path);
+void vcs_add(char *file_path);
 
 # endif

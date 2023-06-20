@@ -11,7 +11,9 @@
 # define COMMITS_FILE ".vcs/commits.txt"
 # define CONTENTS_FILE ".vcs/contents.txt"
 # define LOGS_FILE ".vcs/logs.txt"
+# define METADATA_FILE ".vcs/metadata.txt"
+# define STAGE_FILE ".vcs/stage.txt"
 
-void init();
+void vcs_init();
 
 # endif
