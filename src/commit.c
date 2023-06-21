@@ -126,6 +126,7 @@ void vcs_commit(char *message)
         printf("vcs: error: could not open commits file\n");
         exit(EXIT_FAILURE);
     }
+    commit->byte_start = ftell(commits_file);
     fprintf(commits_file, "ID: %s\n", commit->hash);
     fprintf(commits_file, "Date: %s\n", commit->date);
     // append staged files to commit
@@ -142,9 +143,14 @@ void vcs_commit(char *message)
     fprintf(commits_file, "Message: %s\n", commit->message);
     
     // get byte start and end of commit 
-    commit->byte_start = ftell(commits_file);
+    // check if metadata.txt is empty
+    if (is_empty(METADATA_FILE) == 1) {
+        commit->byte_start = 0;
+        commit->byte_end = ftell(commits_file);
+    }
+        
     fseek(commits_file, 0, SEEK_END);
-    commit->byte_end = ftell(commits_file);
+    commit->byte_end = ftell(commits_file) - 1;
     fclose(commits_file);
     
     // save to metadata.txt
@@ -153,8 +159,7 @@ void vcs_commit(char *message)
         printf("vcs: error: could not open metadata file\n");
         exit(EXIT_FAILURE);
     }
-    fprintf(metadata_file, "%d ", commit->byte_start);
-    fprintf(metadata_file, "%d ", commit->byte_end);
+    fprintf(metadata_file, "%d %d\n", commit->byte_start, commit->byte_end);
 
     fclose(metadata_file);
 
@@ -184,3 +189,7 @@ void vcs_commit(char *message)
 
     exit(EXIT_SUCCESS);
 }
+
+// TODO
+// Modularize
+// fix metadata.txt

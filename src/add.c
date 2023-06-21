@@ -12,7 +12,7 @@
 int main(int argc, char const *argv[])
 {
     // add file to staging area
-    vcs_add("vcs.h, vcs.c");
+    vcs_add("vcs.c, vcs.h");
     return 0;
 }
 
@@ -126,12 +126,9 @@ void vcs_add(char* file_path) {
         exit(EXIT_FAILURE);
     }
 
+    
+
     // stage files to stage.txt and contents to contents.txt
     stage_files(file_path);
 
 }
-
-
-
-
-
