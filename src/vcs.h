@@ -17,7 +17,6 @@ struct commit {
 
 struct files {
     char *file_path;
-    char *content;
     int byte_start;
     int byte_end;
     Files *next;

@@ -12,7 +12,7 @@
 int main(int argc, char const *argv[])
 {
     // add file to staging area
-    vcs_add("vcs.c, vcs.h");
+    vcs_add("init.c, init.h");
     return 0;
 }
 
@@ -34,62 +34,41 @@ int file_exists(char *path) {
         return 0;  // file does not exist
 }
 
-
-// process file
-void process_file(const char* file_path) {
-
-    FILE* file = fopen(file_path, "rb");  // opens file in binary mode
+// Verify if path was already added to file
+int path_already_added(const char* file_path, const char* output_file) {
+    FILE* file = fopen(output_file, "r");  // Opens file in read mode
     if (file == NULL) {
-        printf("vcs: error: could not open file %s\n", file_path);
+        printf("vcs: error: could not open file %s\n", output_file);
         exit(EXIT_FAILURE);
     }
 
-    // gets file size
-    fseek(file, 0, SEEK_END);  // sets file pointer to end of file
-    long file_size = ftell(file);  // gets file size
-    fseek(file, 0, SEEK_SET);  // sets file pointer to beginning of file
+    char* line = NULL;
+    size_t len = 0;
+    ssize_t read;
+    while ((read = getline(&line, &len, file)) != -1) {  // Reads file line by line
+        line[strcspn(line, "\n")] = '\0';  // Remove the trailing newline character
 
-    // reads file content
-    unsigned char* buffer = (unsigned char*) malloc(file_size * sizeof(unsigned char));
-    if (buffer == NULL) {
-        printf("vcs: error: could not allocate memory for file %s\n", file_path);
-        exit(EXIT_FAILURE);
+        if (strcmp(line, file_path) == 0) {  // Compares file path with line
+            fclose(file);
+            free(line);
+            return 1;  // Path was already added
+        }
     }
-    fread(buffer, sizeof(unsigned char), file_size, file);  // reads file content
+
     fclose(file);
-
-    // store contents in contents.txt
-    FILE* contents_file = fopen(CONTENTS_FILE, "ab");  // opens file in binary mode
-    if (contents_file == NULL) {
-        printf("vcs: error: could not open file %s\n", CONTENTS_FILE);
-        free(buffer);
-        exit(EXIT_FAILURE);
-    }
-
-    long start_byte_position = ftell(contents_file);  // gets start byte position
-    fwrite(buffer, sizeof(unsigned char), file_size, contents_file);  // writes file content
-    long end_byte_position = ftell(contents_file) - 1;  // gets end byte position
-    
-    fclose(contents_file);
-
-    // store start and end byte positions in stage.txt
-    FILE* stage_file = fopen(STAGE_FILE, "a");  // opens file in append mode
-    if (stage_file == NULL) {
-        printf("vcs: error: could not open file %s\n", STAGE_FILE);
-        free(buffer);
-        exit(EXIT_FAILURE);
-    }
-
-    // writes file path, start byte position and end byte position to stage.txt
-    fprintf(stage_file, "%s %ld %ld\n", file_path, start_byte_position, end_byte_position);
-    fclose(stage_file);
-
-    free(buffer);
+    free(line);
+    return 0;  // Path was not added
 }
 
-// separate file paths
-void stage_files(char* file_paths) {
-    char* file_path_copy = strdup(file_paths);  // creates copy of file paths
+// add paths to files
+void add_path_to_file(char* file_path, char* output_file) {
+    FILE* file = fopen(output_file, "a");  // opens file in append mode
+    if (file == NULL) {
+        printf("vcs: error: could not open file %s\n", output_file);
+        exit(EXIT_FAILURE);
+    }
+
+    char* file_path_copy = strdup(file_path);  // creates copy of file paths
     if (file_path_copy == NULL) {
         printf("vcs: error: could not allocate memory for file paths\n");
         exit(EXIT_FAILURE);
@@ -97,13 +76,16 @@ void stage_files(char* file_paths) {
 
     char* token = strtok(file_path_copy, ", ");  // gets first file path
     while (token != NULL) {
-        process_file(token);  // processes file
+        if (path_already_added(token, output_file) == 1) {  // verifies if path was already added
+            printf("vcs: error: file %s was already added\n", token);
+            exit(EXIT_FAILURE);
+        }
+        fprintf(file, "%s\n", token);  // writes file path to file
         token = strtok(NULL, ", ");  // gets next file path
     }
-
+    fclose(file);
     free(file_path_copy);
 }
-
 
 // appends file or files to staging area
 void vcs_add(char* file_path) {
@@ -125,10 +107,13 @@ void vcs_add(char* file_path) {
         printf("vcs: error: file or files do not exist\n");
         exit(EXIT_FAILURE);
     }
-
     
+    // verifies if file or files were specified
+    if (file_path == NULL) {
+        printf("vcs: error: no file or files were specified\n");
+        exit(EXIT_FAILURE);
+    }
 
-    // stage files to stage.txt and contents to contents.txt
-    stage_files(file_path);
-
+    // add file or files to staging area
+    add_path_to_file(file_path, STAGE_FILE);
 }
