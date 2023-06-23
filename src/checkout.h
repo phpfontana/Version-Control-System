@@ -1,6 +1,6 @@
 # ifndef __CHECKOUT_H__
 # define __CHECKOUT_H__
 
-void vcs_checkout(char *id);
+void vcs_checkout(const char *hash);
 
 # endif

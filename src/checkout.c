@@ -156,6 +156,6 @@ void vcs_checkout(const char *hash) {
 }
 
 int main() {
-    vcs_checkout("HASH");
+    vcs_checkout("E2E992D5DCDA2E3E266C368E0B354101E27DFBB0");
     return 0;
 }
