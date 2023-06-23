@@ -12,7 +12,7 @@
 int main(int argc, char const *argv[])
 {
     // add file to staging area
-    vcs_add("vcs.c, vcs.h");
+    vcs_add("hello_world.c, test.txt");
     return 0;
 }
 

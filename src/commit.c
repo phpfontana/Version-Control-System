@@ -10,41 +10,8 @@
 # include "init.h"
 # include "commit.h"
 
-void extractContentFromFile(const char* file_path, int start_byte, int end_byte, const char* output_file) {
-    FILE* input_file = fopen(file_path, "r");
-    if (input_file == NULL) {
-        printf("Error opening file: %s\n", file_path);
-        return;
-    }
-
-    FILE* output = fopen(output_file, "w");
-    if (output == NULL) {
-        printf("Error creating output file: %s\n", output_file);
-        fclose(input_file);
-        return;
-    }
-
-    fseek(input_file, start_byte, SEEK_SET);  // Move file pointer to the start byte position
-
-    char buffer[256];
-    int bytes_remaining = end_byte - start_byte + 1;
-    int bytes_to_read = bytes_remaining < sizeof(buffer) ? bytes_remaining : sizeof(buffer);
-
-    while (bytes_remaining > 0 && fread(buffer, 1, bytes_to_read, input_file) > 0) {
-        fwrite(buffer, 1, bytes_to_read, output);
-        bytes_remaining -= bytes_to_read;
-        bytes_to_read = bytes_remaining < sizeof(buffer) ? bytes_remaining : sizeof(buffer);
-    }
-
-    fclose(input_file);
-    fclose(output);
-}
-
 int main(int argc, char const *argv[])
 {
-    // test
-    extractContentFromFile(COMMITS_FILE, 155, 312, "test.txt");
-
     vcs_commit("testing commit");
     return 0;
 }
@@ -367,7 +334,3 @@ void vcs_commit(char *message)
     // free memory
     free(commit);
 }
-
-// TODO
-// Modularize
-// fix metadata.tx
