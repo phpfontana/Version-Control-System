@@ -1,20 +1,16 @@
-# ifndef _VCS_ACTIONS_H
-# define _VCS_ACTIONS_H
-
-# define INIT "init"
-# define ADD "add"
-# define COMMIT "commit"
-# define LOG "log"
-# define CHECKOUT "checkout"
+# ifndef __ACTIONS_H__
+# define __ACTIONS_H__
 
 void vcs_init();
 
-void vcs_add(char *file);
+void vcs_add(const char* file_path);
 
-void vcs_commit(char *message);
+void vcs_commit(const char *message);
 
 void vcs_log();
 
-void vcs_checkout(char *commit_id);
+void vcs_checkout(const char *hash);
+
+void vcs_show(const char *id);
 
 # endif

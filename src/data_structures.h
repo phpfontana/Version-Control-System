@@ -1,5 +1,5 @@
-# ifndef _VERSION_CONTROL_SYSTEM_H_
-# define _VERSION_CONTROL_SYSTEM_H_
+# ifndef __DATA_STRUCTURES_H__
+# define __DATA_STRUCTURES_H__
 
 typedef struct commit Commit;
 typedef struct files Files;
@@ -22,5 +22,10 @@ struct files {
     Files *next;
     Files *prev;
 };
+
+// Function prototypes
+Commit *new_commit(const char* hash, const char* message, const char* date);
+Files *new_file(const char *file_path);
+void insert_file (Commit* commit, Files* file);
 
 # endif
