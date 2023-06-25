@@ -4,6 +4,7 @@
 # include <unistd.h>
 
 # include "validations.h"
+# include "files.h"
 
 // Verifies if directory exists
 int directory_exists(const char *path) {
@@ -69,5 +70,26 @@ int file_is_empty(const char *path) {
         return 1;  
     else
         return 0;
+}
+
+// Verify if path was already added to file
+int path_is_staged(const char* file_path) {
+    FILE* file = open_file(STAGE_FILE, "r");  // Opens file in read mode
+
+    // Reads file line by line
+    char line[256];  // Stores the line
+    ssize_t read;  // Stores the number of characters read
+
+    while (fgets(line, sizeof(line), file) != NULL) {  // Reads file line by line using fgets
+        line[strcspn(line, "\n")] = '\0';  // Remove the trailing newline character
+
+        if (strcmp(line, file_path) == 0) {  // Compares file path with line
+            close_file(file);
+            return 1;  // Path was already added
+        }
+    }
+
+    close_file(file);
+    return 0;  // Path was not added
 }
 

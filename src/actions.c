@@ -8,6 +8,7 @@
 # include "utils.h"
 # include "data_structures.h"
 # include "actions.h"
+# include "parse.h"
 
 void vcs_init() {
     // Verifies if .vcs directory exists
@@ -46,44 +47,8 @@ void vcs_add(const char* file_path) {
         exit(EXIT_FAILURE);
     }
 
-    // Open Stage file
-    FILE *stage_file = open_file(STAGE_FILE, "a");
-
-    // make copy of file paths
-    char *file_paths = strdup(file_path);
-
-    // get first file path
-    char *token = strtok(file_paths, ", ");
-    if (token == NULL) {
-        printf("vcs: error: no file or files were specified\n");
-        exit(EXIT_FAILURE);
-    }
-
-    // loop through file paths
-    while (token != NULL) {
-        // verify if file exists
-        if (file_exists(token) == 0) {
-            printf("vcs: error: file %s does not exist\n", token);
-            exit(EXIT_FAILURE);
-        
-        // verify if file path was already added
-        } else if (path_already_added(token, STAGE_FILE) == 1) {
-            printf("vcs: error: file %s was already added\n", token);
-            exit(EXIT_FAILURE);
-        }
-
-        // write file path to stage file
-        fprintf(stage_file, "%s\n", token);
-
-        // get next file path
-        token = strtok(NULL, ", ");
-    }
-
-    // close stage file
-    close_file(stage_file);
-
-    // free memory
-    free(file_paths);
+    // Parse file to stage
+    parse_file_paths_to_stage(file_path);
 
     // success message
     printf("vcs: file paths added to staging area\n");
@@ -112,100 +77,61 @@ void vcs_commit(const char *message) {
     // initializes commit
     Commit *commit = new_commit(get_hash() ,message, get_timestamp());
 
-    // Open stage file in read mode
-    FILE *stage_file = open_file(STAGE_FILE, "r");
+    // Parse stage to Files
+    parse_stage_to_files(commit);
 
-    // buffer for reading file paths
-    char buffer[256];
-    while (fgets(buffer, sizeof(buffer), stage_file)) {
-        buffer[strcspn(buffer, "\n")] = '\0';  // Remove newline character
-        Files* file = new_file(buffer);  // Create new file
-        insert_file(commit, file);  // Insert file into commit
-    }
+    // Parse Files to contents file
+    parse_files_to_contents(commit->files);
 
-    // close stage file
-    close_file(stage_file);
+    // Parse Commit to commits file
+    parse_commit_to_commit_file(commit);
 
-    // Open contents file in append mode
-    FILE *contents_file = open_file(CONTENTS_FILE, "a");
+    // Parse Commit to metadata file
+    parse_commit_to_metadata_file(commit);
 
-    Files *current = commit->files;
-    current->byte_start = ftell(contents_file);
-
-    // loop through files
-    while (current != NULL) {
-        // open file from Files in read mode
-        FILE *file = open_file(current->file_path, "r");
-        if (file == NULL) {
-            printf("vcs: error: could not open file %s\n", current->file_path);
-            exit(EXIT_FAILURE);
-        }
-        
-        char buffer[256];
-        while (fgets(buffer, sizeof(buffer), file)) {
-            fputs(buffer, contents_file);
-        }
-        fputs("\n", contents_file);
-
-        // store byte end
-        current->byte_end = ftell(contents_file) - 1;
-
-        // go to next file
-        current = current->next;
-
-        // add newline character if there is a next file
-        if (current != NULL) {
-            fputs("\n", contents_file);
-        }
-    }
-
-    // close contents file
-    close_file(contents_file);
-
-    // Open commits file in append mode
-    FILE *commits_file = open_file(COMMITS_FILE, "a");
-
-    // store byte start
-    commit->byte_start = ftell(commits_file);
-
-    // Write commit to file
-    fprintf(commits_file, "ID: %s\n", commit->hash);
-    fprintf(commits_file, "Date: %s\n", commit->date);
-    fprintf(commits_file, "Files:\n");
-    Files *current2 = commit->files;
-    while (current2 != NULL) {
-        fprintf(commits_file, "%s %d %d\n", current2->file_path, current2->byte_start, current2->byte_end);
-        current2 = current2->next;
-    }
-    fprintf(commits_file, "Message: %s\n", commit->message);
-
-    // Write commit separator
-    fprintf(commits_file, "---------------------\n");
-    
-    // store byte end
-    commit->byte_end = ftell(commits_file) - 1;
-
-    // close commits file
-    close_file(commits_file);
-
-    // append commit to metadata.txt
-    FILE *metadata_file = open_file(METADATA_FILE, "a");
-    fprintf(metadata_file, "%s %d %d\n", commit->hash, commit->byte_start, commit->byte_end);
-    close_file(metadata_file);
-
-    // rewrite stage file
+    // Rewrite stage file
     write_file(STAGE_FILE);
 
-    // free memory
-    free(commit);
+    // Free commit
+    free_commit(commit);
 
-    // success message
+    // Print Success message
     printf("vcs: commit successful\n");
 }
 
-int main(int argc, char const *argv[])
+void vcs_log()
 {
-    vcs_commit("testing commit");
+    // Initialize the head of the linked list
+    Commit* head = NULL;
+
+    // Read the commits.txt file and populate the linked list
+    parse_commit_file_to_commit(&head);
+
+    // Print the commits from last to first
+    print_commits(head);
+
+    // Free the memory allocated for the linked list
+    free_commits(head);
+}
+
+void vcs_checkout(const char *hash) {
+
+    int byte_start, byte_end;
+
+    // Parse metadata file to commit
+    parse_metadata_file_to_commit(hash, byte_start, byte_end);
+
+    // Print the commit ID
+    printf("Commit ID: %s\n", hash);
+     
+    // Parse commit file to files
+    parse_commit_to_files(byte_start, byte_end);
+}
+
+
+int main(int argc, char const *argv[])
+{   
+    vcs_checkout("CBB14230B7417704C21D816F19F3D797CA5F6463");
     return 0;
 }
 

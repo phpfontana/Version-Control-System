@@ -5,6 +5,8 @@
 # include <sys/stat.h>
 
 # include "data_structures.h"
+# include "validations.h"
+# include "files.h"
 
 // New Commit
 Commit *new_commit(const char* hash, const char* message, const char* date) {
@@ -80,4 +82,65 @@ void insert_file (Commit* commit, Files* file) {
         file->prev = current;
     }
 }
+
+// free commit
+void free_commit(Commit* commit){
+    if (commit == NULL) {
+        return;
+    }
+
+    // Free the hash and date strings
+    free(commit->hash);
+    free(commit->date);
+
+    // Free the files linked list
+    Files* file = commit->files;
+    while (file != NULL) {
+        Files* next = file->next;
+        free(file->file_path);
+        free(file);
+        file = next;
+    }
+
+    // Free the message string
+    free(commit->message);
+
+    // Recursive call to free the previous commit
+    free_commit(commit->prev);
+
+    // Free the commit itself
+    free(commit);
+}
+
+// free commits
+void free_commits(Commit* head) {
+    Commit* current = head;
+    while (current != NULL) {
+        Commit* next = current->next;
+        free(current->hash);
+        free(current->date);
+        free(current->message);
+        free(current);
+        current = next;
+    }
+}
+
+void print_commits(Commit* commit) {
+    Commit* current = commit;
+    while (current != NULL) {
+        printf("Commit: %s\n", current->hash);
+        printf("Date: %s\n", current->date);
+        printf("Message: %s\n", current->message);
+        printf("\n");
+
+        current = current->next;
+    }
+}
+
+
+
+
+
+
+
 

@@ -27,5 +27,8 @@ struct files {
 Commit *new_commit(const char* hash, const char* message, const char* date);
 Files *new_file(const char *file_path);
 void insert_file (Commit* commit, Files* file);
+void free_commit(Commit* commit);
+void free_commits(Commit* commit);
+void print_commits(Commit* commit);
 
 # endif

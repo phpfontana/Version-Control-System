@@ -13,5 +13,6 @@ int directory_exists(const char *path);
 int file_exists(const char* path);
 int validate_directory(void);
 int file_is_empty(const char *path);
+int path_is_staged(const char* file_path);
 
 # endif
