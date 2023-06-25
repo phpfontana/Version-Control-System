@@ -10,7 +10,7 @@
 
 // Creates a directory
 int create_directory(const char *path) {
-    int status = mkdir(path, 0777);
+    int status = mkdir(path);
     return (status == 0);
 }
 
@@ -39,4 +39,11 @@ void close_file(FILE* file) {
     fclose(file);
 }
 
-
+int fileExists(const char* filename) {
+    FILE* file = fopen(filename, "r");
+    if (file != NULL) {
+        fclose(file);
+        return 1;
+    }
+    return 0;
+}

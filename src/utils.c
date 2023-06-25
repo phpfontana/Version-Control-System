@@ -34,3 +34,15 @@ char *get_timestamp() {
     date[strlen(date) - 1] = '\0';
     return date;
 }
+
+
+//Messages of errors and alerts.
+void printInfo(const char* message) {
+    printf("[INFO] %s\n", message);
+}
+void printAlert(const char* message) {
+    printf("[ALERT] %s\n", message);
+}
+void printWarning(const char* message) {
+    printf("[WARNING] %s\n", message);
+}

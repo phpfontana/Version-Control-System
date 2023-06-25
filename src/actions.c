@@ -262,10 +262,3 @@ void vcs_show(const char *id) {
     }
 }
 
-
-int main(int argc, char const *argv[])
-{   
-    vcs_show("A301B897AE0534A6EBD2D49D45CECAACB452DEE9");
-    return 0;
-}
-
