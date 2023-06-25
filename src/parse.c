@@ -201,3 +201,187 @@ void parse_commit_file_to_commit(Commit** head) {
     fclose(file);
 }
 
+Files *parseFiles(FILE *commitsFile, int endByte) {
+    char line[1000];
+    Files *headFile = NULL;
+    Files *prevFile = NULL;
+    int bytePosition = ftell(commitsFile);
+
+    while (fgets(line, sizeof(line), commitsFile)) {
+        if (strcmp(line, "Files:\n") == 0) {
+            break;
+        }
+    }
+
+    while (fgets(line, sizeof(line), commitsFile)) {
+        if (strstr(line, "Message:") != NULL || bytePosition >= endByte) {
+            break;
+        }
+
+        char *token = strtok(line, " ");
+        if (token == NULL) {
+            continue;
+        }
+
+        Files *file = (Files *)malloc(sizeof(Files));
+        file->file_path = strdup(token);
+
+        token = strtok(NULL, " ");
+        if (token == NULL) {
+            continue;
+        }
+        file->byte_start = atoi(token);
+
+        token = strtok(NULL, " ");
+        if (token == NULL) {
+            continue;
+        }
+        file->byte_end = atoi(token);
+
+        file->next = NULL;
+
+        if (prevFile != NULL) {
+            prevFile->next = file;
+        } else {
+            headFile = file;
+        }
+
+        prevFile = file;
+
+        bytePosition = ftell(commitsFile);
+    }
+
+    return headFile;
+}
+
+void freeFiles(Files *headFile) {
+    Files *currentFile = headFile;
+    while (currentFile != NULL) {
+        Files *temp = currentFile;
+        currentFile = currentFile->next;
+        free(temp->file_path);
+        free(temp);
+    }
+}
+
+void extractContentFromFile(const char* file_path, int start_byte, int end_byte, const char* output_file) {
+    FILE* input_file = fopen(file_path, "r");
+    if (input_file == NULL) {
+        printf("Error opening file: %s\n", file_path);
+        return;
+    }
+
+    FILE* output = fopen(output_file, "w");
+    if (output == NULL) {
+        printf("Error creating output file: %s\n", output_file);
+        fclose(input_file);
+        return;
+    }
+
+    fseek(input_file, start_byte, SEEK_SET);  // Move file pointer to the start byte position
+
+    char buffer[256];
+    int bytes_remaining = end_byte - start_byte + 1;
+    int bytes_to_read = bytes_remaining < sizeof(buffer) ? bytes_remaining : sizeof(buffer);
+
+    while (bytes_remaining > 0 && fread(buffer, 1, bytes_to_read, input_file) > 0) {
+        fwrite(buffer, 1, bytes_to_read, output);
+        bytes_remaining -= bytes_to_read;
+        bytes_to_read = bytes_remaining < sizeof(buffer) ? bytes_remaining : sizeof(buffer);
+    }
+
+    fclose(input_file);
+    fclose(output);
+}
+
+Files *parseFiles_(FILE *commitsFile, int endByte) {
+    char line[1000];
+    Files *headFile = NULL;
+    Files *prevFile = NULL;
+    int bytePosition = ftell(commitsFile);
+
+    while (fgets(line, sizeof(line), commitsFile)) {
+        if (strcmp(line, "Files:\n") == 0) {
+            break;
+        }
+    }
+
+    while (fgets(line, sizeof(line), commitsFile)) {
+        if (strstr(line, "Message:") != NULL || bytePosition >= endByte) {
+            break;
+        }
+
+        char *token = strtok(line, " ");
+        if (token == NULL) {
+            continue;
+        }
+
+        Files *file = (Files *)malloc(sizeof(Files));
+        file->file_path = strdup(token);
+
+        token = strtok(NULL, " ");
+        if (token == NULL) {
+            continue;
+        }
+        file->byte_start = atoi(token);
+
+        token = strtok(NULL, " ");
+        if (token == NULL) {
+            continue;
+        }
+        file->byte_end = atoi(token);
+
+        file->next = NULL;
+
+        if (prevFile != NULL) {
+            prevFile->next = file;
+        } else {
+            headFile = file;
+        }
+
+        prevFile = file;
+
+        bytePosition = ftell(commitsFile);
+    }
+
+    return headFile;
+}
+
+void extractContentFromFile_print(const char* file_path, int start_byte, int end_byte) {
+    FILE* input_file = fopen(file_path, "r");
+    if (input_file == NULL) {
+        printf("Error opening file: %s\n", file_path);
+        return;
+    }
+
+    fseek(input_file, start_byte, SEEK_SET);  // Move file pointer to the start byte position
+
+    char buffer[256];  // Buffer to read the file in chunks
+    int bytes_remaining = end_byte - start_byte + 1;  // Number of bytes to read
+    int bytes_to_read = bytes_remaining < sizeof(buffer) ? bytes_remaining : sizeof(buffer);  // Number of bytes to read in each chunk
+
+    while (bytes_remaining > 0 && fread(buffer, 1, bytes_to_read, input_file) > 0) {  
+        bytes_remaining -= bytes_to_read;
+        bytes_to_read = bytes_remaining < sizeof(buffer) ? bytes_remaining : sizeof(buffer);
+    }
+    // print the buffer to terminal
+    printf("%s", buffer);
+
+    // Add a newline at the end of the file
+    buffer[bytes_to_read] = '\0';  // Null-terminate the buffer
+
+    fclose(input_file);
+}
+
+void print_commits_(Commit* head) {
+    Commit* current = head;
+    while (current != NULL) {
+        printf("Commit: %s\n", current->hash);
+        printf("Date: %s\n", current->date);
+        printf("Message: %s\n", current->message);
+        printf("\n");
+
+        current = current->next;
+    }
+}
+
