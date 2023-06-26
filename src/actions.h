@@ -2,15 +2,11 @@
 # define __ACTIONS_H__
 
 void vcs_init();
-
-void vcs_add(const char* file_path);
-
+void vcs_add(const char *path);
 void vcs_commit(const char *message);
-
-void vcs_log();
-
+void vcs_log(void);
+void vcs_log_content(void);
 void vcs_checkout(const char *hash);
-
-void vcs_show(const char *id);
+void vcs_show(const char *hash);
 
 # endif

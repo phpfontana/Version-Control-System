@@ -1,34 +1,55 @@
 # ifndef __DATA_STRUCTURES_H__
 # define __DATA_STRUCTURES_H__
 
+typedef struct commit_head CommitHead;
 typedef struct commit Commit;
-typedef struct files Files;
 
-struct commit {
-    char *hash;
-    char *date;
-    Files *files;  // head file
-    char *message;
-    int byte_start; // start byte on commits.txt
-    int byte_end; // end byte on commits.txt
-    Commit *next;  // next commit
-    Commit *prev;  // previous commit
+typedef struct file_head FileHead;
+typedef struct file File;
+
+struct commit_head{
+    Commit* first;
+    Commit* last;
 };
 
-struct files {
-    char *file_path;
-    int byte_start;
-    int byte_end;
-    Files *next;
-    Files *prev;
+struct commit{
+    char* hash;
+    char* date;
+    char* message;
+    int start_byte;
+    int end_byte;
+    FileHead* file_head;
+    Commit* next;
+    Commit* prev;
 };
 
-// Function prototypes
-Commit *new_commit(const char* hash, const char* message, const char* date);
-Files *new_file(const char *file_path);
-void insert_file (Commit* commit, Files* file);
-void free_commit(Commit* commit);
-void free_commits(Commit* commit);
-void print_commits(Commit* commit);
+struct file_head {
+    File* first;
+    File* last;
+};
+struct file {
+    char* path;
+    int start_byte;
+    int end_byte;
+    File* next;
+    File* prev;
+};
+
+// function prototypes
+CommitHead* commit_create();
+void commit_insert(CommitHead* head, char* hash, char* date, const char* message, int start_byte, int end_byte);
+void commit_display(CommitHead* head);
+void commit_destroy(CommitHead* head);
+
+FileHead* file_create();
+void file_insert(FileHead* head, const char* path, int start_byte, int end_byte);
+void file_display(FileHead* head);
+void file_destroy(FileHead* head);
+
+void display_commits(CommitHead* commit_head); 
+void display_from_last(CommitHead* commit_head);
+void display_from_last_with_contents(CommitHead* commit_head);
+void display_commit_and_contents(CommitHead* commit_head, const char* hash);
+void write_commit_and_contents(CommitHead* commit_head, const char* hash);
 
 # endif

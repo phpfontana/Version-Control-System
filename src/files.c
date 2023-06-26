@@ -4,46 +4,75 @@
 # include <unistd.h>
 # include <sys/stat.h>
 
+# include "data_structures.h"
 # include "validations.h"
+# include "actions.h"
 # include "files.h"
 
-
-// Creates a directory
 int create_directory(const char *path) {
-    int status = mkdir(path);
-    return (status == 0);
+    return (mkdir(path, 0777) == 0);
 }
 
-// Creates a file
-void write_file(const char *path) {
+int write_empty_file(const char *path) {
     FILE *file = fopen(path, "w");
     if (file == NULL) {
-        printf("vcs: error: could not create file %s\n", path);
-        exit(EXIT_FAILURE);
+        printf("vcs: error: could not create %s file\n", path);
+        return 0;
     }
     fclose(file);
+    return 1;
 }
 
-// Opens a file
-FILE* open_file(const char* path, const char* mode) {
-    FILE* file = fopen(path, mode);
+int write_file(const char *path, const char *content) {
+    FILE *file = fopen(path, "w");
     if (file == NULL) {
-        printf("vcs: error: could not open file %s\n", path);
-        exit(EXIT_FAILURE);
+        printf("vcs: error: could not create %s file\n", path);
+        return 0;
+    }
+    fprintf(file, "%s", content);
+    fclose(file);
+    return 1;
+}
+
+FILE *open_file(const char *path, const char *mode) {
+    FILE *file = fopen(path, mode);
+    if (file == NULL) {
+        printf("vcs: error: could not open %s file\n", path);
+        return NULL;
     }
     return file;
 }
 
-// Closes a file
-void close_file(FILE* file) {
+int append_to_file(const char *path, const char *content) {
+    FILE *file = open_file(path, "a");
+    if (file == NULL) {
+        return 0;
+    }
+    fprintf(file, "%s\n", content);
     fclose(file);
+    return 1;
 }
 
-int fileExists(const char* filename) {
-    FILE* file = fopen(filename, "r");
-    if (file != NULL) {
-        fclose(file);
-        return 1;
+char *read_file(const char *path) {
+    FILE *file = open_file(path, "r");
+    if (file == NULL) {
+        return NULL;
     }
-    return 0;
+
+    // get file size
+    fseek(file, 0, SEEK_END);
+    long file_size = ftell(file);
+    rewind(file);
+
+    // allocate memory for file content
+    char *content = malloc(file_size * sizeof(char));
+    if (content == NULL) {
+        printf("vcs: error: could not allocate memory for %s file\n", path);
+        return NULL;
+    }
+
+    // read file content
+    fread(content, sizeof(char), file_size, file);
+    fclose(file);
+    return content;
 }

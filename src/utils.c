@@ -1,14 +1,13 @@
-# include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdio.h>
 # include <unistd.h>
-# include <sys/stat.h>
 # include <time.h>
+# include <sys/stat.h>
 
 # include "utils.h"
 
-// generates a random hash
-char *get_hash() {
+char *hash() {
     char *hash = malloc(41 * sizeof(char));
     if (hash == NULL) {
         printf("Error allocating memory for hash\n");
@@ -26,15 +25,13 @@ char *get_hash() {
     return hash;
 }
 
-// generate timestamp
-char *get_timestamp() {
+char* timestamp() {
     time_t t;
     time(&t);
     char *date = ctime(&t);
     date[strlen(date) - 1] = '\0';
     return date;
 }
-
 
 //Messages of errors and alerts.
 void printInfo(const char* message) {

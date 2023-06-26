@@ -3,262 +3,220 @@
 # include <string.h>
 # include <unistd.h>
 
+# include "data_structures.h"
 # include "validations.h"
 # include "files.h"
-# include "utils.h"
-# include "data_structures.h"
 # include "actions.h"
-# include "parse.h"
+# include "parser.h"
 
 void vcs_init() {
-    // Verifies if .vcs directory exists
-    if (directory_exists(VCS_DIRECTORY)) {
+    // Check if .vcs directory exists
+    if (directory_exists(VCS_DIRECTORY) == 1) {
         printf("vcs: error: .vcs directory already exists\n");
         exit(EXIT_FAILURE);
-    }
-    
-    // Creates .vcs directory
-    if (!create_directory(VCS_DIRECTORY)) {
+    } 
+
+    // Create .vcs directory
+    if (create_directory(VCS_DIRECTORY) == 0) {
         printf("vcs: error: could not create .vcs directory\n");
         exit(EXIT_FAILURE);
     }
-    
-    // Writes necessary files
-    write_file(COMMITS_FILE);
-    write_file(STAGE_FILE);
-    write_file(CONTENTS_FILE);
-    write_file(METADATA_FILE);
-    
-    // Prints success message
-    printf("vcs: initialized empty version control system repository in .vcs\n");
+
+    // Create .vcs/commits.txt file
+    if (write_empty_file(COMMITS_FILE) == 0) {
+        printf("vcs: error: could not create .vcs/commits.txt file\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Create .vcs/stage.txt file
+    if (write_empty_file(STAGE_FILE) == 0) {
+        printf("vcs: error: could not create .vcs/stage.txt file\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Create .vcs/contents.txt file
+    if (write_empty_file(CONTENTS_FILE) == 0) {
+        printf("vcs: error: could not create .vcs/contents.txt file\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // Create .vcs/metadata.txt file
+    if (write_empty_file(METADATA_FILE) == 0) {
+        printf("vcs: error: could not create .vcs/metadata.txt file\n");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("vcs: initialized empty vcs repository in %s\n", VCS_DIRECTORY);
 }
 
-void vcs_add(const char* file_path) {
-
-    // validates directory
-    if (validate_directory() == 0) {
-        printf("vcs: error: .vcs was not initialized properly\n");
-        exit(EXIT_FAILURE);
-    }
-    
-    // verifies if file or files were specified
-    if (file_path == NULL) {
-        printf("vcs: error: no file or files were specified\n");
+void vcs_add(const char *path) {
+    // validate .vcs directory
+    if (validate_directory(VCS_DIRECTORY) == 0) {
+        printf("vcs: error: .vcs was not initialized\n");
         exit(EXIT_FAILURE);
     }
 
-    // Parse file to stage
-    parse_file_paths_to_stage(file_path);
+    // verifies if path was provided
+    if (path == NULL) {
+        printf("vcs: error: no path provided\n");
+        exit(EXIT_FAILURE);
+    }
 
-    // success message
-    printf("vcs: file paths added to staging area\n");
+    // verifies if path exists
+    if (file_exists(path) == 0) {
+        printf("vcs: error: %s file not found\n", path);
+        exit(EXIT_FAILURE);
+    }
+
+    // verifies if path was already added
+    if (path_is_staged(path) == 1) {
+        printf("vcs: error: %s was already added to stage\n", path);
+        exit(EXIT_FAILURE);
+    }
+
+    // append path to .vcs/stage.txt
+    if (append_to_file(STAGE_FILE, path) == 0) {
+        printf("vcs: error: could not append to .vcs/stage.txt\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // print success message
+    printf("vcs: %s added to stage\n", path);
 }
 
 void vcs_commit(const char *message) {
-    // validates directory
-    if (validate_directory() == 0)
-    {
-        printf("vcs: error: .vcs was not initialized properly\n");
+    // validate .vcs directory
+    if (validate_directory(VCS_DIRECTORY) == 0) {
+        printf("vcs: error: .vcs was not initialized\n");
         exit(EXIT_FAILURE);
     }
 
-    // verifies if staging area is empty
-    if (file_is_empty(STAGE_FILE) == 1) {
-        printf("vcs: error: staging area is empty\n");
-        exit(EXIT_FAILURE);
-    }
-
-    // verifies if commit message is empty
+    // verifies if message was provided
     if (message == NULL) {
-        printf("vcs: error: commit message is empty\n");
+        printf("vcs: error: no message provided\n");
         exit(EXIT_FAILURE);
     }
 
-    // initializes commit
-    Commit *commit = new_commit(get_hash() ,message, get_timestamp());
+    // verifies if stage is empty
+    if (file_is_empty(STAGE_FILE) == 1) {
+        printf("vcs: error: stage is empty\n");
+        exit(EXIT_FAILURE);
+    }
 
-    // Parse stage to Files
-    parse_stage_to_files(commit);
+    // initialize commit head and files head
+    CommitHead *commit_head = commit_create();
+    FileHead *file_head = file_create();
 
-    // Parse Files to contents file
-    parse_files_to_contents(commit->files);
+    // read stage file
+    parse_stage(file_head);
 
-    // Parse Commit to commits file
-    parse_commit_to_commit_file(commit);
+    // parse commit file
+    parse_commit_file(commit_head, file_head, message);
 
-    // Parse Commit to metadata file
-    parse_commit_to_metadata_file(commit);
+    // display structs 
+    commit_display(commit_head);
 
-    // Rewrite stage file
-    write_file(STAGE_FILE);
+    file_display(file_head);
 
-    // Free commit
-    free_commit(commit);
+    // rewrite stage file
+    write_empty_file(STAGE_FILE);
 
-    // Print Success message
+    // free memory
+    commit_destroy(commit_head);
+    file_destroy(file_head);
+
+    // print success message
     printf("vcs: commit successful\n");
 }
 
-void vcs_log()
-{
-    // Initialize the head of the linked list
-    Commit* head = NULL;
+void vcs_log(void) {
+    // validate .vcs directory
+    if (validate_directory(VCS_DIRECTORY) == 0) {
+        printf("vcs: error: .vcs was not initialized\n");
+        exit(EXIT_FAILURE);
+    }
 
-    // Read the commits.txt file and populate the linked list
-    parse_commit_file_to_commit(&head);
+    // initialize commit head and files head
+    CommitHead *commit_head = commit_create();
 
-    // Print the commits from last to first
-    print_commits(head);
+    // parse commits file to data structure
+    parse_commits(commit_head);
 
-    // Free the memory allocated for the linked list
-    free_commits(head);
+    // display commits
+    display_from_last(commit_head);
+
+    // free memory
+    commit_destroy(commit_head);
+
+    // print success message
+    printf("vcs: log successful\n");
+}
+
+void vcs_log_content(void) {
+    // validate .vcs directory
+    if (validate_directory(VCS_DIRECTORY) == 0) {
+        printf("vcs: error: .vcs was not initialized\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // initialize commit head and files head
+    CommitHead *commit_head = commit_create();
+
+    // parse commits file to data structure
+    parse_commits(commit_head);
+
+    // display commits with contents
+    display_from_last_with_contents(commit_head);
+
+    // free memory
+    commit_destroy(commit_head);
+
+    // print success message
+    printf("vcs: log successful\n");
+
 }
 
 void vcs_checkout(const char *hash) {
-    // Open metadata.txt file
-    FILE *metadataFile = fopen(METADATA_FILE, "r");
-    if (metadataFile == NULL) {
-        printf("Error opening metadata.txt file\n");
-        return;
+    // validate .vcs directory
+    if (validate_directory(VCS_DIRECTORY) == 0) {
+        printf("vcs: error: .vcs was not initialized\n");
+        exit(EXIT_FAILURE);
+    }
+    // initialize commit head and files head
+    CommitHead *commit_head = commit_create();
+
+    // parse commits file to data structure
+    parse_commits(commit_head);
+
+    // verify if hash is NULL
+    if (hash == NULL) {
+        printf("vcs: error: no hash provided\n");
+        exit(EXIT_FAILURE);
     }
 
-    // Search for the given hash in metadata.txt
-    char line[100];
-    char hashFromFile[41];
-    int byteStart, byteEnd;
-    int hashFound = 0;
-    while (fgets(line, sizeof(line), metadataFile)) {
-        sscanf(line, "%s %d %d", hashFromFile, &byteStart, &byteEnd);
-        if (strcmp(hashFromFile, hash) == 0) {
-            hashFound = 1;
-            break;  // Found the hash, stop searching
-        }
-    }
-    fclose(metadataFile);
-
-    if (!hashFound) {
-        printf("Hash not found in metadata.txt\n");
-        return;
-    }
-
-    // Open commits.txt file
-    FILE *commitsFile = fopen(COMMITS_FILE, "r");
-    if (commitsFile == NULL) {
-        printf("Error opening commits.txt file\n");
-        return;
-    }
-
-    // Move file pointer to the start byte of the commit
-    fseek(commitsFile, byteStart, SEEK_SET);
-
-    // Print the commit ID
-    printf("Commit ID: %s\n", hash);
-
-    // Parse the files section
-    Files *headFile = parseFiles(commitsFile, byteEnd);
-
-    // Print the parsed files
-    Files *currentFile = headFile;
-    while (currentFile != NULL) {
-        printf("File Path: %s, Start: %d, End: %d\n", currentFile->file_path, currentFile->byte_start, currentFile->byte_end);
-        extractContentFromFile(CONTENTS_FILE, currentFile->byte_start, currentFile->byte_end, currentFile->file_path);
-        currentFile = currentFile->next;
-    }
-
-    // Clean up: free the allocated memory
-    freeFiles(headFile);
-
-    // Close the commits.txt file
-    fclose(commitsFile);
+    // checkout to hash
+    write_commit_and_contents(commit_head, hash);
 }
-
-void vcs_show(const char *id) {
-    // open metadata.txt
-    FILE* metadata = fopen(METADATA_FILE, "r");
-    if (metadata == NULL) {
-        printf("vcs: error: metadata file not found\n");
-        return;
+void vcs_show(const char *hash) {
+    // validate .vcs directory
+    if (validate_directory(VCS_DIRECTORY) == 0) {
+        printf("vcs: error: .vcs was not initialized\n");
+        exit(EXIT_FAILURE);
     }
 
-    // search for the id in metadata.txt
-    char line[256];
-    char hash[41];
-    int byte_start, byte_end;
-    int hash_found = 0;
-    while (fgets(line, sizeof(line), metadata)) {
-        sscanf(line, "%s %d %d", hash, &byte_start, &byte_end);
-        if (strcmp(hash, hash) == 0) {
-            hash_found = 1;
-            break;  // Found the hash, stop searching
-        }
-    }
-    fclose(metadata);
+    // initialize commit head and files head
+    CommitHead *commit_head = commit_create();
 
-    if (!hash_found) {
-        printf("vcs: error: hash not found in metadata.txt\n");
-        return;
+    // parse commits file to data structure
+    parse_commits(commit_head);
+
+    // verify if hash is NULL
+    if (hash == NULL) {
+        printf("vcs: error: no hash provided\n");
+        exit(EXIT_FAILURE);
     }
 
-    // extract the content from the file
-    FILE* commits = fopen(COMMITS_FILE, "r");
-    if (commits == NULL) {
-        printf("vcs: error: commits file not found\n");
-        return;
-    }
+    // display commit and contents
+    display_commit_and_contents(commit_head, hash);
 
-    // move the file pointer to the start byte position
-    fseek(commits, byte_start, SEEK_SET);
-    Commit* current = NULL;
-
-    char buffer[256];
-    while (fgets(line, sizeof(line), commits) != NULL) {
-        if (strncmp(line, "ID: ", 4) == 0) {
-            // Create a new commit
-            Commit* commit = malloc(sizeof(Commit));
-            commit->hash = strdup(line + 4); // Skip "ID: "
-            commit->hash[strcspn(commit->hash, "\n")] = '\0'; // Remove newline character
-            commit->date = NULL;
-            commit->message = NULL;
-            commit->files = NULL;
-            commit->next = NULL;
-            commit->prev = NULL;
-
-            current = commit;
-        } else if (strncmp(line, "Date: ", 6) == 0) {
-            // Set the commit date
-            current->date = strdup(line + 6); // Skip "Date: "
-            current->date[strcspn(current->date, "\n")] = '\0'; // Remove newline character
-        } else if (strncmp(line, "Message: ", 9) == 0) {
-            // Set the commit message
-            current->message = strdup(line + 9); // Skip "Message: "
-            current->message[strcspn(current->message, "\n")] = '\0'; // Remove newline character
-        }
-
-        }
-        fclose(commits);
-
-    // print the commit
-    print_commits_(current);
-
-    // Open commits.txt file
-    FILE *commitsFile = fopen(COMMITS_FILE, "r");
-    if (commitsFile == NULL) {
-        printf("Error opening commits.txt file\n");
-        return;
-    }
-
-    // Move file pointer to the start byte of the commit
-    fseek(commitsFile, byte_start, SEEK_SET);
-
-    // Parse the files section
-    Files *headFile = parseFiles_(commitsFile, byte_end);
-
-    // Print the parsed files
-    Files *currentFile = headFile;
-    while (currentFile != NULL) {
-        printf("File Path: %s, Start: %d, End: %d\n", currentFile->file_path, currentFile->byte_start, currentFile->byte_end);
-        extractContentFromFile_print(CONTENTS_FILE, currentFile->byte_start, currentFile->byte_end);
-        currentFile = currentFile->next;
-    }
 }
-
