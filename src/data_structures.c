@@ -145,22 +145,11 @@ void display_commits(CommitHead* commit_head) {
 void display_from_last(CommitHead* commit_head){
     Commit* aux = commit_head->last;
     while (aux != NULL) {
-        printf("Hash: %s\n", aux->hash);
-        printf("Date: %s\n", aux->date);
-        printf("Message: %s\n", aux->message);
-        printf("Start byte: %d\n", aux->start_byte);
-        printf("End byte: %d\n", aux->end_byte);
+        printf("commit %s\n", aux->hash);
+        printf("Date:   %s\n", aux->date);
         printf("\n");
-
-        // display files
-        File* file_aux = aux->file_head->first;
-        while (file_aux != NULL) {
-            printf("Path: %s\n", file_aux->path);
-            printf("Start byte: %d\n", file_aux->start_byte);
-            printf("End byte: %d\n", file_aux->end_byte);
-            printf("\n");
-            file_aux = file_aux->next;
-        }
+        printf("\t%s\n", aux->message);
+        printf("\n");
         aux = aux->prev;
     }
 }
@@ -168,22 +157,23 @@ void display_from_last(CommitHead* commit_head){
 void display_from_last_with_contents(CommitHead* commit_head) {
     Commit* aux = commit_head->last;
     while (aux != NULL) {
-        printf("Hash: %s\n", aux->hash);
-        printf("Date: %s\n", aux->date);
-        printf("Message: %s\n", aux->message);
-        printf("Start byte: %d\n", aux->start_byte);
-        printf("End byte: %d\n", aux->end_byte);
+        printf("commit %s\n", aux->hash);
+        printf("Date:   %s\n", aux->date);
+        printf("\n");
+        printf("\t%s\n", aux->message);
         printf("\n");
 
         // display files
         File* file_aux = aux->file_head->first;
+        // iterate through files
         while (file_aux != NULL) {
-            printf("Path: %s\n", file_aux->path);
             // display file contents
+            printf("path %s\n", file_aux->path);
+            printf("contents: \n");
             print_text_between_bytes(file_aux->start_byte, file_aux->end_byte);
-
             printf("\n");
 
+            // next file
             file_aux = file_aux->next;
         }
         aux = aux->prev;
@@ -194,18 +184,18 @@ void display_commit_and_contents(CommitHead* commit_head, const char* hash) {
     Commit* aux = commit_head->first;
     while (aux != NULL) {
         if (strcmp(aux->hash, hash) == 0) {
-            printf("Hash: %s\n", aux->hash);
-            printf("Date: %s\n", aux->date);
-            printf("Message: %s\n", aux->message);
-            printf("Start byte: %d\n", aux->start_byte);
-            printf("End byte: %d\n", aux->end_byte);
+            printf("commit %s\n", aux->hash);
+            printf("Date:   %s\n", aux->date);
+            printf("\n");
+            printf("\t%s\n", aux->message);
             printf("\n");
 
             // display files
             File* file_aux = aux->file_head->first;
             while (file_aux != NULL) {
-                printf("Path: %s\n", file_aux->path);
+                printf("path %s\n", file_aux->path);
                 // display file contents
+                printf("contents: \n");
                 print_text_between_bytes(file_aux->start_byte, file_aux->end_byte);
 
                 printf("\n");

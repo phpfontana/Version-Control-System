@@ -181,8 +181,6 @@ void parse_commits(CommitHead *commit_head) {
         commit_insert(commit_head, hash_buffer, date_buffer, message_buffer, start_byte, end_byte);
         // assign file head to latest commit
         commit_head->last->file_head = file_head;
-
-        printf("--------\n");
     }
     fclose(metadata_file);
 }
