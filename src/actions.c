@@ -196,7 +196,30 @@ void vcs_checkout(const char *hash) {
 
     // checkout to hash
     write_commit_and_contents(commit_head, hash);
+
+    // free memory
+    commit_destroy(commit_head);
 }
+
+void vcs_checkout_current(void) {
+    // validate .vcs directory
+    if (validate_directory(VCS_DIRECTORY) == 0) {
+        printf("vcs: error: .vcs was not initialized\n");
+        exit(EXIT_FAILURE);
+    }
+    // initialize commit head and files head
+    CommitHead *commit_head = commit_create();
+
+    // parse commits file to data structure
+    parse_commits(commit_head);
+
+    // checkout to hash
+    write_commit_and_contents(commit_head, commit_head->last->hash);
+
+    // free memory
+    commit_destroy(commit_head);
+}
+
 void vcs_show(const char *hash) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -218,5 +241,8 @@ void vcs_show(const char *hash) {
 
     // display commit and contents
     display_commit_and_contents(commit_head, hash);
+
+    // free memory
+    commit_destroy(commit_head);
 
 }

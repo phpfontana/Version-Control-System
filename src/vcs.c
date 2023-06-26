@@ -92,11 +92,27 @@ int main(int argc, char const *argv[])
     }
     else if (strcmp(command, "mudar") == 0)
     {
-        vcs_checkout(argv[2]);
-    }
-    else if (strcmp(command, "mudar --atual") == 0)
-    {
-        // codigo
+        if (argc == 2)
+        {
+            vcs_checkout(argv[2]);
+        }
+        else
+        {
+            for (int i = 2; i < argc; i++)
+            {
+                if (strcmp(argv[i], "--atual") == 0)
+                {
+                    vcs_checkout_current();
+                }
+                else
+                {
+                    printAlert("Invalid command!\n");
+                }
+            }
+        }
+
+
+        
     }
     else
     {
