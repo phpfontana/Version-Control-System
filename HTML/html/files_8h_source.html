@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Version Control System: Código-Fonte de Version-Control-System/src/files.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Version Control System<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4dcda63b83c8d9dbdd7f383c9f098b99.html">Version-Control-System</a></li><li class="navelem"><a class="el" href="dir_72e89a5144b0bd66119b586912bb4c8e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">files.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="files_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor"># ifndef __FILES_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor"># define __FILES_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor"># include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// FUNCTIONS</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">int</span> <a class="code hl_function" href="files_8h.html#a2b911562432b653319a2475481bdf5bd">create_directory</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">int</span> <a class="code hl_function" href="files_8h.html#a1e806b4cfe8fada99c72e3250c1ddd1f">write_empty_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keywordtype">int</span> <a class="code hl_function" href="files_8h.html#a4a5f92e121ced273d5862cc2b1fce146">write_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keyword">const</span> <span class="keywordtype">char</span> *content);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>FILE *<a class="code hl_function" href="files_8h.html#a139bc891db3edc74b0d9f49d1cec20b9">open_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keyword">const</span> <span class="keywordtype">char</span> *mode);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">int</span> <a class="code hl_function" href="files_8h.html#a6a7f62e09ee4423db6993bc057d18305">append_to_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path, <span class="keyword">const</span> <span class="keywordtype">char</span> *content);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keywordtype">char</span> *<a class="code hl_function" href="files_8h.html#a1e0205abb275b15436fa03c89899e4bb">read_file</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor"># endif</span></div>
+<div class="ttc" id="afiles_8h_html_a139bc891db3edc74b0d9f49d1cec20b9"><div class="ttname"><a href="files_8h.html#a139bc891db3edc74b0d9f49d1cec20b9">open_file</a></div><div class="ttdeci">FILE * open_file(const char *path, const char *mode)</div><div class="ttdoc">Opens a file at the specified path with the specified mode.</div><div class="ttdef"><b>Definição</b> files.c:69</div></div>
+<div class="ttc" id="afiles_8h_html_a1e0205abb275b15436fa03c89899e4bb"><div class="ttname"><a href="files_8h.html#a1e0205abb275b15436fa03c89899e4bb">read_file</a></div><div class="ttdeci">char * read_file(const char *path)</div><div class="ttdoc">Reads the content of a file at the specified path.</div><div class="ttdef"><b>Definição</b> files.c:102</div></div>
+<div class="ttc" id="afiles_8h_html_a1e806b4cfe8fada99c72e3250c1ddd1f"><div class="ttname"><a href="files_8h.html#a1e806b4cfe8fada99c72e3250c1ddd1f">write_empty_file</a></div><div class="ttdeci">int write_empty_file(const char *path)</div><div class="ttdoc">Writes an empty file at the specified path.</div><div class="ttdef"><b>Definição</b> files.c:34</div></div>
+<div class="ttc" id="afiles_8h_html_a2b911562432b653319a2475481bdf5bd"><div class="ttname"><a href="files_8h.html#a2b911562432b653319a2475481bdf5bd">create_directory</a></div><div class="ttdeci">int create_directory(const char *path)</div><div class="ttdoc">Creates a directory at the specified path.</div><div class="ttdef"><b>Definição</b> files.c:24</div></div>
+<div class="ttc" id="afiles_8h_html_a4a5f92e121ced273d5862cc2b1fce146"><div class="ttname"><a href="files_8h.html#a4a5f92e121ced273d5862cc2b1fce146">write_file</a></div><div class="ttdeci">int write_file(const char *path, const char *content)</div><div class="ttdoc">Writes content to a file at the specified path.</div><div class="ttdef"><b>Definição</b> files.c:51</div></div>
+<div class="ttc" id="afiles_8h_html_a6a7f62e09ee4423db6993bc057d18305"><div class="ttname"><a href="files_8h.html#a6a7f62e09ee4423db6993bc057d18305">append_to_file</a></div><div class="ttdeci">int append_to_file(const char *path, const char *content)</div><div class="ttdoc">Appends content to a file at the specified path.</div><div class="ttdef"><b>Definição</b> files.c:85</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

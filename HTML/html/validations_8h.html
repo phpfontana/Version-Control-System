@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Version Control System: Referência do Arquivo Version-Control-System/src/validations.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Version Control System<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4dcda63b83c8d9dbdd7f383c9f098b99.html">Version-Control-System</a></li><li class="navelem"><a class="el" href="dir_72e89a5144b0bd66119b586912bb4c8e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definições e Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo validations.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="validations_8h_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definições e Macros</h2></td></tr>
+<tr class="memitem:a2a7c843ac1fef6a3245ea4aa44ea886b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>&#160;&#160;&#160;&quot;.vcs&quot;</td></tr>
+<tr class="memdesc:a2a7c843ac1fef6a3245ea4aa44ea886b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paths.  <br /></td></tr>
+<tr class="separator:a2a7c843ac1fef6a3245ea4aa44ea886b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5693d494fc2f09b45a1f696f979e3ec2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#a5693d494fc2f09b45a1f696f979e3ec2">COMMITS_FILE</a>&#160;&#160;&#160;&quot;.vcs/commits.txt&quot;</td></tr>
+<tr class="separator:a5693d494fc2f09b45a1f696f979e3ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf2a4c4db532201e2c53d00430c5394b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a>&#160;&#160;&#160;&quot;.vcs/stage.txt&quot;</td></tr>
+<tr class="separator:acf2a4c4db532201e2c53d00430c5394b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f64dcbc469fcf153b075debd14b414b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#a6f64dcbc469fcf153b075debd14b414b">CONTENTS_FILE</a>&#160;&#160;&#160;&quot;.vcs/contents.txt&quot;</td></tr>
+<tr class="separator:a6f64dcbc469fcf153b075debd14b414b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9144c77d647d03267e8a46cc57ee3543"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#a9144c77d647d03267e8a46cc57ee3543">METADATA_FILE</a>&#160;&#160;&#160;&quot;.vcs/metadata.txt&quot;</td></tr>
+<tr class="separator:a9144c77d647d03267e8a46cc57ee3543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:ab3cdcc12b3bc92a382784027c94a2027"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#ab3cdcc12b3bc92a382784027c94a2027">directory_exists</a> (const char *path)</td></tr>
+<tr class="memdesc:ab3cdcc12b3bc92a382784027c94a2027"><td class="mdescLeft">&#160;</td><td class="mdescRight">FUNCTIONS.  <br /></td></tr>
+<tr class="separator:ab3cdcc12b3bc92a382784027c94a2027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af08e65ad716897a2a5f006aa66ef9baa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#af08e65ad716897a2a5f006aa66ef9baa">file_exists</a> (const char *path)</td></tr>
+<tr class="memdesc:af08e65ad716897a2a5f006aa66ef9baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a file exists.  <br /></td></tr>
+<tr class="separator:af08e65ad716897a2a5f006aa66ef9baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8293b165df6faddc7bf94629ec03c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a> (const char *path)</td></tr>
+<tr class="memdesc:afa8293b165df6faddc7bf94629ec03c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates the VCS directory and required files.  <br /></td></tr>
+<tr class="separator:afa8293b165df6faddc7bf94629ec03c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7428c5668f893a92adef89e2ff1d3026"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#a7428c5668f893a92adef89e2ff1d3026">file_is_empty</a> (const char *path)</td></tr>
+<tr class="memdesc:a7428c5668f893a92adef89e2ff1d3026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a file is empty.  <br /></td></tr>
+<tr class="separator:a7428c5668f893a92adef89e2ff1d3026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6912eebf2818c5518cebccad05a4092d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="validations_8h.html#a6912eebf2818c5518cebccad05a4092d">path_is_staged</a> (const char *path)</td></tr>
+<tr class="memdesc:a6912eebf2818c5518cebccad05a4092d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a path is staged.  <br /></td></tr>
+<tr class="separator:a6912eebf2818c5518cebccad05a4092d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Definições e macros</h2>
+<a id="a5693d494fc2f09b45a1f696f979e3ec2" name="a5693d494fc2f09b45a1f696f979e3ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5693d494fc2f09b45a1f696f979e3ec2">&#9670;&#160;</a></span>COMMITS_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMITS_FILE&#160;&#160;&#160;&quot;.vcs/commits.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f64dcbc469fcf153b075debd14b414b" name="a6f64dcbc469fcf153b075debd14b414b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f64dcbc469fcf153b075debd14b414b">&#9670;&#160;</a></span>CONTENTS_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONTENTS_FILE&#160;&#160;&#160;&quot;.vcs/contents.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9144c77d647d03267e8a46cc57ee3543" name="a9144c77d647d03267e8a46cc57ee3543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9144c77d647d03267e8a46cc57ee3543">&#9670;&#160;</a></span>METADATA_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define METADATA_FILE&#160;&#160;&#160;&quot;.vcs/metadata.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf2a4c4db532201e2c53d00430c5394b" name="acf2a4c4db532201e2c53d00430c5394b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf2a4c4db532201e2c53d00430c5394b">&#9670;&#160;</a></span>STAGE_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STAGE_FILE&#160;&#160;&#160;&quot;.vcs/stage.txt&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a7c843ac1fef6a3245ea4aa44ea886b" name="a2a7c843ac1fef6a3245ea4aa44ea886b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7c843ac1fef6a3245ea4aa44ea886b">&#9670;&#160;</a></span>VCS_DIRECTORY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VCS_DIRECTORY&#160;&#160;&#160;&quot;.vcs&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Paths. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Funções</h2>
+<a id="ab3cdcc12b3bc92a382784027c94a2027" name="ab3cdcc12b3bc92a382784027c94a2027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3cdcc12b3bc92a382784027c94a2027">&#9670;&#160;</a></span>directory_exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int directory_exists </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FUNCTIONS. </p>
+<p>FUNCTIONS.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path to the directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 if the directory exists, 0 otherwise. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>                                       {</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> (access(path, F_OK) == 0);</div>
+<div class="line"><span class="lineno">   24</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af08e65ad716897a2a5f006aa66ef9baa" name="af08e65ad716897a2a5f006aa66ef9baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af08e65ad716897a2a5f006aa66ef9baa">&#9670;&#160;</a></span>file_exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int file_exists </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a file exists. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path to the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 if the file exists, 0 otherwise. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>                                  {</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> (access(path, F_OK) == 0);</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7428c5668f893a92adef89e2ff1d3026" name="a7428c5668f893a92adef89e2ff1d3026"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7428c5668f893a92adef89e2ff1d3026">&#9670;&#160;</a></span>file_is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int file_is_empty </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a file is empty. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path to the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 if the file is empty, 0 otherwise. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>                                    {</div>
+<div class="line"><span class="lineno">   77</span>    FILE *<a class="code hl_struct" href="structfile.html">file</a> = fopen(path, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structfile.html">file</a> == NULL) {</div>
+<div class="line"><span class="lineno">   79</span>        printf(<span class="stringliteral">&quot;vcs: error: %s file not found\n&quot;</span>, path);</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="line"><span class="lineno">   82</span>    </div>
+<div class="line"><span class="lineno">   83</span>    fseek(<a class="code hl_struct" href="structfile.html">file</a>, 0, SEEK_END);</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordtype">int</span> size = ftell(<a class="code hl_struct" href="structfile.html">file</a>);</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    <span class="comment">// close file</span></div>
+<div class="line"><span class="lineno">   87</span>    fclose(<a class="code hl_struct" href="structfile.html">file</a>);</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> (size == 0);</div>
+<div class="line"><span class="lineno">   90</span>}</div>
+<div class="ttc" id="astructfile_html"><div class="ttname"><a href="structfile.html">file</a></div><div class="ttdef"><b>Definição</b> data_structures.h:30</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6912eebf2818c5518cebccad05a4092d" name="a6912eebf2818c5518cebccad05a4092d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6912eebf2818c5518cebccad05a4092d">&#9670;&#160;</a></span>path_is_staged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int path_is_staged </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a path is staged. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path to the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 if the path is staged, 0 otherwise. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>                                     {</div>
+<div class="line"><span class="lineno">   99</span>    FILE *<a class="code hl_struct" href="structfile.html">file</a> = fopen(<a class="code hl_define" href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a>, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structfile.html">file</a> == NULL) {</div>
+<div class="line"><span class="lineno">  101</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs/stage file not found\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  103</span>    }</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="comment">// read file line by line</span></div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordtype">char</span> line[256];</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">while</span> (fgets(line, <span class="keyword">sizeof</span>(line), <a class="code hl_struct" href="structfile.html">file</a>)) {</div>
+<div class="line"><span class="lineno">  108</span>        <span class="comment">// Remove the trailing newline character</span></div>
+<div class="line"><span class="lineno">  109</span>        line[strcspn(line, <span class="stringliteral">&quot;\n&quot;</span>)] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> (strcmp(path, line) == 0) {</div>
+<div class="line"><span class="lineno">  112</span>            fclose(<a class="code hl_struct" href="structfile.html">file</a>);</div>
+<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  114</span>        }</div>
+<div class="line"><span class="lineno">  115</span>    }</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    fclose(<a class="code hl_struct" href="structfile.html">file</a>);</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  119</span>}</div>
+<div class="ttc" id="avalidations_8h_html_acf2a4c4db532201e2c53d00430c5394b"><div class="ttname"><a href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a></div><div class="ttdeci">#define STAGE_FILE</div><div class="ttdef"><b>Definição</b> validations.h:7</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afa8293b165df6faddc7bf94629ec03c4" name="afa8293b165df6faddc7bf94629ec03c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8293b165df6faddc7bf94629ec03c4">&#9670;&#160;</a></span>validate_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int validate_directory </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validates the VCS directory and required files. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path to the VCS directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>1 if the directory and required files are valid, 0 otherwise. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                         {</div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">// Check if directory exists</span></div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#ab3cdcc12b3bc92a382784027c94a2027">directory_exists</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0 ) {</div>
+<div class="line"><span class="lineno">   45</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs directory not found\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="comment">// Check if files exist</span></div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#af08e65ad716897a2a5f006aa66ef9baa">file_exists</a>(<a class="code hl_define" href="validations_8h.html#a5693d494fc2f09b45a1f696f979e3ec2">COMMITS_FILE</a>) == 0) {</div>
+<div class="line"><span class="lineno">   51</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs/commit file not found\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#af08e65ad716897a2a5f006aa66ef9baa">file_exists</a>(<a class="code hl_define" href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a>) == 0) {</div>
+<div class="line"><span class="lineno">   55</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs/stage file not found\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#af08e65ad716897a2a5f006aa66ef9baa">file_exists</a>(<a class="code hl_define" href="validations_8h.html#a6f64dcbc469fcf153b075debd14b414b">CONTENTS_FILE</a>) == 0) {</div>
+<div class="line"><span class="lineno">   59</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs/contents file not found\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#af08e65ad716897a2a5f006aa66ef9baa">file_exists</a>(<a class="code hl_define" href="validations_8h.html#a9144c77d647d03267e8a46cc57ee3543">METADATA_FILE</a>) == 0) {</div>
+<div class="line"><span class="lineno">   63</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs/metadata file not found\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span>    </div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">   68</span>}</div>
+<div class="ttc" id="avalidations_8c_html_ab3cdcc12b3bc92a382784027c94a2027"><div class="ttname"><a href="validations_8c.html#ab3cdcc12b3bc92a382784027c94a2027">directory_exists</a></div><div class="ttdeci">int directory_exists(const char *path)</div><div class="ttdoc">Checks if a directory exists.</div><div class="ttdef"><b>Definição</b> validations.c:22</div></div>
+<div class="ttc" id="avalidations_8c_html_af08e65ad716897a2a5f006aa66ef9baa"><div class="ttname"><a href="validations_8c.html#af08e65ad716897a2a5f006aa66ef9baa">file_exists</a></div><div class="ttdeci">int file_exists(const char *path)</div><div class="ttdoc">Checks if a file exists.</div><div class="ttdef"><b>Definição</b> validations.c:32</div></div>
+<div class="ttc" id="avalidations_8h_html_a2a7c843ac1fef6a3245ea4aa44ea886b"><div class="ttname"><a href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a></div><div class="ttdeci">#define VCS_DIRECTORY</div><div class="ttdoc">Paths.</div><div class="ttdef"><b>Definição</b> validations.h:5</div></div>
+<div class="ttc" id="avalidations_8h_html_a5693d494fc2f09b45a1f696f979e3ec2"><div class="ttname"><a href="validations_8h.html#a5693d494fc2f09b45a1f696f979e3ec2">COMMITS_FILE</a></div><div class="ttdeci">#define COMMITS_FILE</div><div class="ttdef"><b>Definição</b> validations.h:6</div></div>
+<div class="ttc" id="avalidations_8h_html_a6f64dcbc469fcf153b075debd14b414b"><div class="ttname"><a href="validations_8h.html#a6f64dcbc469fcf153b075debd14b414b">CONTENTS_FILE</a></div><div class="ttdeci">#define CONTENTS_FILE</div><div class="ttdef"><b>Definição</b> validations.h:8</div></div>
+<div class="ttc" id="avalidations_8h_html_a9144c77d647d03267e8a46cc57ee3543"><div class="ttname"><a href="validations_8h.html#a9144c77d647d03267e8a46cc57ee3543">METADATA_FILE</a></div><div class="ttdeci">#define METADATA_FILE</div><div class="ttdef"><b>Definição</b> validations.h:9</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

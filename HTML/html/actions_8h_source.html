@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Version Control System: Código-Fonte de Version-Control-System/src/actions.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Version Control System<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4dcda63b83c8d9dbdd7f383c9f098b99.html">Version-Control-System</a></li><li class="navelem"><a class="el" href="dir_72e89a5144b0bd66119b586912bb4c8e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">actions.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="actions_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor"># ifndef __ACTIONS_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor"># define __ACTIONS_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keywordtype">void</span> <a class="code hl_function" href="actions_8h.html#a995ea83c909f0dd79065d2726f77cfa9">vcs_init</a>();</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keywordtype">void</span> <a class="code hl_function" href="actions_8h.html#a20db5d5e0b9c1d53863b7e6293ff0987">vcs_add</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *path);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">void</span> <a class="code hl_function" href="actions_8h.html#a5aac437e573879e6de22cf46afdabe2e">vcs_commit</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *message);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">void</span> <a class="code hl_function" href="actions_8h.html#a922d947ac9c921b1c15b714aa0dfe2f9">vcs_log</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">void</span> <a class="code hl_function" href="actions_8h.html#a8af78772bc7a1e8e6cfe25b1c248cf82">vcs_log_content</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keywordtype">void</span> <a class="code hl_function" href="actions_8h.html#ae00d5b4d74af875e2070b682f40cca0d">vcs_checkout</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keywordtype">void</span> <a class="code hl_function" href="actions_8h.html#a94c9501c2277038f48e92baaf9a5f80d">vcs_checkout_current</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">void</span> <a class="code hl_function" href="actions_8h.html#aa18e7e8b1c26f5173cd4c7a36701814c">vcs_show</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor"># endif</span></div>
+<div class="ttc" id="aactions_8h_html_a20db5d5e0b9c1d53863b7e6293ff0987"><div class="ttname"><a href="actions_8h.html#a20db5d5e0b9c1d53863b7e6293ff0987">vcs_add</a></div><div class="ttdeci">void vcs_add(const char *path)</div><div class="ttdoc">Adds a file to the VCS stage.</div><div class="ttdef"><b>Definição</b> actions.c:81</div></div>
+<div class="ttc" id="aactions_8h_html_a5aac437e573879e6de22cf46afdabe2e"><div class="ttname"><a href="actions_8h.html#a5aac437e573879e6de22cf46afdabe2e">vcs_commit</a></div><div class="ttdeci">void vcs_commit(const char *message)</div><div class="ttdoc">Commits the changes in the VCS stage.</div><div class="ttdef"><b>Definição</b> actions.c:128</div></div>
+<div class="ttc" id="aactions_8h_html_a8af78772bc7a1e8e6cfe25b1c248cf82"><div class="ttname"><a href="actions_8h.html#a8af78772bc7a1e8e6cfe25b1c248cf82">vcs_log_content</a></div><div class="ttdeci">void vcs_log_content(void)</div><div class="ttdoc">Displays the commit log with contents.</div><div class="ttdef"><b>Definição</b> actions.c:214</div></div>
+<div class="ttc" id="aactions_8h_html_a922d947ac9c921b1c15b714aa0dfe2f9"><div class="ttname"><a href="actions_8h.html#a922d947ac9c921b1c15b714aa0dfe2f9">vcs_log</a></div><div class="ttdeci">void vcs_log(void)</div><div class="ttdoc">Displays the commit log.</div><div class="ttdef"><b>Definição</b> actions.c:182</div></div>
+<div class="ttc" id="aactions_8h_html_a94c9501c2277038f48e92baaf9a5f80d"><div class="ttname"><a href="actions_8h.html#a94c9501c2277038f48e92baaf9a5f80d">vcs_checkout_current</a></div><div class="ttdeci">void vcs_checkout_current(void)</div><div class="ttdoc">Checks out to the current commit.</div><div class="ttdef"><b>Definição</b> actions.c:284</div></div>
+<div class="ttc" id="aactions_8h_html_a995ea83c909f0dd79065d2726f77cfa9"><div class="ttname"><a href="actions_8h.html#a995ea83c909f0dd79065d2726f77cfa9">vcs_init</a></div><div class="ttdeci">void vcs_init()</div><div class="ttdoc">Initializes a new VCS repository.</div><div class="ttdef"><b>Definição</b> actions.c:30</div></div>
+<div class="ttc" id="aactions_8h_html_aa18e7e8b1c26f5173cd4c7a36701814c"><div class="ttname"><a href="actions_8h.html#aa18e7e8b1c26f5173cd4c7a36701814c">vcs_show</a></div><div class="ttdeci">void vcs_show(const char *hash)</div><div class="ttdoc">Displays the details of a specific commit.</div><div class="ttdef"><b>Definição</b> actions.c:315</div></div>
+<div class="ttc" id="aactions_8h_html_ae00d5b4d74af875e2070b682f40cca0d"><div class="ttname"><a href="actions_8h.html#ae00d5b4d74af875e2070b682f40cca0d">vcs_checkout</a></div><div class="ttdeci">void vcs_checkout(const char *hash)</div><div class="ttdoc">Checks out to a specific commit.</div><div class="ttdef"><b>Definição</b> actions.c:250</div></div>
+<div class="ttc" id="autils_8c_html_a7a83b81e07136758832c25529e56a429"><div class="ttname"><a href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a></div><div class="ttdeci">char * hash()</div><div class="ttdoc">Generates a random hexadecimal hash.</div><div class="ttdef"><b>Definição</b> utils.c:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

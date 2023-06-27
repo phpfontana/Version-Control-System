@@ -1,3 +1,9 @@
+/**
+ * @file parser.h
+ * @brief Parsing functions for the VCS (Version Control System).
+ *
+ * This file contains functions for parsing and processing data in the VCS system.
+ */
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -9,6 +15,11 @@
 # include "utils.h"
 # include "data_structures.h"
 
+/**
+ * @brief Parses the stage file and populates the file head with the parsed data.
+ *
+ * @param head The pointer to the file head.
+ */
 void parse_stage(FileHead *head) {
     FILE* stage_file = open_file(STAGE_FILE, "r");
 
@@ -37,6 +48,13 @@ void parse_stage(FileHead *head) {
     fclose(stage_file);
 }
 
+/**
+ * @brief Parses the commit file, appends the commit to the commits file, and updates metadata.
+ *
+ * @param commit_head The pointer to the commit head.
+ * @param file_head The pointer to the file head.
+ * @param message The commit message.
+ */
 void parse_commit_file(CommitHead *commit_head, FileHead *file_head, const char *message) {
     // open commit file for appending
     FILE* commit_file = open_file(COMMITS_FILE, "a");
@@ -74,6 +92,11 @@ void parse_commit_file(CommitHead *commit_head, FileHead *file_head, const char 
     fclose(metadata_file);
 }
 
+/**
+ * @brief Parses the commits metadata file and populates the commit and file heads with the parsed data.
+ *
+ * @param commit_head The pointer to the commit head.
+ */
 void parse_commits(CommitHead *commit_head) {
     // read metadata file
     FILE* metadata_file = open_file(METADATA_FILE, "r");
@@ -185,6 +208,12 @@ void parse_commits(CommitHead *commit_head) {
     fclose(metadata_file);
 }
 
+/**
+ * @brief Prints the text between the specified byte start and byte end.
+ *
+ * @param byte_start The starting byte position.
+ * @param byte_end The ending byte position.
+ */
 void print_text_between_bytes(int byte_start, int byte_end) {
     // Open constants.txt file
     FILE* file = fopen(CONTENTS_FILE, "r");
@@ -219,6 +248,13 @@ void print_text_between_bytes(int byte_start, int byte_end) {
     fclose(file);
 }
 
+/**
+ * @brief Writes the text between the specified byte start and byte end to the specified file.
+ *
+ * @param byte_start The starting byte position.
+ * @param byte_end The ending byte position.
+ * @param path The path of the output file.
+ */
 void write_text_between_bytes(int byte_start, int byte_end, const char *path) {
     // Open contents.txt file
     FILE* input_file = fopen(CONTENTS_FILE, "r");

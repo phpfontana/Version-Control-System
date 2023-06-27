@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Version Control System: Código-Fonte de Version-Control-System/src/data_structures.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Version Control System<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4dcda63b83c8d9dbdd7f383c9f098b99.html">Version-Control-System</a></li><li class="navelem"><a class="el" href="dir_72e89a5144b0bd66119b586912bb4c8e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">data_structures.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="data__structures_8h.html">Ir para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor"># ifndef __DATA_STRUCTURES_H__</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor"># define __DATA_STRUCTURES_H__</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">    4</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structcommit__head.html">commit_head</a> <a class="code hl_struct" href="structcommit__head.html">CommitHead</a>;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="data__structures_8h.html#a88619185527f2b60fe4c259e5bd618bf">    5</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structcommit.html">commit</a> <a class="code hl_struct" href="structcommit.html">Commit</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">    7</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfile__head.html">file_head</a> <a class="code hl_struct" href="structfile__head.html">FileHead</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="data__structures_8h.html#ae2097d8905c595503ce7541623017d5f">    8</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structfile.html">file</a> <a class="code hl_struct" href="structfile.html">File</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structcommit__head.html">   10</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structcommit__head.html">commit_head</a>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">   11</a></span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* <a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">   12</a></span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* <a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structcommit.html">   15</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structcommit.html">commit</a>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">   16</a></span>    <span class="keywordtype">char</span>* <a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">   17</a></span>    <span class="keywordtype">char</span>* <a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">   18</a></span>    <span class="keywordtype">char</span>* <a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structcommit.html#abf279fb66381dc428dab7f283d7492bf">   19</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structcommit.html#abf279fb66381dc428dab7f283d7492bf">start_byte</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structcommit.html#a3d4cdcfb7a0ce1e054b730f3773ac15f">   20</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structcommit.html#a3d4cdcfb7a0ce1e054b730f3773ac15f">end_byte</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structcommit.html#a9513c0856678b4889091cfbe91055d0e">   21</a></span>    <a class="code hl_struct" href="structfile__head.html">FileHead</a>* <a class="code hl_variable" href="structcommit.html#a9513c0856678b4889091cfbe91055d0e">file_head</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">   22</a></span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* <a class="code hl_variable" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">next</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structcommit.html#a3981fde3b2e1c3ebc3df650eaf52583e">   23</a></span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* <a class="code hl_variable" href="structcommit.html#a3981fde3b2e1c3ebc3df650eaf52583e">prev</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structfile__head.html">   26</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structfile__head.html">file_head</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">   27</a></span>    <a class="code hl_struct" href="structfile.html">File</a>* <a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">   28</a></span>    <a class="code hl_struct" href="structfile.html">File</a>* <a class="code hl_variable" href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">last</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structfile.html">   30</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structfile.html">file</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">   31</a></span>    <span class="keywordtype">char</span>* <a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">   32</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">start_byte</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">   33</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">end_byte</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">   34</a></span>    <a class="code hl_struct" href="structfile.html">File</a>* <a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structfile.html#aaf4f09b89dd163c8ffcbf77678da97a0">   35</a></span>    <a class="code hl_struct" href="structfile.html">File</a>* <a class="code hl_variable" href="structfile.html#aaf4f09b89dd163c8ffcbf77678da97a0">prev</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// function prototypes</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* <a class="code hl_function" href="data__structures_8h.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#aefecb84f7405da6287bddd5c7d4cb1ed">commit_insert</a>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* head, <span class="keywordtype">char</span>* <a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>, <span class="keywordtype">char</span>* date, <span class="keyword">const</span> <span class="keywordtype">char</span>* message, <span class="keywordtype">int</span> start_byte, <span class="keywordtype">int</span> end_byte);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#ac9fa1fb437220e850d58ecb699123ac3">commit_display</a>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* head);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* head);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><a class="code hl_struct" href="structfile__head.html">FileHead</a>* <a class="code hl_function" href="data__structures_8h.html#ae3682f0080b40b5078276fa0dcb70d0b">file_create</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#aa2fa79de0b4063e6e18b349bd0ebcb99">file_insert</a>(<a class="code hl_struct" href="structfile__head.html">FileHead</a>* head, <span class="keyword">const</span> <span class="keywordtype">char</span>* path, <span class="keywordtype">int</span> start_byte, <span class="keywordtype">int</span> end_byte);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#a033314473c7a8954f4ae067950b27b3a">file_display</a>(<a class="code hl_struct" href="structfile__head.html">FileHead</a>* head);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#a22dcea2f182cd9adb45652dc8d528f9d">file_destroy</a>(<a class="code hl_struct" href="structfile__head.html">FileHead</a>* head);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#ac153353ef4e02741f313f940baa44c47">display_commits</a>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* <a class="code hl_struct" href="structcommit__head.html">commit_head</a>); </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#ab45ac42480377e376e13fbb70f2c46a5">display_from_last</a>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* <a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#acbf12322edfae4eea5674f15d70b00d7">display_from_last_with_contents</a>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* <a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#adf75e61c5129c20833135a177437e48b">display_commit_and_contents</a>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* <a class="code hl_struct" href="structcommit__head.html">commit_head</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">void</span> <a class="code hl_function" href="data__structures_8h.html#a22f1da70cfe2ff55a31054db679fb913">write_commit_and_contents</a>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* <a class="code hl_struct" href="structcommit__head.html">commit_head</a>, <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor"># endif</span></div>
+<div class="ttc" id="adata__structures_8h_html_a033314473c7a8954f4ae067950b27b3a"><div class="ttname"><a href="data__structures_8h.html#a033314473c7a8954f4ae067950b27b3a">file_display</a></div><div class="ttdeci">void file_display(FileHead *head)</div><div class="ttdoc">Displays the files in the file list.</div><div class="ttdef"><b>Definição</b> data_structures.c:154</div></div>
+<div class="ttc" id="adata__structures_8h_html_a07bfd05d58ebcd3e28bf3324435e03bb"><div class="ttname"><a href="data__structures_8h.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a></div><div class="ttdeci">CommitHead * commit_create()</div><div class="ttdoc">Creates a new commit list head.</div><div class="ttdef"><b>Definição</b> data_structures.c:24</div></div>
+<div class="ttc" id="adata__structures_8h_html_a22dcea2f182cd9adb45652dc8d528f9d"><div class="ttname"><a href="data__structures_8h.html#a22dcea2f182cd9adb45652dc8d528f9d">file_destroy</a></div><div class="ttdeci">void file_destroy(FileHead *head)</div><div class="ttdoc">Destroys the file list and frees the memory.</div><div class="ttdef"><b>Definição</b> data_structures.c:170</div></div>
+<div class="ttc" id="adata__structures_8h_html_a22f1da70cfe2ff55a31054db679fb913"><div class="ttname"><a href="data__structures_8h.html#a22f1da70cfe2ff55a31054db679fb913">write_commit_and_contents</a></div><div class="ttdeci">void write_commit_and_contents(CommitHead *commit_head, const char *hash)</div><div class="ttdoc">Writes a specific commit and its associated files to the current directory.</div><div class="ttdef"><b>Definição</b> data_structures.c:298</div></div>
+<div class="ttc" id="adata__structures_8h_html_a844b3c209f0ced5f66f271060417abb3"><div class="ttname"><a href="data__structures_8h.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a></div><div class="ttdeci">void commit_destroy(CommitHead *head)</div><div class="ttdoc">Destroys the commit list and frees the memory.</div><div class="ttdef"><b>Definição</b> data_structures.c:92</div></div>
+<div class="ttc" id="adata__structures_8h_html_aa2fa79de0b4063e6e18b349bd0ebcb99"><div class="ttname"><a href="data__structures_8h.html#aa2fa79de0b4063e6e18b349bd0ebcb99">file_insert</a></div><div class="ttdeci">void file_insert(FileHead *head, const char *path, int start_byte, int end_byte)</div><div class="ttdoc">Inserts a file into the file list.</div><div class="ttdef"><b>Definição</b> data_structures.c:127</div></div>
+<div class="ttc" id="adata__structures_8h_html_ab45ac42480377e376e13fbb70f2c46a5"><div class="ttname"><a href="data__structures_8h.html#ab45ac42480377e376e13fbb70f2c46a5">display_from_last</a></div><div class="ttdeci">void display_from_last(CommitHead *commit_head)</div><div class="ttdoc">Displays the commits in reverse order from the last commit.</div><div class="ttdef"><b>Definição</b> data_structures.c:214</div></div>
+<div class="ttc" id="adata__structures_8h_html_ac153353ef4e02741f313f940baa44c47"><div class="ttname"><a href="data__structures_8h.html#ac153353ef4e02741f313f940baa44c47">display_commits</a></div><div class="ttdeci">void display_commits(CommitHead *commit_head)</div><div class="ttdoc">Displays all the commits and their associated files.</div><div class="ttdef"><b>Definição</b> data_structures.c:186</div></div>
+<div class="ttc" id="adata__structures_8h_html_ac9fa1fb437220e850d58ecb699123ac3"><div class="ttname"><a href="data__structures_8h.html#ac9fa1fb437220e850d58ecb699123ac3">commit_display</a></div><div class="ttdeci">void commit_display(CommitHead *head)</div><div class="ttdoc">Displays the commits in the commit list.</div><div class="ttdef"><b>Definição</b> data_structures.c:74</div></div>
+<div class="ttc" id="adata__structures_8h_html_acbf12322edfae4eea5674f15d70b00d7"><div class="ttname"><a href="data__structures_8h.html#acbf12322edfae4eea5674f15d70b00d7">display_from_last_with_contents</a></div><div class="ttdeci">void display_from_last_with_contents(CommitHead *commit_head)</div><div class="ttdoc">Displays the commits and their associated files in reverse order from the last commit.</div><div class="ttdef"><b>Definição</b> data_structures.c:231</div></div>
+<div class="ttc" id="adata__structures_8h_html_adf75e61c5129c20833135a177437e48b"><div class="ttname"><a href="data__structures_8h.html#adf75e61c5129c20833135a177437e48b">display_commit_and_contents</a></div><div class="ttdeci">void display_commit_and_contents(CommitHead *commit_head, const char *hash)</div><div class="ttdoc">Displays a specific commit and its associated files.</div><div class="ttdef"><b>Definição</b> data_structures.c:263</div></div>
+<div class="ttc" id="adata__structures_8h_html_ae3682f0080b40b5078276fa0dcb70d0b"><div class="ttname"><a href="data__structures_8h.html#ae3682f0080b40b5078276fa0dcb70d0b">file_create</a></div><div class="ttdeci">FileHead * file_create()</div><div class="ttdoc">Creates a new file list head.</div><div class="ttdef"><b>Definição</b> data_structures.c:110</div></div>
+<div class="ttc" id="adata__structures_8h_html_aefecb84f7405da6287bddd5c7d4cb1ed"><div class="ttname"><a href="data__structures_8h.html#aefecb84f7405da6287bddd5c7d4cb1ed">commit_insert</a></div><div class="ttdeci">void commit_insert(CommitHead *head, char *hash, char *date, const char *message, int start_byte, int end_byte)</div><div class="ttdoc">Inserts a commit into the commit list.</div><div class="ttdef"><b>Definição</b> data_structures.c:43</div></div>
+<div class="ttc" id="astructcommit__head_html"><div class="ttname"><a href="structcommit__head.html">commit_head</a></div><div class="ttdef"><b>Definição</b> data_structures.h:10</div></div>
+<div class="ttc" id="astructcommit__head_html_a17bb9baefcfc6d825c90f27c54d12cf9"><div class="ttname"><a href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">commit_head::last</a></div><div class="ttdeci">Commit * last</div><div class="ttdef"><b>Definição</b> data_structures.h:12</div></div>
+<div class="ttc" id="astructcommit__head_html_a5b4a567111ef994ca3cdc868172221cd"><div class="ttname"><a href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">commit_head::first</a></div><div class="ttdeci">Commit * first</div><div class="ttdef"><b>Definição</b> data_structures.h:11</div></div>
+<div class="ttc" id="astructcommit_html"><div class="ttname"><a href="structcommit.html">commit</a></div><div class="ttdef"><b>Definição</b> data_structures.h:15</div></div>
+<div class="ttc" id="astructcommit_html_a2ffdc248e999f58e4042569b64005e11"><div class="ttname"><a href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">commit::date</a></div><div class="ttdeci">char * date</div><div class="ttdef"><b>Definição</b> data_structures.h:17</div></div>
+<div class="ttc" id="astructcommit_html_a3981fde3b2e1c3ebc3df650eaf52583e"><div class="ttname"><a href="structcommit.html#a3981fde3b2e1c3ebc3df650eaf52583e">commit::prev</a></div><div class="ttdeci">Commit * prev</div><div class="ttdef"><b>Definição</b> data_structures.h:23</div></div>
+<div class="ttc" id="astructcommit_html_a3d4cdcfb7a0ce1e054b730f3773ac15f"><div class="ttname"><a href="structcommit.html#a3d4cdcfb7a0ce1e054b730f3773ac15f">commit::end_byte</a></div><div class="ttdeci">int end_byte</div><div class="ttdef"><b>Definição</b> data_structures.h:20</div></div>
+<div class="ttc" id="astructcommit_html_a61b61fe79c05acbc53a11ad29f07f87c"><div class="ttname"><a href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">commit::next</a></div><div class="ttdeci">Commit * next</div><div class="ttdef"><b>Definição</b> data_structures.h:22</div></div>
+<div class="ttc" id="astructcommit_html_a85cdb2c1548119a1646f5214df9c484f"><div class="ttname"><a href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">commit::message</a></div><div class="ttdeci">char * message</div><div class="ttdef"><b>Definição</b> data_structures.h:18</div></div>
+<div class="ttc" id="astructcommit_html_a9513c0856678b4889091cfbe91055d0e"><div class="ttname"><a href="structcommit.html#a9513c0856678b4889091cfbe91055d0e">commit::file_head</a></div><div class="ttdeci">FileHead * file_head</div><div class="ttdef"><b>Definição</b> data_structures.h:21</div></div>
+<div class="ttc" id="astructcommit_html_abf279fb66381dc428dab7f283d7492bf"><div class="ttname"><a href="structcommit.html#abf279fb66381dc428dab7f283d7492bf">commit::start_byte</a></div><div class="ttdeci">int start_byte</div><div class="ttdef"><b>Definição</b> data_structures.h:19</div></div>
+<div class="ttc" id="astructcommit_html_aeb2acd873458aa736144ae60783dcb1b"><div class="ttname"><a href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">commit::hash</a></div><div class="ttdeci">char * hash</div><div class="ttdef"><b>Definição</b> data_structures.h:16</div></div>
+<div class="ttc" id="astructfile__head_html"><div class="ttname"><a href="structfile__head.html">file_head</a></div><div class="ttdef"><b>Definição</b> data_structures.h:26</div></div>
+<div class="ttc" id="astructfile__head_html_a36409f6d15480a17c96be43c41efb4b3"><div class="ttname"><a href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">file_head::first</a></div><div class="ttdeci">File * first</div><div class="ttdef"><b>Definição</b> data_structures.h:27</div></div>
+<div class="ttc" id="astructfile__head_html_ae8a4465d2fad17835235b3506f7a43ef"><div class="ttname"><a href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">file_head::last</a></div><div class="ttdeci">File * last</div><div class="ttdef"><b>Definição</b> data_structures.h:28</div></div>
+<div class="ttc" id="astructfile_html"><div class="ttname"><a href="structfile.html">file</a></div><div class="ttdef"><b>Definição</b> data_structures.h:30</div></div>
+<div class="ttc" id="astructfile_html_a1aa1b122e87c623b1d132991daf4f0bc"><div class="ttname"><a href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">file::path</a></div><div class="ttdeci">char * path</div><div class="ttdef"><b>Definição</b> data_structures.h:31</div></div>
+<div class="ttc" id="astructfile_html_a35c7b5f6e6ed77338af5255fd805cf85"><div class="ttname"><a href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">file::next</a></div><div class="ttdeci">File * next</div><div class="ttdef"><b>Definição</b> data_structures.h:34</div></div>
+<div class="ttc" id="astructfile_html_a3c45db19f907de2dd9c77514e29fa6fe"><div class="ttname"><a href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">file::end_byte</a></div><div class="ttdeci">int end_byte</div><div class="ttdef"><b>Definição</b> data_structures.h:33</div></div>
+<div class="ttc" id="astructfile_html_aaf4f09b89dd163c8ffcbf77678da97a0"><div class="ttname"><a href="structfile.html#aaf4f09b89dd163c8ffcbf77678da97a0">file::prev</a></div><div class="ttdeci">File * prev</div><div class="ttdef"><b>Definição</b> data_structures.h:35</div></div>
+<div class="ttc" id="astructfile_html_ac7cd87b6f4af706e08c2c5c88e17753d"><div class="ttname"><a href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">file::start_byte</a></div><div class="ttdeci">int start_byte</div><div class="ttdef"><b>Definição</b> data_structures.h:32</div></div>
+<div class="ttc" id="autils_8c_html_a7a83b81e07136758832c25529e56a429"><div class="ttname"><a href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a></div><div class="ttdeci">char * hash()</div><div class="ttdoc">Generates a random hexadecimal hash.</div><div class="ttdef"><b>Definição</b> utils.c:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

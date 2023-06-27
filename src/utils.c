@@ -1,3 +1,9 @@
+/**
+ * @file utils.c
+ * @brief Utility functions for the VCS (Version Control System).
+ *
+ * This file contains utility functions used in the VCS system.
+ */
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>
@@ -7,6 +13,11 @@
 
 # include "utils.h"
 
+/**
+ * @brief Generates a random hexadecimal hash.
+ *
+ * @return A dynamically allocated string containing the generated hash.
+ */
 char *hash() {
     char *hash = malloc(41 * sizeof(char));
     if (hash == NULL) {
@@ -25,6 +36,11 @@ char *hash() {
     return hash;
 }
 
+/**
+ * @brief Retrieves the current timestamp.
+ *
+ * @return A string representing the current timestamp.
+ */
 char* timestamp() {
     time_t t;
     time(&t);
@@ -33,13 +49,29 @@ char* timestamp() {
     return date;
 }
 
-//Messages of errors and alerts.
+/**
+ * @brief Prints an informational message.
+ *
+ * @param message The message to be printed.
+ */
 void printInfo(const char* message) {
     printf("[INFO] %s\n", message);
 }
+
+/**
+ * @brief Prints an alert message.
+ *
+ * @param message The message to be printed.
+ */
 void printAlert(const char* message) {
     printf("[ALERT] %s\n", message);
 }
+
+/**
+ * @brief Prints a warning message.
+ *
+ * @param message The message to be printed.
+ */
 void printWarning(const char* message) {
     printf("[WARNING] %s\n", message);
 }

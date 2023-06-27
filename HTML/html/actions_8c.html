@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Version Control System: Referência do Arquivo Version-Control-System/src/actions.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Version Control System<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4dcda63b83c8d9dbdd7f383c9f098b99.html">Version-Control-System</a></li><li class="navelem"><a class="el" href="dir_72e89a5144b0bd66119b586912bb4c8e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo actions.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>VCS (Version Control System) main functions.  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="data__structures_8h_source.html">data_structures.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="validations_8h_source.html">validations.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="files_8h_source.html">files.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actions_8h_source.html">actions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="parser_8h_source.html">parser.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a995ea83c909f0dd79065d2726f77cfa9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actions_8c.html#a995ea83c909f0dd79065d2726f77cfa9">vcs_init</a> ()</td></tr>
+<tr class="memdesc:a995ea83c909f0dd79065d2726f77cfa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new VCS repository.  <br /></td></tr>
+<tr class="separator:a995ea83c909f0dd79065d2726f77cfa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20db5d5e0b9c1d53863b7e6293ff0987"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actions_8c.html#a20db5d5e0b9c1d53863b7e6293ff0987">vcs_add</a> (const char *path)</td></tr>
+<tr class="memdesc:a20db5d5e0b9c1d53863b7e6293ff0987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a file to the VCS stage.  <br /></td></tr>
+<tr class="separator:a20db5d5e0b9c1d53863b7e6293ff0987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aac437e573879e6de22cf46afdabe2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actions_8c.html#a5aac437e573879e6de22cf46afdabe2e">vcs_commit</a> (const char *message)</td></tr>
+<tr class="memdesc:a5aac437e573879e6de22cf46afdabe2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commits the changes in the VCS stage.  <br /></td></tr>
+<tr class="separator:a5aac437e573879e6de22cf46afdabe2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a922d947ac9c921b1c15b714aa0dfe2f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actions_8c.html#a922d947ac9c921b1c15b714aa0dfe2f9">vcs_log</a> (void)</td></tr>
+<tr class="memdesc:a922d947ac9c921b1c15b714aa0dfe2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the commit log.  <br /></td></tr>
+<tr class="separator:a922d947ac9c921b1c15b714aa0dfe2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af78772bc7a1e8e6cfe25b1c248cf82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actions_8c.html#a8af78772bc7a1e8e6cfe25b1c248cf82">vcs_log_content</a> (void)</td></tr>
+<tr class="memdesc:a8af78772bc7a1e8e6cfe25b1c248cf82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the commit log with contents.  <br /></td></tr>
+<tr class="separator:a8af78772bc7a1e8e6cfe25b1c248cf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae00d5b4d74af875e2070b682f40cca0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actions_8c.html#ae00d5b4d74af875e2070b682f40cca0d">vcs_checkout</a> (const char *<a class="el" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>)</td></tr>
+<tr class="memdesc:ae00d5b4d74af875e2070b682f40cca0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks out to a specific commit.  <br /></td></tr>
+<tr class="separator:ae00d5b4d74af875e2070b682f40cca0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c9501c2277038f48e92baaf9a5f80d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actions_8c.html#a94c9501c2277038f48e92baaf9a5f80d">vcs_checkout_current</a> (void)</td></tr>
+<tr class="memdesc:a94c9501c2277038f48e92baaf9a5f80d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks out to the current commit.  <br /></td></tr>
+<tr class="separator:a94c9501c2277038f48e92baaf9a5f80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa18e7e8b1c26f5173cd4c7a36701814c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="actions_8c.html#aa18e7e8b1c26f5173cd4c7a36701814c">vcs_show</a> (const char *<a class="el" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>)</td></tr>
+<tr class="memdesc:aa18e7e8b1c26f5173cd4c7a36701814c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the details of a specific commit.  <br /></td></tr>
+<tr class="separator:aa18e7e8b1c26f5173cd4c7a36701814c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>VCS (Version Control System) main functions. </p>
+<p>This file contains the main functions of the VCS system, including initialization, adding files to the stage, committing changes, displaying commit logs, checking out to a specific commit, and showing commit details. </p>
+</div><h2 class="groupheader">Funções</h2>
+<a id="a20db5d5e0b9c1d53863b7e6293ff0987" name="a20db5d5e0b9c1d53863b7e6293ff0987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20db5d5e0b9c1d53863b7e6293ff0987">&#9670;&#160;</a></span>vcs_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vcs_add </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a file to the VCS stage. </p>
+<p>This function adds a file to the VCS stage by appending its path to the "stage.txt" file in the ".vcs" directory. It performs various validations such as checking if the ".vcs" directory exists, if the provided path exists, and if the file has already been added to the stage.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path of the file to be added to the stage.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Observação</dt><dd>This function terminates the program if any validation fails or if the file cannot be appended to the stage. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                               {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="comment">// validate .vcs directory</span></div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0) {</div>
+<div class="line"><span class="lineno">   84</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs was not initialized\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   85</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">// verifies if path was provided</span></div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (path == NULL) {</div>
+<div class="line"><span class="lineno">   90</span>        printf(<span class="stringliteral">&quot;vcs: error: no path provided\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   91</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    <span class="comment">// verifies if path exists</span></div>
+<div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#af08e65ad716897a2a5f006aa66ef9baa">file_exists</a>(path) == 0) {</div>
+<div class="line"><span class="lineno">   96</span>        printf(<span class="stringliteral">&quot;vcs: error: %s file not found\n&quot;</span>, path);</div>
+<div class="line"><span class="lineno">   97</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">// verifies if path was already added</span></div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#a6912eebf2818c5518cebccad05a4092d">path_is_staged</a>(path) == 1) {</div>
+<div class="line"><span class="lineno">  102</span>        printf(<span class="stringliteral">&quot;vcs: error: %s was already added to stage\n&quot;</span>, path);</div>
+<div class="line"><span class="lineno">  103</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  104</span>    }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">// append path to .vcs/stage.txt</span></div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="files_8c.html#a6a7f62e09ee4423db6993bc057d18305">append_to_file</a>(<a class="code hl_define" href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a>, path) == 0) {</div>
+<div class="line"><span class="lineno">  108</span>        printf(<span class="stringliteral">&quot;vcs: error: could not append to .vcs/stage.txt\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  109</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <span class="comment">// print success message</span></div>
+<div class="line"><span class="lineno">  113</span>    printf(<span class="stringliteral">&quot;vcs: %s added to stage\n&quot;</span>, path);</div>
+<div class="line"><span class="lineno">  114</span>}</div>
+<div class="ttc" id="afiles_8c_html_a6a7f62e09ee4423db6993bc057d18305"><div class="ttname"><a href="files_8c.html#a6a7f62e09ee4423db6993bc057d18305">append_to_file</a></div><div class="ttdeci">int append_to_file(const char *path, const char *content)</div><div class="ttdoc">Appends content to a file at the specified path.</div><div class="ttdef"><b>Definição</b> files.c:85</div></div>
+<div class="ttc" id="avalidations_8c_html_a6912eebf2818c5518cebccad05a4092d"><div class="ttname"><a href="validations_8c.html#a6912eebf2818c5518cebccad05a4092d">path_is_staged</a></div><div class="ttdeci">int path_is_staged(const char *path)</div><div class="ttdoc">Checks if a path is staged.</div><div class="ttdef"><b>Definição</b> validations.c:98</div></div>
+<div class="ttc" id="avalidations_8c_html_af08e65ad716897a2a5f006aa66ef9baa"><div class="ttname"><a href="validations_8c.html#af08e65ad716897a2a5f006aa66ef9baa">file_exists</a></div><div class="ttdeci">int file_exists(const char *path)</div><div class="ttdoc">Checks if a file exists.</div><div class="ttdef"><b>Definição</b> validations.c:32</div></div>
+<div class="ttc" id="avalidations_8c_html_afa8293b165df6faddc7bf94629ec03c4"><div class="ttname"><a href="validations_8c.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a></div><div class="ttdeci">int validate_directory(const char *path)</div><div class="ttdoc">Validates the VCS directory and required files.</div><div class="ttdef"><b>Definição</b> validations.c:42</div></div>
+<div class="ttc" id="avalidations_8h_html_a2a7c843ac1fef6a3245ea4aa44ea886b"><div class="ttname"><a href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a></div><div class="ttdeci">#define VCS_DIRECTORY</div><div class="ttdoc">Paths.</div><div class="ttdef"><b>Definição</b> validations.h:5</div></div>
+<div class="ttc" id="avalidations_8h_html_acf2a4c4db532201e2c53d00430c5394b"><div class="ttname"><a href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a></div><div class="ttdeci">#define STAGE_FILE</div><div class="ttdef"><b>Definição</b> validations.h:7</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae00d5b4d74af875e2070b682f40cca0d" name="ae00d5b4d74af875e2070b682f40cca0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae00d5b4d74af875e2070b682f40cca0d">&#9670;&#160;</a></span>vcs_checkout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vcs_checkout </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hash</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks out to a specific commit. </p>
+<p>This function checks out to a specific commit by writing the commit and contents associated with the provided commit hash. It validates the ".vcs" directory, parses the commits file, and verifies if a hash is provided. If successful, it writes the commit and contents files to the current working directory.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash of the commit to check out to.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Observação</dt><dd>This function terminates the program if the ".vcs" directory is not valid, if no hash is provided, or if the commit and contents cannot be written. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>                                    {</div>
+<div class="line"><span class="lineno">  251</span>    <span class="comment">// validate .vcs directory</span></div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0) {</div>
+<div class="line"><span class="lineno">  253</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs was not initialized\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  254</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  255</span>    }</div>
+<div class="line"><span class="lineno">  256</span>    <span class="comment">// initialize commit head and files head</span></div>
+<div class="line"><span class="lineno">  257</span>    <a class="code hl_struct" href="structcommit__head.html">CommitHead</a> *<a class="code hl_struct" href="structcommit__head.html">commit_head</a> = <a class="code hl_function" href="data__structures_8c.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a>();</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>    <span class="comment">// parse commits file to data structure</span></div>
+<div class="line"><span class="lineno">  260</span>    <a class="code hl_function" href="parser_8c.html#aa376d001922ef42c4ecb55ecad1a3f9a">parse_commits</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  261</span> </div>
+<div class="line"><span class="lineno">  262</span>    <span class="comment">// verify if hash is NULL</span></div>
+<div class="line"><span class="lineno">  263</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a> == NULL) {</div>
+<div class="line"><span class="lineno">  264</span>        printf(<span class="stringliteral">&quot;vcs: error: no hash provided\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  265</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  266</span>    }</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>    <span class="comment">// checkout to hash</span></div>
+<div class="line"><span class="lineno">  269</span>    <a class="code hl_function" href="data__structures_8c.html#a22f1da70cfe2ff55a31054db679fb913">write_commit_and_contents</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>, <a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>);</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>    <span class="comment">// free memory</span></div>
+<div class="line"><span class="lineno">  272</span>    <a class="code hl_function" href="data__structures_8c.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  273</span>}</div>
+<div class="ttc" id="adata__structures_8c_html_a07bfd05d58ebcd3e28bf3324435e03bb"><div class="ttname"><a href="data__structures_8c.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a></div><div class="ttdeci">CommitHead * commit_create()</div><div class="ttdoc">Creates a new commit list head.</div><div class="ttdef"><b>Definição</b> data_structures.c:24</div></div>
+<div class="ttc" id="adata__structures_8c_html_a22f1da70cfe2ff55a31054db679fb913"><div class="ttname"><a href="data__structures_8c.html#a22f1da70cfe2ff55a31054db679fb913">write_commit_and_contents</a></div><div class="ttdeci">void write_commit_and_contents(CommitHead *commit_head, const char *hash)</div><div class="ttdoc">Writes a specific commit and its associated files to the current directory.</div><div class="ttdef"><b>Definição</b> data_structures.c:298</div></div>
+<div class="ttc" id="adata__structures_8c_html_a844b3c209f0ced5f66f271060417abb3"><div class="ttname"><a href="data__structures_8c.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a></div><div class="ttdeci">void commit_destroy(CommitHead *head)</div><div class="ttdoc">Destroys the commit list and frees the memory.</div><div class="ttdef"><b>Definição</b> data_structures.c:92</div></div>
+<div class="ttc" id="aparser_8c_html_aa376d001922ef42c4ecb55ecad1a3f9a"><div class="ttname"><a href="parser_8c.html#aa376d001922ef42c4ecb55ecad1a3f9a">parse_commits</a></div><div class="ttdeci">void parse_commits(CommitHead *commit_head)</div><div class="ttdoc">Parses the commits metadata file and populates the commit and file heads with the parsed data.</div><div class="ttdef"><b>Definição</b> parser.c:100</div></div>
+<div class="ttc" id="astructcommit__head_html"><div class="ttname"><a href="structcommit__head.html">commit_head</a></div><div class="ttdef"><b>Definição</b> data_structures.h:10</div></div>
+<div class="ttc" id="autils_8c_html_a7a83b81e07136758832c25529e56a429"><div class="ttname"><a href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a></div><div class="ttdeci">char * hash()</div><div class="ttdoc">Generates a random hexadecimal hash.</div><div class="ttdef"><b>Definição</b> utils.c:21</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a94c9501c2277038f48e92baaf9a5f80d" name="a94c9501c2277038f48e92baaf9a5f80d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c9501c2277038f48e92baaf9a5f80d">&#9670;&#160;</a></span>vcs_checkout_current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vcs_checkout_current </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks out to the current commit. </p>
+<p>This function checks out to the current commit by writing the commit and contents associated with the most recent commit. It validates the ".vcs" directory, parses the commits file, and checks out to the most recent commit by writing the commit and contents files to the current working directory.</p>
+<dl class="section note"><dt>Observação</dt><dd>This function terminates the program if the ".vcs" directory is not valid or if the commit and contents cannot be written. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  284</span>                                {</div>
+<div class="line"><span class="lineno">  285</span>    <span class="comment">// validate .vcs directory</span></div>
+<div class="line"><span class="lineno">  286</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0) {</div>
+<div class="line"><span class="lineno">  287</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs was not initialized\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  288</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  289</span>    }</div>
+<div class="line"><span class="lineno">  290</span>    <span class="comment">// initialize commit head and files head</span></div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_struct" href="structcommit__head.html">CommitHead</a> *<a class="code hl_struct" href="structcommit__head.html">commit_head</a> = <a class="code hl_function" href="data__structures_8c.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a>();</div>
+<div class="line"><span class="lineno">  292</span> </div>
+<div class="line"><span class="lineno">  293</span>    <span class="comment">// parse commits file to data structure</span></div>
+<div class="line"><span class="lineno">  294</span>    <a class="code hl_function" href="parser_8c.html#aa376d001922ef42c4ecb55ecad1a3f9a">parse_commits</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  295</span> </div>
+<div class="line"><span class="lineno">  296</span>    <span class="comment">// checkout to hash</span></div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_function" href="data__structures_8c.html#a22f1da70cfe2ff55a31054db679fb913">write_commit_and_contents</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>, <a class="code hl_struct" href="structcommit__head.html">commit_head</a>-&gt;<a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a>-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>);</div>
+<div class="line"><span class="lineno">  298</span> </div>
+<div class="line"><span class="lineno">  299</span>    <span class="comment">// free memory</span></div>
+<div class="line"><span class="lineno">  300</span>    <a class="code hl_function" href="data__structures_8c.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  301</span>}</div>
+<div class="ttc" id="astructcommit__head_html_a17bb9baefcfc6d825c90f27c54d12cf9"><div class="ttname"><a href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">commit_head::last</a></div><div class="ttdeci">Commit * last</div><div class="ttdef"><b>Definição</b> data_structures.h:12</div></div>
+<div class="ttc" id="astructcommit_html_aeb2acd873458aa736144ae60783dcb1b"><div class="ttname"><a href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">commit::hash</a></div><div class="ttdeci">char * hash</div><div class="ttdef"><b>Definição</b> data_structures.h:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5aac437e573879e6de22cf46afdabe2e" name="a5aac437e573879e6de22cf46afdabe2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aac437e573879e6de22cf46afdabe2e">&#9670;&#160;</a></span>vcs_commit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vcs_commit </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Commits the changes in the VCS stage. </p>
+<p>This function commits the changes in the VCS stage by creating a new commit with the provided message. It validates the ".vcs" directory, checks if a message is provided, and verifies if the stage is not empty. The function then parses the stage file, creates a new commit, updates the commit and file data structures, and writes the changes to the necessary files.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The commit message.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Observação</dt><dd>This function terminates the program if any validation fails or if the commit cannot be written successfully. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>                                     {</div>
+<div class="line"><span class="lineno">  129</span>    <span class="comment">// validate .vcs directory</span></div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0) {</div>
+<div class="line"><span class="lineno">  131</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs was not initialized\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  132</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  133</span>    }</div>
+<div class="line"><span class="lineno">  134</span> </div>
+<div class="line"><span class="lineno">  135</span>    <span class="comment">// verifies if message was provided</span></div>
+<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">if</span> (message == NULL) {</div>
+<div class="line"><span class="lineno">  137</span>        printf(<span class="stringliteral">&quot;vcs: error: no message provided\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  138</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    <span class="comment">// verifies if stage is empty</span></div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#a7428c5668f893a92adef89e2ff1d3026">file_is_empty</a>(<a class="code hl_define" href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a>) == 1) {</div>
+<div class="line"><span class="lineno">  143</span>        printf(<span class="stringliteral">&quot;vcs: error: stage is empty\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  144</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>    <span class="comment">// initialize commit head and files head</span></div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_struct" href="structcommit__head.html">CommitHead</a> *<a class="code hl_struct" href="structcommit__head.html">commit_head</a> = <a class="code hl_function" href="data__structures_8c.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a>();</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_struct" href="structfile__head.html">FileHead</a> *<a class="code hl_struct" href="structfile__head.html">file_head</a> = <a class="code hl_function" href="data__structures_8c.html#ae3682f0080b40b5078276fa0dcb70d0b">file_create</a>();</div>
+<div class="line"><span class="lineno">  150</span> </div>
+<div class="line"><span class="lineno">  151</span>    <span class="comment">// read stage file</span></div>
+<div class="line"><span class="lineno">  152</span>    <a class="code hl_function" href="parser_8c.html#a65d4ac3190d2d67d8ff9e04a4fdc29cb">parse_stage</a>(<a class="code hl_struct" href="structfile__head.html">file_head</a>);</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="comment">// parse commit file</span></div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_function" href="parser_8c.html#a672ef5725906cab033affc8f8520c65f">parse_commit_file</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>, <a class="code hl_struct" href="structfile__head.html">file_head</a>, message);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    <span class="comment">// display structs </span></div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_function" href="data__structures_8c.html#ac9fa1fb437220e850d58ecb699123ac3">commit_display</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_function" href="data__structures_8c.html#a033314473c7a8954f4ae067950b27b3a">file_display</a>(<a class="code hl_struct" href="structfile__head.html">file_head</a>);</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    <span class="comment">// rewrite stage file</span></div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_function" href="files_8c.html#a1e806b4cfe8fada99c72e3250c1ddd1f">write_empty_file</a>(<a class="code hl_define" href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a>);</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>    <span class="comment">// free memory</span></div>
+<div class="line"><span class="lineno">  166</span>    <a class="code hl_function" href="data__structures_8c.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  167</span>    <a class="code hl_function" href="data__structures_8c.html#a22dcea2f182cd9adb45652dc8d528f9d">file_destroy</a>(<a class="code hl_struct" href="structfile__head.html">file_head</a>);</div>
+<div class="line"><span class="lineno">  168</span> </div>
+<div class="line"><span class="lineno">  169</span>    <span class="comment">// print success message</span></div>
+<div class="line"><span class="lineno">  170</span>    printf(<span class="stringliteral">&quot;vcs: commit successful\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  171</span>}</div>
+<div class="ttc" id="adata__structures_8c_html_a033314473c7a8954f4ae067950b27b3a"><div class="ttname"><a href="data__structures_8c.html#a033314473c7a8954f4ae067950b27b3a">file_display</a></div><div class="ttdeci">void file_display(FileHead *head)</div><div class="ttdoc">Displays the files in the file list.</div><div class="ttdef"><b>Definição</b> data_structures.c:154</div></div>
+<div class="ttc" id="adata__structures_8c_html_a22dcea2f182cd9adb45652dc8d528f9d"><div class="ttname"><a href="data__structures_8c.html#a22dcea2f182cd9adb45652dc8d528f9d">file_destroy</a></div><div class="ttdeci">void file_destroy(FileHead *head)</div><div class="ttdoc">Destroys the file list and frees the memory.</div><div class="ttdef"><b>Definição</b> data_structures.c:170</div></div>
+<div class="ttc" id="adata__structures_8c_html_ac9fa1fb437220e850d58ecb699123ac3"><div class="ttname"><a href="data__structures_8c.html#ac9fa1fb437220e850d58ecb699123ac3">commit_display</a></div><div class="ttdeci">void commit_display(CommitHead *head)</div><div class="ttdoc">Displays the commits in the commit list.</div><div class="ttdef"><b>Definição</b> data_structures.c:74</div></div>
+<div class="ttc" id="adata__structures_8c_html_ae3682f0080b40b5078276fa0dcb70d0b"><div class="ttname"><a href="data__structures_8c.html#ae3682f0080b40b5078276fa0dcb70d0b">file_create</a></div><div class="ttdeci">FileHead * file_create()</div><div class="ttdoc">Creates a new file list head.</div><div class="ttdef"><b>Definição</b> data_structures.c:110</div></div>
+<div class="ttc" id="afiles_8c_html_a1e806b4cfe8fada99c72e3250c1ddd1f"><div class="ttname"><a href="files_8c.html#a1e806b4cfe8fada99c72e3250c1ddd1f">write_empty_file</a></div><div class="ttdeci">int write_empty_file(const char *path)</div><div class="ttdoc">Writes an empty file at the specified path.</div><div class="ttdef"><b>Definição</b> files.c:34</div></div>
+<div class="ttc" id="aparser_8c_html_a65d4ac3190d2d67d8ff9e04a4fdc29cb"><div class="ttname"><a href="parser_8c.html#a65d4ac3190d2d67d8ff9e04a4fdc29cb">parse_stage</a></div><div class="ttdeci">void parse_stage(FileHead *head)</div><div class="ttdoc">Parses the stage file and populates the file head with the parsed data.</div><div class="ttdef"><b>Definição</b> parser.c:23</div></div>
+<div class="ttc" id="aparser_8c_html_a672ef5725906cab033affc8f8520c65f"><div class="ttname"><a href="parser_8c.html#a672ef5725906cab033affc8f8520c65f">parse_commit_file</a></div><div class="ttdeci">void parse_commit_file(CommitHead *commit_head, FileHead *file_head, const char *message)</div><div class="ttdoc">Parses the commit file, appends the commit to the commits file, and updates metadata.</div><div class="ttdef"><b>Definição</b> parser.c:58</div></div>
+<div class="ttc" id="astructfile__head_html"><div class="ttname"><a href="structfile__head.html">file_head</a></div><div class="ttdef"><b>Definição</b> data_structures.h:26</div></div>
+<div class="ttc" id="avalidations_8c_html_a7428c5668f893a92adef89e2ff1d3026"><div class="ttname"><a href="validations_8c.html#a7428c5668f893a92adef89e2ff1d3026">file_is_empty</a></div><div class="ttdeci">int file_is_empty(const char *path)</div><div class="ttdoc">Checks if a file is empty.</div><div class="ttdef"><b>Definição</b> validations.c:76</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a995ea83c909f0dd79065d2726f77cfa9" name="a995ea83c909f0dd79065d2726f77cfa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a995ea83c909f0dd79065d2726f77cfa9">&#9670;&#160;</a></span>vcs_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vcs_init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new VCS repository. </p>
+<p>This function creates the necessary directory and files for a new VCS repository. It checks if the ".vcs" directory already exists, and if not, creates it along with the required files: "commits.txt", "stage.txt", "contents.txt", and "metadata.txt".</p>
+<dl class="section note"><dt>Observação</dt><dd>This function terminates the program if the directory or files cannot be created. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>                {</div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment">// Check if .vcs directory exists</span></div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#ab3cdcc12b3bc92a382784027c94a2027">directory_exists</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 1) {</div>
+<div class="line"><span class="lineno">   33</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs directory already exists\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   35</span>    } </div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="comment">// Create .vcs directory</span></div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="files_8c.html#a2b911562432b653319a2475481bdf5bd">create_directory</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0) {</div>
+<div class="line"><span class="lineno">   39</span>        printf(<span class="stringliteral">&quot;vcs: error: could not create .vcs directory\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   40</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    <span class="comment">// Create .vcs/commits.txt file</span></div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="files_8c.html#a1e806b4cfe8fada99c72e3250c1ddd1f">write_empty_file</a>(<a class="code hl_define" href="validations_8h.html#a5693d494fc2f09b45a1f696f979e3ec2">COMMITS_FILE</a>) == 0) {</div>
+<div class="line"><span class="lineno">   45</span>        printf(<span class="stringliteral">&quot;vcs: error: could not create .vcs/commits.txt file\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   46</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="comment">// Create .vcs/stage.txt file</span></div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="files_8c.html#a1e806b4cfe8fada99c72e3250c1ddd1f">write_empty_file</a>(<a class="code hl_define" href="validations_8h.html#acf2a4c4db532201e2c53d00430c5394b">STAGE_FILE</a>) == 0) {</div>
+<div class="line"><span class="lineno">   51</span>        printf(<span class="stringliteral">&quot;vcs: error: could not create .vcs/stage.txt file\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="comment">// Create .vcs/contents.txt file</span></div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="files_8c.html#a1e806b4cfe8fada99c72e3250c1ddd1f">write_empty_file</a>(<a class="code hl_define" href="validations_8h.html#a6f64dcbc469fcf153b075debd14b414b">CONTENTS_FILE</a>) == 0) {</div>
+<div class="line"><span class="lineno">   57</span>        printf(<span class="stringliteral">&quot;vcs: error: could not create .vcs/contents.txt file\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   58</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    <span class="comment">// Create .vcs/metadata.txt file</span></div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="files_8c.html#a1e806b4cfe8fada99c72e3250c1ddd1f">write_empty_file</a>(<a class="code hl_define" href="validations_8h.html#a9144c77d647d03267e8a46cc57ee3543">METADATA_FILE</a>) == 0) {</div>
+<div class="line"><span class="lineno">   63</span>        printf(<span class="stringliteral">&quot;vcs: error: could not create .vcs/metadata.txt file\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   64</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>    printf(<span class="stringliteral">&quot;vcs: initialized empty vcs repository in %s\n&quot;</span>, <a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>);</div>
+<div class="line"><span class="lineno">   68</span>}</div>
+<div class="ttc" id="afiles_8c_html_a2b911562432b653319a2475481bdf5bd"><div class="ttname"><a href="files_8c.html#a2b911562432b653319a2475481bdf5bd">create_directory</a></div><div class="ttdeci">int create_directory(const char *path)</div><div class="ttdoc">Creates a directory at the specified path.</div><div class="ttdef"><b>Definição</b> files.c:24</div></div>
+<div class="ttc" id="avalidations_8c_html_ab3cdcc12b3bc92a382784027c94a2027"><div class="ttname"><a href="validations_8c.html#ab3cdcc12b3bc92a382784027c94a2027">directory_exists</a></div><div class="ttdeci">int directory_exists(const char *path)</div><div class="ttdoc">Checks if a directory exists.</div><div class="ttdef"><b>Definição</b> validations.c:22</div></div>
+<div class="ttc" id="avalidations_8h_html_a5693d494fc2f09b45a1f696f979e3ec2"><div class="ttname"><a href="validations_8h.html#a5693d494fc2f09b45a1f696f979e3ec2">COMMITS_FILE</a></div><div class="ttdeci">#define COMMITS_FILE</div><div class="ttdef"><b>Definição</b> validations.h:6</div></div>
+<div class="ttc" id="avalidations_8h_html_a6f64dcbc469fcf153b075debd14b414b"><div class="ttname"><a href="validations_8h.html#a6f64dcbc469fcf153b075debd14b414b">CONTENTS_FILE</a></div><div class="ttdeci">#define CONTENTS_FILE</div><div class="ttdef"><b>Definição</b> validations.h:8</div></div>
+<div class="ttc" id="avalidations_8h_html_a9144c77d647d03267e8a46cc57ee3543"><div class="ttname"><a href="validations_8h.html#a9144c77d647d03267e8a46cc57ee3543">METADATA_FILE</a></div><div class="ttdeci">#define METADATA_FILE</div><div class="ttdef"><b>Definição</b> validations.h:9</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a922d947ac9c921b1c15b714aa0dfe2f9" name="a922d947ac9c921b1c15b714aa0dfe2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a922d947ac9c921b1c15b714aa0dfe2f9">&#9670;&#160;</a></span>vcs_log()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vcs_log </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the commit log. </p>
+<p>This function displays the commit log by parsing the "commits.txt" file and printing the commits in reverse order (from the most recent to the oldest). It validates the ".vcs" directory and creates the commit data structure to hold the parsed commits.</p>
+<dl class="section note"><dt>Observação</dt><dd>This function terminates the program if the ".vcs" directory is not valid or if the commits cannot be parsed. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>                   {</div>
+<div class="line"><span class="lineno">  183</span>    <span class="comment">// validate .vcs directory</span></div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0) {</div>
+<div class="line"><span class="lineno">  185</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs was not initialized\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  186</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  187</span>    }</div>
+<div class="line"><span class="lineno">  188</span> </div>
+<div class="line"><span class="lineno">  189</span>    <span class="comment">// initialize commit head and files head</span></div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_struct" href="structcommit__head.html">CommitHead</a> *<a class="code hl_struct" href="structcommit__head.html">commit_head</a> = <a class="code hl_function" href="data__structures_8c.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a>();</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="comment">// parse commits file to data structure</span></div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_function" href="parser_8c.html#aa376d001922ef42c4ecb55ecad1a3f9a">parse_commits</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>    <span class="comment">// display commits</span></div>
+<div class="line"><span class="lineno">  196</span>    <a class="code hl_function" href="data__structures_8c.html#ab45ac42480377e376e13fbb70f2c46a5">display_from_last</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  197</span> </div>
+<div class="line"><span class="lineno">  198</span>    <span class="comment">// free memory</span></div>
+<div class="line"><span class="lineno">  199</span>    <a class="code hl_function" href="data__structures_8c.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>    <span class="comment">// print success message</span></div>
+<div class="line"><span class="lineno">  202</span>    printf(<span class="stringliteral">&quot;vcs: log successful\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span>}</div>
+<div class="ttc" id="adata__structures_8c_html_ab45ac42480377e376e13fbb70f2c46a5"><div class="ttname"><a href="data__structures_8c.html#ab45ac42480377e376e13fbb70f2c46a5">display_from_last</a></div><div class="ttdeci">void display_from_last(CommitHead *commit_head)</div><div class="ttdoc">Displays the commits in reverse order from the last commit.</div><div class="ttdef"><b>Definição</b> data_structures.c:214</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8af78772bc7a1e8e6cfe25b1c248cf82" name="a8af78772bc7a1e8e6cfe25b1c248cf82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af78772bc7a1e8e6cfe25b1c248cf82">&#9670;&#160;</a></span>vcs_log_content()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vcs_log_content </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the commit log with contents. </p>
+<p>This function displays the commit log with contents by parsing the "commits.txt" file and printing the commits in reverse order (from the most recent to the oldest) along with the contents of each commit. It validates the ".vcs" directory and creates the commit data structure to hold the parsed commits.</p>
+<dl class="section note"><dt>Observação</dt><dd>This function terminates the program if the ".vcs" directory is not valid or if the commits cannot be parsed. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>                           {</div>
+<div class="line"><span class="lineno">  215</span>    <span class="comment">// validate .vcs directory</span></div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0) {</div>
+<div class="line"><span class="lineno">  217</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs was not initialized\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  218</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  219</span>    }</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>    <span class="comment">// initialize commit head and files head</span></div>
+<div class="line"><span class="lineno">  222</span>    <a class="code hl_struct" href="structcommit__head.html">CommitHead</a> *<a class="code hl_struct" href="structcommit__head.html">commit_head</a> = <a class="code hl_function" href="data__structures_8c.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a>();</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>    <span class="comment">// parse commits file to data structure</span></div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_function" href="parser_8c.html#aa376d001922ef42c4ecb55ecad1a3f9a">parse_commits</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>    <span class="comment">// display commits with contents</span></div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_function" href="data__structures_8c.html#acbf12322edfae4eea5674f15d70b00d7">display_from_last_with_contents</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  229</span> </div>
+<div class="line"><span class="lineno">  230</span>    <span class="comment">// free memory</span></div>
+<div class="line"><span class="lineno">  231</span>    <a class="code hl_function" href="data__structures_8c.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  232</span> </div>
+<div class="line"><span class="lineno">  233</span>    <span class="comment">// print success message</span></div>
+<div class="line"><span class="lineno">  234</span>    printf(<span class="stringliteral">&quot;vcs: log successful\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  235</span> </div>
+<div class="line"><span class="lineno">  236</span>}</div>
+<div class="ttc" id="adata__structures_8c_html_acbf12322edfae4eea5674f15d70b00d7"><div class="ttname"><a href="data__structures_8c.html#acbf12322edfae4eea5674f15d70b00d7">display_from_last_with_contents</a></div><div class="ttdeci">void display_from_last_with_contents(CommitHead *commit_head)</div><div class="ttdoc">Displays the commits and their associated files in reverse order from the last commit.</div><div class="ttdef"><b>Definição</b> data_structures.c:231</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa18e7e8b1c26f5173cd4c7a36701814c" name="aa18e7e8b1c26f5173cd4c7a36701814c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa18e7e8b1c26f5173cd4c7a36701814c">&#9670;&#160;</a></span>vcs_show()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vcs_show </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hash</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the details of a specific commit. </p>
+<p>This function displays the details of a specific commit by parsing the "commits.txt" file and finding the commit with the provided hash. It validates the ".vcs" directory, parses the commits, and prints the commit information along with its contents.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash</td><td>The hash of the commit to display.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Observação</dt><dd>This function terminates the program if the ".vcs" directory is not valid, if no hash is provided, or if the commit with the provided hash cannot be found. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  315</span>                                {</div>
+<div class="line"><span class="lineno">  316</span>    <span class="comment">// validate .vcs directory</span></div>
+<div class="line"><span class="lineno">  317</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="validations_8c.html#afa8293b165df6faddc7bf94629ec03c4">validate_directory</a>(<a class="code hl_define" href="validations_8h.html#a2a7c843ac1fef6a3245ea4aa44ea886b">VCS_DIRECTORY</a>) == 0) {</div>
+<div class="line"><span class="lineno">  318</span>        printf(<span class="stringliteral">&quot;vcs: error: .vcs was not initialized\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  319</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  320</span>    }</div>
+<div class="line"><span class="lineno">  321</span> </div>
+<div class="line"><span class="lineno">  322</span>    <span class="comment">// initialize commit head and files head</span></div>
+<div class="line"><span class="lineno">  323</span>    <a class="code hl_struct" href="structcommit__head.html">CommitHead</a> *<a class="code hl_struct" href="structcommit__head.html">commit_head</a> = <a class="code hl_function" href="data__structures_8c.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a>();</div>
+<div class="line"><span class="lineno">  324</span> </div>
+<div class="line"><span class="lineno">  325</span>    <span class="comment">// parse commits file to data structure</span></div>
+<div class="line"><span class="lineno">  326</span>    <a class="code hl_function" href="parser_8c.html#aa376d001922ef42c4ecb55ecad1a3f9a">parse_commits</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>    <span class="comment">// verify if hash is NULL</span></div>
+<div class="line"><span class="lineno">  329</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a> == NULL) {</div>
+<div class="line"><span class="lineno">  330</span>        printf(<span class="stringliteral">&quot;vcs: error: no hash provided\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  331</span>        exit(EXIT_FAILURE);</div>
+<div class="line"><span class="lineno">  332</span>    }</div>
+<div class="line"><span class="lineno">  333</span> </div>
+<div class="line"><span class="lineno">  334</span>    <span class="comment">// display commit and contents</span></div>
+<div class="line"><span class="lineno">  335</span>    <a class="code hl_function" href="data__structures_8c.html#adf75e61c5129c20833135a177437e48b">display_commit_and_contents</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>, <a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>);</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>    <span class="comment">// free memory</span></div>
+<div class="line"><span class="lineno">  338</span>    <a class="code hl_function" href="data__structures_8c.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a>(<a class="code hl_struct" href="structcommit__head.html">commit_head</a>);</div>
+<div class="line"><span class="lineno">  339</span> </div>
+<div class="line"><span class="lineno">  340</span>}</div>
+<div class="ttc" id="adata__structures_8c_html_adf75e61c5129c20833135a177437e48b"><div class="ttname"><a href="data__structures_8c.html#adf75e61c5129c20833135a177437e48b">display_commit_and_contents</a></div><div class="ttdeci">void display_commit_and_contents(CommitHead *commit_head, const char *hash)</div><div class="ttdoc">Displays a specific commit and its associated files.</div><div class="ttdef"><b>Definição</b> data_structures.c:263</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

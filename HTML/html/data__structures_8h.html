@@ -1,0 +1,876 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Version Control System: Referência do Arquivo Version-Control-System/src/data_structures.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Version Control System<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Carregando...</div>
+<div class="SRStatus" id="Searching">Procurando...</div>
+<div class="SRStatus" id="NoMatches">Nenhuma entrada encontrado</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4dcda63b83c8d9dbdd7f383c9f098b99.html">Version-Control-System</a></li><li class="navelem"><a class="el" href="dir_72e89a5144b0bd66119b586912bb4c8e.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#typedef-members">Definições de Tipos</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle"><div class="title">Referência do Arquivo data_structures.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="data__structures_8h_source.html">Ir para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcommit__head.html">commit_head</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcommit.html">commit</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__head.html">file_head</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile.html">file</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Definições de Tipos</h2></td></tr>
+<tr class="memitem:a43a76c3dc651de500e30bd6fa70c5eaf"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcommit__head.html">commit_head</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a></td></tr>
+<tr class="separator:a43a76c3dc651de500e30bd6fa70c5eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88619185527f2b60fe4c259e5bd618bf"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcommit.html">commit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#a88619185527f2b60fe4c259e5bd618bf">Commit</a></td></tr>
+<tr class="separator:a88619185527f2b60fe4c259e5bd618bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d0434ca72e2397e4a1b0af7579d5c97"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structfile__head.html">file_head</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a></td></tr>
+<tr class="separator:a9d0434ca72e2397e4a1b0af7579d5c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2097d8905c595503ce7541623017d5f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structfile.html">file</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#ae2097d8905c595503ce7541623017d5f">File</a></td></tr>
+<tr class="separator:ae2097d8905c595503ce7541623017d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a07bfd05d58ebcd3e28bf3324435e03bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#a07bfd05d58ebcd3e28bf3324435e03bb">commit_create</a> ()</td></tr>
+<tr class="memdesc:a07bfd05d58ebcd3e28bf3324435e03bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new commit list head.  <br /></td></tr>
+<tr class="separator:a07bfd05d58ebcd3e28bf3324435e03bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefecb84f7405da6287bddd5c7d4cb1ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#aefecb84f7405da6287bddd5c7d4cb1ed">commit_insert</a> (<a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *head, char *<a class="el" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>, char *date, const char *message, int start_byte, int end_byte)</td></tr>
+<tr class="memdesc:aefecb84f7405da6287bddd5c7d4cb1ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a commit into the commit list.  <br /></td></tr>
+<tr class="separator:aefecb84f7405da6287bddd5c7d4cb1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9fa1fb437220e850d58ecb699123ac3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#ac9fa1fb437220e850d58ecb699123ac3">commit_display</a> (<a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *head)</td></tr>
+<tr class="memdesc:ac9fa1fb437220e850d58ecb699123ac3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the commits in the commit list.  <br /></td></tr>
+<tr class="separator:ac9fa1fb437220e850d58ecb699123ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844b3c209f0ced5f66f271060417abb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#a844b3c209f0ced5f66f271060417abb3">commit_destroy</a> (<a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *head)</td></tr>
+<tr class="memdesc:a844b3c209f0ced5f66f271060417abb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the commit list and frees the memory.  <br /></td></tr>
+<tr class="separator:a844b3c209f0ced5f66f271060417abb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3682f0080b40b5078276fa0dcb70d0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#ae3682f0080b40b5078276fa0dcb70d0b">file_create</a> ()</td></tr>
+<tr class="memdesc:ae3682f0080b40b5078276fa0dcb70d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new file list head.  <br /></td></tr>
+<tr class="separator:ae3682f0080b40b5078276fa0dcb70d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2fa79de0b4063e6e18b349bd0ebcb99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#aa2fa79de0b4063e6e18b349bd0ebcb99">file_insert</a> (<a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a> *head, const char *path, int start_byte, int end_byte)</td></tr>
+<tr class="memdesc:aa2fa79de0b4063e6e18b349bd0ebcb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a file into the file list.  <br /></td></tr>
+<tr class="separator:aa2fa79de0b4063e6e18b349bd0ebcb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a033314473c7a8954f4ae067950b27b3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#a033314473c7a8954f4ae067950b27b3a">file_display</a> (<a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a> *head)</td></tr>
+<tr class="memdesc:a033314473c7a8954f4ae067950b27b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the files in the file list.  <br /></td></tr>
+<tr class="separator:a033314473c7a8954f4ae067950b27b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22dcea2f182cd9adb45652dc8d528f9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#a22dcea2f182cd9adb45652dc8d528f9d">file_destroy</a> (<a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a> *head)</td></tr>
+<tr class="memdesc:a22dcea2f182cd9adb45652dc8d528f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the file list and frees the memory.  <br /></td></tr>
+<tr class="separator:a22dcea2f182cd9adb45652dc8d528f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac153353ef4e02741f313f940baa44c47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#ac153353ef4e02741f313f940baa44c47">display_commits</a> (<a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *<a class="el" href="structcommit__head.html">commit_head</a>)</td></tr>
+<tr class="memdesc:ac153353ef4e02741f313f940baa44c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays all the commits and their associated files.  <br /></td></tr>
+<tr class="separator:ac153353ef4e02741f313f940baa44c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45ac42480377e376e13fbb70f2c46a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#ab45ac42480377e376e13fbb70f2c46a5">display_from_last</a> (<a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *<a class="el" href="structcommit__head.html">commit_head</a>)</td></tr>
+<tr class="memdesc:ab45ac42480377e376e13fbb70f2c46a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the commits in reverse order from the last commit.  <br /></td></tr>
+<tr class="separator:ab45ac42480377e376e13fbb70f2c46a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf12322edfae4eea5674f15d70b00d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#acbf12322edfae4eea5674f15d70b00d7">display_from_last_with_contents</a> (<a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *<a class="el" href="structcommit__head.html">commit_head</a>)</td></tr>
+<tr class="memdesc:acbf12322edfae4eea5674f15d70b00d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the commits and their associated files in reverse order from the last commit.  <br /></td></tr>
+<tr class="separator:acbf12322edfae4eea5674f15d70b00d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf75e61c5129c20833135a177437e48b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#adf75e61c5129c20833135a177437e48b">display_commit_and_contents</a> (<a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *<a class="el" href="structcommit__head.html">commit_head</a>, const char *<a class="el" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>)</td></tr>
+<tr class="memdesc:adf75e61c5129c20833135a177437e48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a specific commit and its associated files.  <br /></td></tr>
+<tr class="separator:adf75e61c5129c20833135a177437e48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f1da70cfe2ff55a31054db679fb913"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="data__structures_8h.html#a22f1da70cfe2ff55a31054db679fb913">write_commit_and_contents</a> (<a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *<a class="el" href="structcommit__head.html">commit_head</a>, const char *<a class="el" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>)</td></tr>
+<tr class="memdesc:a22f1da70cfe2ff55a31054db679fb913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a specific commit and its associated files to the current directory.  <br /></td></tr>
+<tr class="separator:a22f1da70cfe2ff55a31054db679fb913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Definições dos tipos</h2>
+<a id="a88619185527f2b60fe4c259e5bd618bf" name="a88619185527f2b60fe4c259e5bd618bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88619185527f2b60fe4c259e5bd618bf">&#9670;&#160;</a></span>Commit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcommit.html">commit</a> <a class="el" href="data__structures_8h.html#a88619185527f2b60fe4c259e5bd618bf">Commit</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43a76c3dc651de500e30bd6fa70c5eaf" name="a43a76c3dc651de500e30bd6fa70c5eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a76c3dc651de500e30bd6fa70c5eaf">&#9670;&#160;</a></span>CommitHead</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcommit__head.html">commit_head</a> <a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2097d8905c595503ce7541623017d5f" name="ae2097d8905c595503ce7541623017d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2097d8905c595503ce7541623017d5f">&#9670;&#160;</a></span>File</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structfile.html">file</a> <a class="el" href="data__structures_8h.html#ae2097d8905c595503ce7541623017d5f">File</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d0434ca72e2397e4a1b0af7579d5c97" name="a9d0434ca72e2397e4a1b0af7579d5c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d0434ca72e2397e4a1b0af7579d5c97">&#9670;&#160;</a></span>FileHead</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structfile__head.html">file_head</a> <a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Funções</h2>
+<a id="a07bfd05d58ebcd3e28bf3324435e03bb" name="a07bfd05d58ebcd3e28bf3324435e03bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07bfd05d58ebcd3e28bf3324435e03bb">&#9670;&#160;</a></span>commit_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> * commit_create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new commit list head. </p>
+<dl class="section return"><dt>Retorna</dt><dd>A pointer to the newly created CommitHead. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>                            {</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_struct" href="structcommit__head.html">CommitHead</a>* head = (<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structcommit__head.html">CommitHead</a>));</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (head == NULL)</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">return</span> head;</div>
+<div class="line"><span class="lineno">   28</span>    head-&gt;<a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a> = NULL;</div>
+<div class="line"><span class="lineno">   29</span>    head-&gt;<a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a> = NULL;</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> head;</div>
+<div class="line"><span class="lineno">   31</span>}</div>
+<div class="ttc" id="astructcommit__head_html"><div class="ttname"><a href="structcommit__head.html">commit_head</a></div><div class="ttdef"><b>Definição</b> data_structures.h:10</div></div>
+<div class="ttc" id="astructcommit__head_html_a17bb9baefcfc6d825c90f27c54d12cf9"><div class="ttname"><a href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">commit_head::last</a></div><div class="ttdeci">Commit * last</div><div class="ttdef"><b>Definição</b> data_structures.h:12</div></div>
+<div class="ttc" id="astructcommit__head_html_a5b4a567111ef994ca3cdc868172221cd"><div class="ttname"><a href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">commit_head::first</a></div><div class="ttdeci">Commit * first</div><div class="ttdef"><b>Definição</b> data_structures.h:11</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a844b3c209f0ced5f66f271060417abb3" name="a844b3c209f0ced5f66f271060417abb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844b3c209f0ced5f66f271060417abb3">&#9670;&#160;</a></span>commit_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void commit_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroys the commit list and frees the memory. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>The commit list head. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>                                      {</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* aux = head-&gt;<a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a>;</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_struct" href="structcommit.html">Commit</a>* t = aux-&gt;<a class="code hl_variable" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">next</a>;</div>
+<div class="line"><span class="lineno">   96</span>        free(aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>);</div>
+<div class="line"><span class="lineno">   97</span>        free(aux-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>);</div>
+<div class="line"><span class="lineno">   98</span>        free(aux-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>);</div>
+<div class="line"><span class="lineno">   99</span>        free(aux);</div>
+<div class="line"><span class="lineno">  100</span>        aux = t;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>    free(head);</div>
+<div class="line"><span class="lineno">  103</span>}</div>
+<div class="ttc" id="astructcommit_html"><div class="ttname"><a href="structcommit.html">commit</a></div><div class="ttdef"><b>Definição</b> data_structures.h:15</div></div>
+<div class="ttc" id="astructcommit_html_a2ffdc248e999f58e4042569b64005e11"><div class="ttname"><a href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">commit::date</a></div><div class="ttdeci">char * date</div><div class="ttdef"><b>Definição</b> data_structures.h:17</div></div>
+<div class="ttc" id="astructcommit_html_a61b61fe79c05acbc53a11ad29f07f87c"><div class="ttname"><a href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">commit::next</a></div><div class="ttdeci">Commit * next</div><div class="ttdef"><b>Definição</b> data_structures.h:22</div></div>
+<div class="ttc" id="astructcommit_html_a85cdb2c1548119a1646f5214df9c484f"><div class="ttname"><a href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">commit::message</a></div><div class="ttdeci">char * message</div><div class="ttdef"><b>Definição</b> data_structures.h:18</div></div>
+<div class="ttc" id="astructcommit_html_aeb2acd873458aa736144ae60783dcb1b"><div class="ttname"><a href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">commit::hash</a></div><div class="ttdeci">char * hash</div><div class="ttdef"><b>Definição</b> data_structures.h:16</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac9fa1fb437220e850d58ecb699123ac3" name="ac9fa1fb437220e850d58ecb699123ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9fa1fb437220e850d58ecb699123ac3">&#9670;&#160;</a></span>commit_display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void commit_display </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the commits in the commit list. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>The commit list head. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                                      {</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* aux = head-&gt;<a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a>;</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">   77</span>        printf(<span class="stringliteral">&quot;Hash: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>);</div>
+<div class="line"><span class="lineno">   78</span>        printf(<span class="stringliteral">&quot;Date: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>);</div>
+<div class="line"><span class="lineno">   79</span>        printf(<span class="stringliteral">&quot;Message: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>);</div>
+<div class="line"><span class="lineno">   80</span>        printf(<span class="stringliteral">&quot;Start byte: %d\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#abf279fb66381dc428dab7f283d7492bf">start_byte</a>);</div>
+<div class="line"><span class="lineno">   81</span>        printf(<span class="stringliteral">&quot;End byte: %d\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a3d4cdcfb7a0ce1e054b730f3773ac15f">end_byte</a>);</div>
+<div class="line"><span class="lineno">   82</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   83</span>        aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">next</a>;</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="line"><span class="lineno">   85</span>}</div>
+<div class="ttc" id="astructcommit_html_a3d4cdcfb7a0ce1e054b730f3773ac15f"><div class="ttname"><a href="structcommit.html#a3d4cdcfb7a0ce1e054b730f3773ac15f">commit::end_byte</a></div><div class="ttdeci">int end_byte</div><div class="ttdef"><b>Definição</b> data_structures.h:20</div></div>
+<div class="ttc" id="astructcommit_html_abf279fb66381dc428dab7f283d7492bf"><div class="ttname"><a href="structcommit.html#abf279fb66381dc428dab7f283d7492bf">commit::start_byte</a></div><div class="ttdeci">int start_byte</div><div class="ttdef"><b>Definição</b> data_structures.h:19</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aefecb84f7405da6287bddd5c7d4cb1ed" name="aefecb84f7405da6287bddd5c7d4cb1ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefecb84f7405da6287bddd5c7d4cb1ed">&#9670;&#160;</a></span>commit_insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void commit_insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>date</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_byte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>end_byte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserts a commit into the commit list. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>The commit list head. </td></tr>
+    <tr><td class="paramname">hash</td><td>The hash of the commit. </td></tr>
+    <tr><td class="paramname">date</td><td>The date of the commit. </td></tr>
+    <tr><td class="paramname">message</td><td>The commit message. </td></tr>
+    <tr><td class="paramname">start_byte</td><td>The start byte position of the commit. </td></tr>
+    <tr><td class="paramname">end_byte</td><td>The end byte position of the commit. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                                                                {</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* <a class="code hl_struct" href="structcommit.html">commit</a> = (<a class="code hl_struct" href="structcommit.html">Commit</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structcommit.html">Commit</a>));</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structcommit.html">commit</a> == NULL)</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   47</span>    </div>
+<div class="line"><span class="lineno">   48</span>    <a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a> = (<span class="keywordtype">char</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * (strlen(<a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>) + 1));</div>
+<div class="line"><span class="lineno">   49</span>    strcpy(<a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>, <a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>);</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a> = (<span class="keywordtype">char</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * (strlen(date) + 1));</div>
+<div class="line"><span class="lineno">   51</span>    strcpy(<a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>, date);</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a> = (<span class="keywordtype">char</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * (strlen(message) + 1));</div>
+<div class="line"><span class="lineno">   53</span>    strcpy(<a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>, message);</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#abf279fb66381dc428dab7f283d7492bf">start_byte</a> = start_byte;</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#a3d4cdcfb7a0ce1e054b730f3773ac15f">end_byte</a> = end_byte;</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">next</a> = NULL;</div>
+<div class="line"><span class="lineno">   58</span>    <a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#a3981fde3b2e1c3ebc3df650eaf52583e">prev</a> = NULL;</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (head-&gt;<a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a> == NULL) {</div>
+<div class="line"><span class="lineno">   60</span>        head-&gt;<a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a> = <a class="code hl_struct" href="structcommit.html">commit</a>;</div>
+<div class="line"><span class="lineno">   61</span>        head-&gt;<a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a> = <a class="code hl_struct" href="structcommit.html">commit</a>;</div>
+<div class="line"><span class="lineno">   62</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   63</span>        head-&gt;<a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a>-&gt;<a class="code hl_variable" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">next</a> = <a class="code hl_struct" href="structcommit.html">commit</a>;</div>
+<div class="line"><span class="lineno">   64</span>        <a class="code hl_struct" href="structcommit.html">commit</a>-&gt;<a class="code hl_variable" href="structcommit.html#a3981fde3b2e1c3ebc3df650eaf52583e">prev</a> = head-&gt;<a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a>;</div>
+<div class="line"><span class="lineno">   65</span>        head-&gt;<a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a> = <a class="code hl_struct" href="structcommit.html">commit</a>;</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="line"><span class="lineno">   67</span>}</div>
+<div class="ttc" id="astructcommit_html_a3981fde3b2e1c3ebc3df650eaf52583e"><div class="ttname"><a href="structcommit.html#a3981fde3b2e1c3ebc3df650eaf52583e">commit::prev</a></div><div class="ttdeci">Commit * prev</div><div class="ttdef"><b>Definição</b> data_structures.h:23</div></div>
+<div class="ttc" id="autils_8c_html_a7a83b81e07136758832c25529e56a429"><div class="ttname"><a href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a></div><div class="ttdeci">char * hash()</div><div class="ttdoc">Generates a random hexadecimal hash.</div><div class="ttdef"><b>Definição</b> utils.c:21</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adf75e61c5129c20833135a177437e48b" name="adf75e61c5129c20833135a177437e48b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf75e61c5129c20833135a177437e48b">&#9670;&#160;</a></span>display_commit_and_contents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_commit_and_contents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td>
+          <td class="paramname"><em>commit_head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hash</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays a specific commit and its associated files. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structcommit__head.html">commit_head</a></td><td>The commit list head. </td></tr>
+    <tr><td class="paramname">hash</td><td>The hash of the commit to display. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  263</span>                                                                            {</div>
+<div class="line"><span class="lineno">  264</span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* aux = <a class="code hl_struct" href="structcommit__head.html">commit_head</a>-&gt;<a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a>;</div>
+<div class="line"><span class="lineno">  265</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">  266</span>        <span class="keywordflow">if</span> (strcmp(aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>, <a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>) == 0) {</div>
+<div class="line"><span class="lineno">  267</span>            printf(<span class="stringliteral">&quot;commit %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>);</div>
+<div class="line"><span class="lineno">  268</span>            printf(<span class="stringliteral">&quot;Date:   %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>);</div>
+<div class="line"><span class="lineno">  269</span>            printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  270</span>            printf(<span class="stringliteral">&quot;\t%s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>);</div>
+<div class="line"><span class="lineno">  271</span>            printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>            <span class="comment">// display files</span></div>
+<div class="line"><span class="lineno">  274</span>            <a class="code hl_struct" href="structfile.html">File</a>* file_aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a9513c0856678b4889091cfbe91055d0e">file_head</a>-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a>;</div>
+<div class="line"><span class="lineno">  275</span>            <span class="keywordflow">while</span> (file_aux != NULL) {</div>
+<div class="line"><span class="lineno">  276</span>                printf(<span class="stringliteral">&quot;path %s\n&quot;</span>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>);</div>
+<div class="line"><span class="lineno">  277</span>                <span class="comment">// display file contents</span></div>
+<div class="line"><span class="lineno">  278</span>                printf(<span class="stringliteral">&quot;contents: \n&quot;</span>);</div>
+<div class="line"><span class="lineno">  279</span>                <a class="code hl_function" href="parser_8c.html#a18098036ffad3c2ffb152e7afbdd985c">print_text_between_bytes</a>(file_aux-&gt;<a class="code hl_variable" href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">start_byte</a>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">end_byte</a>);</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>                printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>                file_aux = file_aux-&gt;<a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a>;</div>
+<div class="line"><span class="lineno">  284</span>            }</div>
+<div class="line"><span class="lineno">  285</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  286</span>        }</div>
+<div class="line"><span class="lineno">  287</span>        aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">next</a>;</div>
+<div class="line"><span class="lineno">  288</span>    }</div>
+<div class="line"><span class="lineno">  289</span>    printf(<span class="stringliteral">&quot;Commit not found!\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  290</span>}</div>
+<div class="ttc" id="aparser_8c_html_a18098036ffad3c2ffb152e7afbdd985c"><div class="ttname"><a href="parser_8c.html#a18098036ffad3c2ffb152e7afbdd985c">print_text_between_bytes</a></div><div class="ttdeci">void print_text_between_bytes(int byte_start, int byte_end)</div><div class="ttdoc">Prints the text between the specified byte start and byte end.</div><div class="ttdef"><b>Definição</b> parser.c:217</div></div>
+<div class="ttc" id="astructcommit_html_a9513c0856678b4889091cfbe91055d0e"><div class="ttname"><a href="structcommit.html#a9513c0856678b4889091cfbe91055d0e">commit::file_head</a></div><div class="ttdeci">FileHead * file_head</div><div class="ttdef"><b>Definição</b> data_structures.h:21</div></div>
+<div class="ttc" id="astructfile__head_html_a36409f6d15480a17c96be43c41efb4b3"><div class="ttname"><a href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">file_head::first</a></div><div class="ttdeci">File * first</div><div class="ttdef"><b>Definição</b> data_structures.h:27</div></div>
+<div class="ttc" id="astructfile_html"><div class="ttname"><a href="structfile.html">file</a></div><div class="ttdef"><b>Definição</b> data_structures.h:30</div></div>
+<div class="ttc" id="astructfile_html_a1aa1b122e87c623b1d132991daf4f0bc"><div class="ttname"><a href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">file::path</a></div><div class="ttdeci">char * path</div><div class="ttdef"><b>Definição</b> data_structures.h:31</div></div>
+<div class="ttc" id="astructfile_html_a35c7b5f6e6ed77338af5255fd805cf85"><div class="ttname"><a href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">file::next</a></div><div class="ttdeci">File * next</div><div class="ttdef"><b>Definição</b> data_structures.h:34</div></div>
+<div class="ttc" id="astructfile_html_a3c45db19f907de2dd9c77514e29fa6fe"><div class="ttname"><a href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">file::end_byte</a></div><div class="ttdeci">int end_byte</div><div class="ttdef"><b>Definição</b> data_structures.h:33</div></div>
+<div class="ttc" id="astructfile_html_ac7cd87b6f4af706e08c2c5c88e17753d"><div class="ttname"><a href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">file::start_byte</a></div><div class="ttdeci">int start_byte</div><div class="ttdef"><b>Definição</b> data_structures.h:32</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac153353ef4e02741f313f940baa44c47" name="ac153353ef4e02741f313f940baa44c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac153353ef4e02741f313f940baa44c47">&#9670;&#160;</a></span>display_commits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_commits </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td>
+          <td class="paramname"><em>commit_head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays all the commits and their associated files. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structcommit__head.html">commit_head</a></td><td>The commit list head. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  186</span>                                              {</div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* aux = <a class="code hl_struct" href="structcommit__head.html">commit_head</a>-&gt;<a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a>;</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">  189</span>        printf(<span class="stringliteral">&quot;Hash: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>);</div>
+<div class="line"><span class="lineno">  190</span>        printf(<span class="stringliteral">&quot;Date: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>);</div>
+<div class="line"><span class="lineno">  191</span>        printf(<span class="stringliteral">&quot;Message: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>);</div>
+<div class="line"><span class="lineno">  192</span>        printf(<span class="stringliteral">&quot;Start byte: %d\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#abf279fb66381dc428dab7f283d7492bf">start_byte</a>);</div>
+<div class="line"><span class="lineno">  193</span>        printf(<span class="stringliteral">&quot;End byte: %d\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a3d4cdcfb7a0ce1e054b730f3773ac15f">end_byte</a>);</div>
+<div class="line"><span class="lineno">  194</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  195</span> </div>
+<div class="line"><span class="lineno">  196</span>        <span class="comment">// display files</span></div>
+<div class="line"><span class="lineno">  197</span>        <a class="code hl_struct" href="structfile.html">File</a>* file_aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a9513c0856678b4889091cfbe91055d0e">file_head</a>-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a>;</div>
+<div class="line"><span class="lineno">  198</span>        <span class="keywordflow">while</span> (file_aux != NULL) {</div>
+<div class="line"><span class="lineno">  199</span>            printf(<span class="stringliteral">&quot;Path: %s\n&quot;</span>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>);</div>
+<div class="line"><span class="lineno">  200</span>            printf(<span class="stringliteral">&quot;Start byte: %d\n&quot;</span>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">start_byte</a>);</div>
+<div class="line"><span class="lineno">  201</span>            printf(<span class="stringliteral">&quot;End byte: %d\n&quot;</span>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">end_byte</a>);</div>
+<div class="line"><span class="lineno">  202</span>            printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span>            file_aux = file_aux-&gt;<a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a>;</div>
+<div class="line"><span class="lineno">  204</span>        }</div>
+<div class="line"><span class="lineno">  205</span>        aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">next</a>;</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab45ac42480377e376e13fbb70f2c46a5" name="ab45ac42480377e376e13fbb70f2c46a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab45ac42480377e376e13fbb70f2c46a5">&#9670;&#160;</a></span>display_from_last()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_from_last </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td>
+          <td class="paramname"><em>commit_head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the commits in reverse order from the last commit. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structcommit__head.html">commit_head</a></td><td>The commit list head. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>                                               {</div>
+<div class="line"><span class="lineno">  215</span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* aux = <a class="code hl_struct" href="structcommit__head.html">commit_head</a>-&gt;<a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a>;</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">  217</span>        printf(<span class="stringliteral">&quot;commit %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>);</div>
+<div class="line"><span class="lineno">  218</span>        printf(<span class="stringliteral">&quot;Date:   %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>);</div>
+<div class="line"><span class="lineno">  219</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  220</span>        printf(<span class="stringliteral">&quot;\t%s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>);</div>
+<div class="line"><span class="lineno">  221</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  222</span>        aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a3981fde3b2e1c3ebc3df650eaf52583e">prev</a>;</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acbf12322edfae4eea5674f15d70b00d7" name="acbf12322edfae4eea5674f15d70b00d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf12322edfae4eea5674f15d70b00d7">&#9670;&#160;</a></span>display_from_last_with_contents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_from_last_with_contents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td>
+          <td class="paramname"><em>commit_head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the commits and their associated files in reverse order from the last commit. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structcommit__head.html">commit_head</a></td><td>The commit list head. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>                                                              {</div>
+<div class="line"><span class="lineno">  232</span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* aux = <a class="code hl_struct" href="structcommit__head.html">commit_head</a>-&gt;<a class="code hl_variable" href="structcommit__head.html#a17bb9baefcfc6d825c90f27c54d12cf9">last</a>;</div>
+<div class="line"><span class="lineno">  233</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">  234</span>        printf(<span class="stringliteral">&quot;commit %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>);</div>
+<div class="line"><span class="lineno">  235</span>        printf(<span class="stringliteral">&quot;Date:   %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>);</div>
+<div class="line"><span class="lineno">  236</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  237</span>        printf(<span class="stringliteral">&quot;\t%s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>);</div>
+<div class="line"><span class="lineno">  238</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>        <span class="comment">// display files</span></div>
+<div class="line"><span class="lineno">  241</span>        <a class="code hl_struct" href="structfile.html">File</a>* file_aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a9513c0856678b4889091cfbe91055d0e">file_head</a>-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a>;</div>
+<div class="line"><span class="lineno">  242</span>        <span class="comment">// iterate through files</span></div>
+<div class="line"><span class="lineno">  243</span>        <span class="keywordflow">while</span> (file_aux != NULL) {</div>
+<div class="line"><span class="lineno">  244</span>            <span class="comment">// display file contents</span></div>
+<div class="line"><span class="lineno">  245</span>            printf(<span class="stringliteral">&quot;path %s\n&quot;</span>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>);</div>
+<div class="line"><span class="lineno">  246</span>            printf(<span class="stringliteral">&quot;contents: \n&quot;</span>);</div>
+<div class="line"><span class="lineno">  247</span>            <a class="code hl_function" href="parser_8c.html#a18098036ffad3c2ffb152e7afbdd985c">print_text_between_bytes</a>(file_aux-&gt;<a class="code hl_variable" href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">start_byte</a>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">end_byte</a>);</div>
+<div class="line"><span class="lineno">  248</span>            printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>            <span class="comment">// next file</span></div>
+<div class="line"><span class="lineno">  251</span>            file_aux = file_aux-&gt;<a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a>;</div>
+<div class="line"><span class="lineno">  252</span>        }</div>
+<div class="line"><span class="lineno">  253</span>        aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a3981fde3b2e1c3ebc3df650eaf52583e">prev</a>;</div>
+<div class="line"><span class="lineno">  254</span>    }</div>
+<div class="line"><span class="lineno">  255</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae3682f0080b40b5078276fa0dcb70d0b" name="ae3682f0080b40b5078276fa0dcb70d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3682f0080b40b5078276fa0dcb70d0b">&#9670;&#160;</a></span>file_create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a> * file_create </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new file list head. </p>
+<dl class="section return"><dt>Retorna</dt><dd>A pointer to the newly created FileHead. </dd></dl>
+<div class="fragment"><div class="line"><span class="lineno">  110</span>                        {</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_struct" href="structfile__head.html">FileHead</a>* head = (<a class="code hl_struct" href="structfile__head.html">FileHead</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structfile__head.html">FileHead</a>));</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">if</span> (head == NULL)</div>
+<div class="line"><span class="lineno">  113</span>        <span class="keywordflow">return</span> head;</div>
+<div class="line"><span class="lineno">  114</span>    head-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a> = NULL;</div>
+<div class="line"><span class="lineno">  115</span>    head-&gt;<a class="code hl_variable" href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">last</a> = NULL;</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> head;</div>
+<div class="line"><span class="lineno">  117</span>}</div>
+<div class="ttc" id="astructfile__head_html"><div class="ttname"><a href="structfile__head.html">file_head</a></div><div class="ttdef"><b>Definição</b> data_structures.h:26</div></div>
+<div class="ttc" id="astructfile__head_html_ae8a4465d2fad17835235b3506f7a43ef"><div class="ttname"><a href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">file_head::last</a></div><div class="ttdeci">File * last</div><div class="ttdef"><b>Definição</b> data_structures.h:28</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a22dcea2f182cd9adb45652dc8d528f9d" name="a22dcea2f182cd9adb45652dc8d528f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22dcea2f182cd9adb45652dc8d528f9d">&#9670;&#160;</a></span>file_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void file_destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a> *&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroys the file list and frees the memory. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>The file list head. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>                                  {</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_struct" href="structfile.html">File</a>* aux = head-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a>;</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">  173</span>        <a class="code hl_struct" href="structfile.html">File</a>* t = aux-&gt;<a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a>;</div>
+<div class="line"><span class="lineno">  174</span>        free(aux-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>);</div>
+<div class="line"><span class="lineno">  175</span>        free(aux);</div>
+<div class="line"><span class="lineno">  176</span>        aux = t;</div>
+<div class="line"><span class="lineno">  177</span>    }</div>
+<div class="line"><span class="lineno">  178</span>    free(head);</div>
+<div class="line"><span class="lineno">  179</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a033314473c7a8954f4ae067950b27b3a" name="a033314473c7a8954f4ae067950b27b3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a033314473c7a8954f4ae067950b27b3a">&#9670;&#160;</a></span>file_display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void file_display </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a> *&#160;</td>
+          <td class="paramname"><em>head</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Displays the files in the file list. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>The file list head. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>                                  {</div>
+<div class="line"><span class="lineno">  155</span>    <a class="code hl_struct" href="structfile.html">File</a>* aux = head-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a>;</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">  157</span>        printf(<span class="stringliteral">&quot;Path: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>);</div>
+<div class="line"><span class="lineno">  158</span>        printf(<span class="stringliteral">&quot;Start byte: %d\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">start_byte</a>);</div>
+<div class="line"><span class="lineno">  159</span>        printf(<span class="stringliteral">&quot;End byte: %d\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">end_byte</a>);</div>
+<div class="line"><span class="lineno">  160</span>        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  161</span>        aux = aux-&gt;<a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a>;</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
+<div class="line"><span class="lineno">  163</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa2fa79de0b4063e6e18b349bd0ebcb99" name="aa2fa79de0b4063e6e18b349bd0ebcb99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2fa79de0b4063e6e18b349bd0ebcb99">&#9670;&#160;</a></span>file_insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void file_insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a9d0434ca72e2397e4a1b0af7579d5c97">FileHead</a> *&#160;</td>
+          <td class="paramname"><em>head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start_byte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>end_byte</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserts a file into the file list. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">head</td><td>The file list head. </td></tr>
+    <tr><td class="paramname">path</td><td>The path of the file. </td></tr>
+    <tr><td class="paramname">start_byte</td><td>The start byte position of the file. </td></tr>
+    <tr><td class="paramname">end_byte</td><td>The end byte position of the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>                                                                                 {</div>
+<div class="line"><span class="lineno">  128</span>    <a class="code hl_struct" href="structfile.html">File</a>* <a class="code hl_struct" href="structfile.html">file</a> = (<a class="code hl_struct" href="structfile.html">File</a>*)malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structfile.html">File</a>));</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">if</span> (<a class="code hl_struct" href="structfile.html">file</a> == NULL)</div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  131</span>    </div>
+<div class="line"><span class="lineno">  132</span>    <a class="code hl_struct" href="structfile.html">file</a>-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a> = (<span class="keywordtype">char</span>*)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * (strlen(path) + 1));</div>
+<div class="line"><span class="lineno">  133</span>    strcpy(<a class="code hl_struct" href="structfile.html">file</a>-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>, path);</div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_struct" href="structfile.html">file</a>-&gt;<a class="code hl_variable" href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">start_byte</a> = start_byte;</div>
+<div class="line"><span class="lineno">  135</span>    <a class="code hl_struct" href="structfile.html">file</a>-&gt;<a class="code hl_variable" href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">end_byte</a> = end_byte;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_struct" href="structfile.html">file</a>-&gt;<a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a> = NULL;</div>
+<div class="line"><span class="lineno">  138</span>    <a class="code hl_struct" href="structfile.html">file</a>-&gt;<a class="code hl_variable" href="structfile.html#aaf4f09b89dd163c8ffcbf77678da97a0">prev</a> = NULL;</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span> (head-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a> == NULL) {</div>
+<div class="line"><span class="lineno">  140</span>        head-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a> = <a class="code hl_struct" href="structfile.html">file</a>;</div>
+<div class="line"><span class="lineno">  141</span>        head-&gt;<a class="code hl_variable" href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">last</a> = <a class="code hl_struct" href="structfile.html">file</a>;</div>
+<div class="line"><span class="lineno">  142</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  143</span>        head-&gt;<a class="code hl_variable" href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">last</a>-&gt;<a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a> = <a class="code hl_struct" href="structfile.html">file</a>;</div>
+<div class="line"><span class="lineno">  144</span>        <a class="code hl_struct" href="structfile.html">file</a>-&gt;<a class="code hl_variable" href="structfile.html#aaf4f09b89dd163c8ffcbf77678da97a0">prev</a> = head-&gt;<a class="code hl_variable" href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">last</a>;</div>
+<div class="line"><span class="lineno">  145</span>        head-&gt;<a class="code hl_variable" href="structfile__head.html#ae8a4465d2fad17835235b3506f7a43ef">last</a> = <a class="code hl_struct" href="structfile.html">file</a>;</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="line"><span class="lineno">  147</span>}</div>
+<div class="ttc" id="astructfile_html_aaf4f09b89dd163c8ffcbf77678da97a0"><div class="ttname"><a href="structfile.html#aaf4f09b89dd163c8ffcbf77678da97a0">file::prev</a></div><div class="ttdeci">File * prev</div><div class="ttdef"><b>Definição</b> data_structures.h:35</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a22f1da70cfe2ff55a31054db679fb913" name="a22f1da70cfe2ff55a31054db679fb913"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f1da70cfe2ff55a31054db679fb913">&#9670;&#160;</a></span>write_commit_and_contents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void write_commit_and_contents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="data__structures_8h.html#a43a76c3dc651de500e30bd6fa70c5eaf">CommitHead</a> *&#160;</td>
+          <td class="paramname"><em>commit_head</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hash</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes a specific commit and its associated files to the current directory. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structcommit__head.html">commit_head</a></td><td>The commit list head. </td></tr>
+    <tr><td class="paramname">hash</td><td>The hash of the commit to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="lineno">  298</span>                                                                          {</div>
+<div class="line"><span class="lineno">  299</span>    <a class="code hl_struct" href="structcommit.html">Commit</a>* aux = <a class="code hl_struct" href="structcommit__head.html">commit_head</a>-&gt;<a class="code hl_variable" href="structcommit__head.html#a5b4a567111ef994ca3cdc868172221cd">first</a>;</div>
+<div class="line"><span class="lineno">  300</span>    <span class="keywordflow">while</span> (aux != NULL) {</div>
+<div class="line"><span class="lineno">  301</span>        <span class="keywordflow">if</span> (strcmp(aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>, <a class="code hl_function" href="utils_8c.html#a7a83b81e07136758832c25529e56a429">hash</a>) == 0) {</div>
+<div class="line"><span class="lineno">  302</span>            FILE* <a class="code hl_struct" href="structfile.html">file</a> = fopen(<span class="stringliteral">&quot;commit.txt&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><span class="lineno">  303</span>            <span class="keywordflow">if</span> (<a class="code hl_struct" href="structfile.html">file</a> == NULL) {</div>
+<div class="line"><span class="lineno">  304</span>                printf(<span class="stringliteral">&quot;Error opening file!\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  305</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  306</span>            }</div>
+<div class="line"><span class="lineno">  307</span>            fprintf(<a class="code hl_struct" href="structfile.html">file</a>, <span class="stringliteral">&quot;Hash: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#aeb2acd873458aa736144ae60783dcb1b">hash</a>);</div>
+<div class="line"><span class="lineno">  308</span>            fprintf(<a class="code hl_struct" href="structfile.html">file</a>, <span class="stringliteral">&quot;Date: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a2ffdc248e999f58e4042569b64005e11">date</a>);</div>
+<div class="line"><span class="lineno">  309</span>            fprintf(<a class="code hl_struct" href="structfile.html">file</a>, <span class="stringliteral">&quot;Message: %s\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a85cdb2c1548119a1646f5214df9c484f">message</a>);</div>
+<div class="line"><span class="lineno">  310</span>            fprintf(<a class="code hl_struct" href="structfile.html">file</a>, <span class="stringliteral">&quot;Start byte: %d\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#abf279fb66381dc428dab7f283d7492bf">start_byte</a>);</div>
+<div class="line"><span class="lineno">  311</span>            fprintf(<a class="code hl_struct" href="structfile.html">file</a>, <span class="stringliteral">&quot;End byte: %d\n&quot;</span>, aux-&gt;<a class="code hl_variable" href="structcommit.html#a3d4cdcfb7a0ce1e054b730f3773ac15f">end_byte</a>);</div>
+<div class="line"><span class="lineno">  312</span>            fprintf(<a class="code hl_struct" href="structfile.html">file</a>, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  313</span> </div>
+<div class="line"><span class="lineno">  314</span>            <span class="comment">// display files</span></div>
+<div class="line"><span class="lineno">  315</span>            <a class="code hl_struct" href="structfile.html">File</a>* file_aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a9513c0856678b4889091cfbe91055d0e">file_head</a>-&gt;<a class="code hl_variable" href="structfile__head.html#a36409f6d15480a17c96be43c41efb4b3">first</a>;</div>
+<div class="line"><span class="lineno">  316</span>            <span class="keywordflow">while</span> (file_aux != NULL) {</div>
+<div class="line"><span class="lineno">  317</span>                fprintf(<a class="code hl_struct" href="structfile.html">file</a>, <span class="stringliteral">&quot;Path: %s\n&quot;</span>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>);</div>
+<div class="line"><span class="lineno">  318</span>                <span class="comment">// display file contents</span></div>
+<div class="line"><span class="lineno">  319</span>                <a class="code hl_function" href="parser_8c.html#a58c39d628ba413091fdd930447d664f6">write_text_between_bytes</a>(file_aux-&gt;<a class="code hl_variable" href="structfile.html#ac7cd87b6f4af706e08c2c5c88e17753d">start_byte</a>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a3c45db19f907de2dd9c77514e29fa6fe">end_byte</a>, file_aux-&gt;<a class="code hl_variable" href="structfile.html#a1aa1b122e87c623b1d132991daf4f0bc">path</a>);</div>
+<div class="line"><span class="lineno">  320</span> </div>
+<div class="line"><span class="lineno">  321</span>                fprintf(<a class="code hl_struct" href="structfile.html">file</a>, <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  322</span> </div>
+<div class="line"><span class="lineno">  323</span>                file_aux = file_aux-&gt;<a class="code hl_variable" href="structfile.html#a35c7b5f6e6ed77338af5255fd805cf85">next</a>;</div>
+<div class="line"><span class="lineno">  324</span>            }</div>
+<div class="line"><span class="lineno">  325</span>            fclose(<a class="code hl_struct" href="structfile.html">file</a>);</div>
+<div class="line"><span class="lineno">  326</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  327</span>        }</div>
+<div class="line"><span class="lineno">  328</span>        aux = aux-&gt;<a class="code hl_variable" href="structcommit.html#a61b61fe79c05acbc53a11ad29f07f87c">next</a>;</div>
+<div class="line"><span class="lineno">  329</span>    }</div>
+<div class="line"><span class="lineno">  330</span>    printf(<span class="stringliteral">&quot;Commit not found!\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  331</span>}</div>
+<div class="ttc" id="aparser_8c_html_a58c39d628ba413091fdd930447d664f6"><div class="ttname"><a href="parser_8c.html#a58c39d628ba413091fdd930447d664f6">write_text_between_bytes</a></div><div class="ttdeci">void write_text_between_bytes(int byte_start, int byte_end, const char *path)</div><div class="ttdoc">Writes the text between the specified byte start and byte end to the specified file.</div><div class="ttdef"><b>Definição</b> parser.c:258</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>

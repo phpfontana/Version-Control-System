@@ -1,3 +1,11 @@
+/**
+ * @file data_structures.c
+ * @brief Data structures for the VCS (Version Control System).
+ *
+ * This file contains the code for the data structures used in the VCS,
+ * including the commit data structure and the file data structure.
+ */
+
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
@@ -7,6 +15,11 @@
 # include "data_structures.h"
 # include "parser.h"
 
+/**
+ * @brief Creates a new commit list head.
+ *
+ * @return A pointer to the newly created CommitHead.
+ */
 // function prototypes
 CommitHead* commit_create() {
     CommitHead* head = (CommitHead*)malloc(sizeof(CommitHead));
@@ -16,6 +29,17 @@ CommitHead* commit_create() {
     head->last = NULL;
     return head;
 }
+
+/**
+ * @brief Inserts a commit into the commit list.
+ *
+ * @param head The commit list head.
+ * @param hash The hash of the commit.
+ * @param date The date of the commit.
+ * @param message The commit message.
+ * @param start_byte The start byte position of the commit.
+ * @param end_byte The end byte position of the commit.
+ */
 void commit_insert(CommitHead* head, char* hash, char* date, const char* message, int start_byte, int end_byte) {
     Commit* commit = (Commit*)malloc(sizeof(Commit));
     if (commit == NULL)
@@ -42,6 +66,11 @@ void commit_insert(CommitHead* head, char* hash, char* date, const char* message
     }
 }
 
+/**
+ * @brief Displays the commits in the commit list.
+ *
+ * @param head The commit list head.
+ */
 void commit_display(CommitHead* head) {
     Commit* aux = head->first;
     while (aux != NULL) {
@@ -55,6 +84,11 @@ void commit_display(CommitHead* head) {
     }
 }
 
+/**
+ * @brief Destroys the commit list and frees the memory.
+ *
+ * @param head The commit list head.
+ */
 void commit_destroy(CommitHead* head) {
     Commit* aux = head->first;
     while (aux != NULL) {
@@ -68,6 +102,11 @@ void commit_destroy(CommitHead* head) {
     free(head);
 }
 
+/**
+ * @brief Creates a new file list head.
+ *
+ * @return A pointer to the newly created FileHead.
+ */
 FileHead* file_create() {
     FileHead* head = (FileHead*)malloc(sizeof(FileHead));
     if (head == NULL)
@@ -76,6 +115,15 @@ FileHead* file_create() {
     head->last = NULL;
     return head;
 }
+
+/**
+ * @brief Inserts a file into the file list.
+ *
+ * @param head The file list head.
+ * @param path The path of the file.
+ * @param start_byte The start byte position of the file.
+ * @param end_byte The end byte position of the file.
+ */
 void file_insert(FileHead* head, const char* path, int start_byte, int end_byte) {
     File* file = (File*)malloc(sizeof(File));
     if (file == NULL)
@@ -97,6 +145,12 @@ void file_insert(FileHead* head, const char* path, int start_byte, int end_byte)
         head->last = file;
     }
 }
+
+/**
+ * @brief Displays the files in the file list.
+ *
+ * @param head The file list head.
+ */
 void file_display(FileHead* head) {
     File* aux = head->first;
     while (aux != NULL) {
@@ -108,6 +162,11 @@ void file_display(FileHead* head) {
     }
 }
 
+/**
+ * @brief Destroys the file list and frees the memory.
+ *
+ * @param head The file list head.
+ */
 void file_destroy(FileHead* head) {
     File* aux = head->first;
     while (aux != NULL) {
@@ -119,6 +178,11 @@ void file_destroy(FileHead* head) {
     free(head);
 }
 
+/**
+ * @brief Displays all the commits and their associated files.
+ *
+ * @param commit_head The commit list head.
+ */
 void display_commits(CommitHead* commit_head) {
     Commit* aux = commit_head->first;
     while (aux != NULL) {
@@ -142,6 +206,11 @@ void display_commits(CommitHead* commit_head) {
     }
 }
 
+/**
+ * @brief Displays the commits in reverse order from the last commit.
+ *
+ * @param commit_head The commit list head.
+ */
 void display_from_last(CommitHead* commit_head){
     Commit* aux = commit_head->last;
     while (aux != NULL) {
@@ -154,6 +223,11 @@ void display_from_last(CommitHead* commit_head){
     }
 }
 
+/**
+ * @brief Displays the commits and their associated files in reverse order from the last commit.
+ *
+ * @param commit_head The commit list head.
+ */
 void display_from_last_with_contents(CommitHead* commit_head) {
     Commit* aux = commit_head->last;
     while (aux != NULL) {
@@ -180,6 +254,12 @@ void display_from_last_with_contents(CommitHead* commit_head) {
     }
 }
 
+/**
+ * @brief Displays a specific commit and its associated files.
+ *
+ * @param commit_head The commit list head.
+ * @param hash The hash of the commit to display.
+ */
 void display_commit_and_contents(CommitHead* commit_head, const char* hash) {
     Commit* aux = commit_head->first;
     while (aux != NULL) {
@@ -209,6 +289,12 @@ void display_commit_and_contents(CommitHead* commit_head, const char* hash) {
     printf("Commit not found!\n");
 }
 
+/**
+ * @brief Writes a specific commit and its associated files to the current directory.
+ *
+ * @param commit_head The commit list head.
+ * @param hash The hash of the commit to write.
+ */
 void write_commit_and_contents(CommitHead* commit_head, const char* hash) {
     Commit* aux = commit_head->first;
     while (aux != NULL) {
