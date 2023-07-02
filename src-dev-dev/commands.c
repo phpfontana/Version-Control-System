@@ -6,7 +6,9 @@
 # include <sys/stat.h>
 # include "commands.h"
 
-// Function Implementations
+/**
+ * @brief Initializes the repository by creating the necessary directories and loading the repository state.
+ */
 void initializeRepository() {
     if (mkdir(repositoryPath, 0700) != 0) {
         fprintf(stderr, "Failed to create repository directory.\n");
@@ -23,6 +25,9 @@ void initializeRepository() {
     loadRepositoryState();
 }
 
+/**
+ * @brief Loads the repository state from the config file.
+ */
 void loadRepositoryState() {
     char configFilePath[100];
     sprintf(configFilePath, "%s/config.txt", repositoryPath);
@@ -34,6 +39,9 @@ void loadRepositoryState() {
     }
 }
 
+/**
+ * @brief Saves the current repository state to the config file.
+ */
 void saveRepositoryState() {
     char configFilePath[100];
     sprintf(configFilePath, "%s/config.txt", repositoryPath);
@@ -47,6 +55,9 @@ void saveRepositoryState() {
     fclose(configFile);
 }
 
+/**
+ * @brief Creates a new commit with random commit ID.
+ */
 void commit() {
     Commit* newCommit = (Commit*)malloc(sizeof(Commit));
     strcpy(newCommit->branch, currentBranch);
@@ -89,6 +100,11 @@ void commit() {
     printf("New commit created with ID: %s\n", newCommit->commitID);
 }
 
+/**
+ * @brief Creates a new branch with the given name.
+ *
+ * @param branchName The name of the new branch.
+ */
 void createBranch(const char* branchName) {
     char branchFilePath[100];
     sprintf(branchFilePath, "%s/branches/%s.txt", repositoryPath, branchName);
@@ -110,6 +126,11 @@ void createBranch(const char* branchName) {
     printf("New branch created with name: %s\n", branchName);
 }
 
+/**
+ * @brief Switches to the specified branch.
+ *
+ * @param branchName The name of the branch to switch to.
+ */
 void switchBranch(const char* branchName) {
     if (strcmp(currentBranch, branchName) == 0) {
         printf("Already on branch: %s\n", branchName);
@@ -133,6 +154,11 @@ void switchBranch(const char* branchName) {
     printf("Switched to branch: %s\n", branchName);
 }
 
+/**
+ * @brief Removes the specified branch.
+ *
+ * @param branchName The name of the branch to remove.
+ */
 void removeBranch(const char* branchName) {
     if (strcmp(currentBranch, branchName) == 0) {
         printf("Cannot remove the current branch.\n");
@@ -149,6 +175,11 @@ void removeBranch(const char* branchName) {
     }
 }
 
+/**
+ * @brief Displays the commit information for the given commit ID.
+ *
+ * @param commitID The ID of the commit to display.
+ */
 void displayCommit(const char* commitID) {
     char commitFilePath[100];
     sprintf(commitFilePath, "%s/commits/%s.txt", repositoryPath, commitID);
@@ -165,6 +196,12 @@ void displayCommit(const char* commitID) {
     fclose(commitFile);
 }
 
+/**
+ * @brief Displays the commit history for the given branch.
+ *
+ * @param node The starting node of the commit tree.
+ * @param depth The depth of the current node in the commit tree.
+ */
 void displayCommitHistory(TreeNode* node, int depth) {
     if (node == NULL) {
         return;
@@ -179,6 +216,11 @@ void displayCommitHistory(TreeNode* node, int depth) {
     displayCommitHistory(node->sibling, depth);
 }
 
+/**
+ * @brief Displays the branch information, including the commit history.
+ *
+ * @param branchName The name of the branch to display.
+ */
 void displayBranch(const char* branchName) {
     char branchFilePath[100];
     sprintf(branchFilePath, "%s/branches/%s.txt", repositoryPath, branchName);
@@ -254,6 +296,11 @@ void displayBranch(const char* branchName) {
     cleanupCommitTree(commitTree);
 }
 
+/**
+ * @brief Cleans up the commit tree and frees the allocated memory.
+ *
+ * @param node The starting node of the commit tree.
+ */
 void cleanupCommitTree(TreeNode* node) {
     if (node == NULL) {
         return;
@@ -265,6 +312,12 @@ void cleanupCommitTree(TreeNode* node) {
     free(node);
 }
 
+/**
+ * @brief Renames a branch with a new name.
+ *
+ * @param oldBranchName The current name of the branch to rename.
+ * @param newBranchName The new name for the branch.
+ */
 void renameBranch(const char* oldBranchName, const char* newBranchName) {
     if (strcmp(currentBranch, oldBranchName) == 0) {
         printf("Cannot rename the current branch.\n");
@@ -281,41 +334,4 @@ void renameBranch(const char* oldBranchName, const char* newBranchName) {
     } else {
         fprintf(stderr, "Failed to rename branch %s.\n", oldBranchName);
     }
-}
-
-int main() {
-    initializeRepository();
-
-    commit();
-    createBranch("feature1");
-    switchBranch("feature1");
-    commit();
-    commit();
-    createBranch("feature2");
-    switchBranch("feature2");
-    commit();
-    switchBranch("feature1");
-    commit();
-    switchBranch("main");
-    commit();
-
-    displayBranch("main");
-    printf("----------------------------\n");
-    displayBranch("feature1");
-    printf("----------------------------\n");
-    displayBranch("feature2");
-
-    removeBranch("feature1");
-    renameBranch("feature2", "feature3");
-
-    displayBranch("main");
-    printf("----------------------------\n");
-    displayBranch("feature1");
-    printf("----------------------------\n");
-    displayBranch("feature2");
-    printf("----------------------------\n");
-    displayBranch("feature3");
-
-
-    return 0;
 }
