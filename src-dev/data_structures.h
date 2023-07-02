@@ -3,43 +3,44 @@
 
 typedef struct commit_tree CommitTree;
 typedef struct commit Commit;
+typedef struct file_head FileHead;
 typedef struct file File;
 
 struct commit {
-    char *hash;
-    char* date;
-    char* message;
-    int start_byte;
-    int end_byte;
-    File* file;
-    Commit* parent;
-    Commit* child;
-    Commit* sibling;
-};
-
-struct file {
-    char* path;
-    int start_byte;
-    int end_byte;
-    File* next;
-    File* prev;
+    char* hash;             // commit hash
+    char* date;            // commit date
+    char* message;        // commit message
+    int start_byte;      // start byte of commit in contents.txt
+    int end_byte;       // end byte of commit in contents.txt
+    FileHead* file;    // file head
+    Commit* parent;  // parent commit
+    Commit* child;  // child commit
 };
 
 struct commit_tree {
-    Commit* root;
-    Commit* current;
-    int size;
+    Commit* root;      // root commit
 };
 
-// Function prototypes for tree operations
-CommitTree* create_commit_tree();
-Commit* create_commit(char* hash, char* date, const char* message, int start_byte, int end_byte);
-void insert_commit(CommitTree* tree, Commit* parent, Commit* child);
-void destroy_commit_tree(CommitTree* tree);
+struct file_head {
+    File* first;   // head of file
+    File* last;  // tail of file
+};
 
-// Function prototypes for file operations
-File* create_file(const char* path, int start_byte, int end_byte);
-void insert_file(Commit* commit, File* file);
-void destroy_files(File* file);
+struct file {
+    char* path;   // path of file
+    File* next;  // next file
+};
+
+// File functions
+FileHead* file_create(void);
+void file_insert(FileHead* head, const char* path);
+void file_display(FileHead* head);
+void file_destroy(FileHead* head);
+
+// Commit functions
+CommitTree* commit_tree_create(void);
+void commit_tree_insert(CommitTree *tree, const char* hash, const char* date, const char* message, int start_byte, int end_byte, FileHead* file, Commit* parent);
+void commit_tree_display(CommitTree* tree);
+void commit_tree_destroy(CommitTree* tree);
 
 #endif

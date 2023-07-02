@@ -8,113 +8,104 @@
 
 # include "data_structures.h"
 
-// Function prototypes for tree operations
-CommitTree* create_commit_tree() {
-    CommitTree* tree = (CommitTree*) malloc(sizeof(CommitTree));  // allocate memory for the tree
-    if (tree == NULL) {  // if the tree is NULL
-        printf("Error: Could not allocate memory for the tree.\n");  // print an error message
-        exit(1);  // exit the program
-    }
-    tree->root = NULL;  // set the root to NULL
-    return tree;     // return the tree
+// File functions
+FileHead* file_create(void) {
+    FileHead* head = (FileHead*) malloc(sizeof(FileHead));
+    if (head == NULL)
+        return head;
+    head->first = NULL;
+    head->last = NULL;
+    return head;
 }
-Commit* create_commit(char* hash, char* date, const char* message, int start_byte, int end_byte) {
-    Commit* commit = (Commit*) malloc(sizeof(Commit));  // allocate memory for the commit
-    if (commit == NULL) {  // if the commit is NULL
-        printf("Error: Could not allocate memory for the commit.\n");  // print an error message
-        exit(1);  // exit the program
-    }
-    commit->hash = strdup(hash);  // set the hash
-    commit->date = strdup(date);  // set the date
-    commit->message = strdup(message);  // set the message
-    commit->start_byte = start_byte;  // set the start byte
-    commit->end_byte = end_byte;  // set the end byte
-    commit->file = NULL;  // set the file to NULL
-    commit->parent = NULL;  // set the parent to NULL
-    commit->child = NULL;  // set the child to NULL
-    commit->sibling = NULL;  // set the siblings to NULL
 
-    return commit;  // return the commit
-  
-}
-void insert_commit(CommitTree* tree, Commit* parent, Commit* child) {
-        if (tree == NULL || child == NULL)
+void file_insert(FileHead* head, const char* path) {
+    File* file = (File*) malloc(sizeof(File));
+    if (file == NULL)
         return;
-
-    if (parent == NULL) {
-        // Inserting root commit
-        tree->root = child;
-        tree->current = child;
+    file->path = strdup(path);
+    file->next = NULL;
+    if (head->first == NULL) {
+        head->first = file;
+        head->last = file;
     } else {
-        // Inserting child commit under parent commit
-        child->parent = parent;
-        if (parent->child == NULL) {
-            parent->child = child;
-        } else {
-            Commit* sibling = parent->child;
-            while (sibling->sibling != NULL) {
-                sibling = sibling->sibling;
-            }
-            sibling->sibling = child;
-        }
+        head->last->next = file;
+        head->last = file;
     }
-
-    tree->size++;
 }
 
-void destroy_files(File* file) {
+void file_display(FileHead* head) {
+    File* file = head->first;
     while (file != NULL) {
-        File* next = file->next;
-        free(file->path);
-        free(file);
-        file = next;
+        printf("%s\n", file->path);
+        file = file->next;
     }
 }
 
-void destroy_commit_tree_helper(Commit* commit) {
-    if (commit != NULL) {
-        destroy_commit_tree_helper(commit->child);
-        destroy_commit_tree_helper(commit->sibling);
-        destroy_files(commit->file);
-        destroy_commit(commit);
+void file_destroy(FileHead* head) {
+    File* file = head->first;
+    while (file != NULL) {
+        File* temp = file;
+        file = file->next;
+        free(temp->path);
+        free(temp);
     }
+    free(head);
 }
 
-void destroy_commit_tree(CommitTree* tree) {
-    if (tree != NULL) {
-        destroy_commit_tree_helper(tree->root);
-        free(tree);
-    }
+// Commit functions
+CommitTree* commit_tree_create(void) {
+    CommitTree* tree = (CommitTree*) malloc(sizeof(CommitTree));
+    if (tree == NULL)
+        return tree;
+    tree->root = NULL;
+    return tree;
 }
-
-
-// Function prototypes for file operations
-File* create_file(const char* path, int start_byte, int end_byte) {
-    File* file = (File*) malloc(sizeof(File));  // allocate memory for the file
-    if (file == NULL) {  // if the file is NULL
-        printf("Error: Could not allocate memory for the file.\n");  // print an error message
-        exit(1);  // exit the program
-    }
-    file->path = strdup(path);  // set the path
-    file->start_byte = start_byte;  // set the start byte
-    file->end_byte = end_byte;  // set the end byte
-    file->next = NULL;  // set the next to NULL
-    file->prev = NULL;  // set the prev to NULL
-
-    return file;  // return the file
-}
-void insert_file(Commit* commit, File* file) {
-    if (commit == NULL || file == NULL)
+void commit_tree_insert(CommitTree *tree, const char* hash, const char* date, const char* message, int start_byte, int end_byte, FileHead* file, Commit* parent) {
+    Commit* commit = (Commit*) malloc(sizeof(Commit));
+    if (commit == NULL)
         return;
-
-    if (commit->file == NULL) {
-        commit->file = file;
+    commit->hash = strdup(hash);
+    commit->date = strdup(date);
+    commit->message = strdup(message);
+    commit->start_byte = start_byte;
+    commit->end_byte = end_byte;
+    commit->file = file;
+    commit->parent = parent;
+    commit->child = NULL;
+    if (tree->root == NULL) {
+        tree->root = commit;
     } else {
-        File* current = commit->file;
-        while (current->next != NULL) {
-            current = current->next;
-        }
-        current->next = file;
-        file->prev = current;
+        Commit* temp = tree->root;
+        while (temp->child != NULL)
+            temp = temp->child;
+        temp->child = commit;
     }
 }
+void commit_tree_display(CommitTree* tree) {
+    Commit* commit = tree->root;
+    while (commit != NULL) {
+        printf("hash: %s\n", commit->hash);
+        printf("date: %s\n", commit->date);
+        printf("message: %s\n", commit->message);
+        printf("start_byte: %d\n", commit->start_byte);
+        printf("end_byte: %d\n", commit->end_byte);
+        printf("parent: %s\n", commit->parent == NULL ? "NULL" : commit->parent->hash);
+        file_display(commit->file);
+        commit = commit->child;
+    }
+}
+void commit_tree_destroy(CommitTree* tree) {
+    Commit* commit = tree->root;
+    while (commit != NULL) {
+        Commit* temp = commit;
+        commit = commit->child;
+        free(temp->hash);
+        free(temp->date);
+        free(temp->message);
+        file_destroy(temp->file);
+        free(temp);
+    }
+    free(tree);
+}
+
+

@@ -35,9 +35,9 @@ void vcs_init() {
         exit(EXIT_FAILURE);
     }
 
-    // Create .vcs/contents.txt file
-    if (write_file(CONTENTS_FILE, EMPTY) == 0) {
-        printf("vcs: error: could not create .vcs/contents.txt file\n");
+    // Create .vcs/contents/ directory
+    if (create_directory(CONTENTS_DIRECTORY) == 0) {
+        printf("vcs: error: could not create .vcs/contents/ directory\n");
         exit(EXIT_FAILURE);
     }
 
@@ -102,10 +102,76 @@ void vcs_commit(const char *message) {
         exit(EXIT_FAILURE);
     }
 
+    // initialize FileHead and Commit Tree
+    FileHead *file_head = file_create();
+    CommitTree *commit_tree = commit_tree_create();
 
+    // read stage file
+    char *stage_content = read_file(STAGE_FILE);
 
+    // split stage content by new line
+    char *stage_path = strtok(stage_content, "\n");
+
+    // iterate over stage paths
+    while (stage_path != NULL) {
+        // read file contents
+        char *file_content = read_file(stage_path);
+
+        // get file_id
+        char *file_id = hash();
+
+        // write empty file to contents directory
+        char *file_path = concat_strings(CONTENTS_DIRECTORY, file_id);
+
+        if (write_file(file_path, EMPTY) == 0) {
+            printf("vcs: error: could not write file to contents directory\n");
+            exit(EXIT_FAILURE);
+        }
+        
+        // append file path to empty file
+        if (append_file(file_path, stage_path) == 0) {
+            printf("vcs: error: could not append file path to file\n");
+            exit(EXIT_FAILURE);
+        }
+
+        // append file contents to file
+        if (append_file(file_path, file_content) == 0) {
+            printf("vcs: error: could not append file contents to file\n");
+            exit(EXIT_FAILURE);
+        }
+
+        // insert file to commit
+        file_insert(file_head, file_id);
+
+        // free file content
+        free(file_content);
+
+        // free file path
+        free(file_path);
+
+        // get next stage path
+        stage_path = strtok(NULL, "\n");
+    }
+
+    // free stage content
+    free(stage_content);
+
+    // display file head
+    file_display(file_head); 
+
+    // empty stage 
+    if (write_file(STAGE_FILE, EMPTY) == 0) {
+        printf("vcs: error: could not empty stage\n");
+        exit(EXIT_FAILURE);
+    }
+
+    // insert commit to commit tree
+    commit_tree_insert(commit_tree, hash(), timestamp(), message, 0, 0, file_head, NULL);
+
+    // parse commit to commits file
     
 }
+
 void vcs_log(void) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -141,3 +207,5 @@ void vcs_show(const char *hash) {
         exit(EXIT_FAILURE);
     }
 }
+
+
