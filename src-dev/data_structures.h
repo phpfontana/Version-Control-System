@@ -43,4 +43,9 @@ void commit_tree_insert(CommitTree *tree, const char* hash, const char* date, co
 void commit_tree_display(CommitTree* tree);
 void commit_tree_destroy(CommitTree* tree);
 
+
+void printInfo(const char* message);
+void printAlert(const char* message);
+void printWarning(const char* message);
+
 #endif

@@ -1,15 +1,41 @@
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <math.h>
-# include <time.h>
-# include <unistd.h>
-# include <sys/stat.h>
+/**
+ * @file main.c
+ *
+ * @brief VCS (Version Control System) Application
+ *
+ * This application implements a simple Version Control System (VCS) using C programming language.
+ * It includes necessary header files, such as `stdio.h`, `stdlib.h`, `string.h`, `math.h`, `time.h`,
+ * `unistd.h`, and `sys/stat.h`, and also includes custom header files: `data_structures.h`, `utils.h`,
+ * and `commands.h`.
+ *
+ * @note This file assumes that the necessary header files (`data_structures.h`, `utils.h`, and `commands.h`)
+ * and their corresponding implementations are present in the project.
+ */
 
-# include "data_structures.h"
-# include "utils.h"
-# include "commands.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
+#include <unistd.h>
+#include <sys/stat.h>
 
+#include "data_structures.h"
+#include "utils.h"
+#include "commands.h"
+
+
+/**
+ * @brief Initializes the VCS repository.
+ *
+ * This function initializes the VCS repository by creating the necessary directories and files.
+ * It checks if the `.vcs` directory already exists and exits if it does.
+ * It creates the `.vcs` directory, `commits.txt` file, `stage.txt` file, `contents/` directory,
+ * and `metadata.txt` file.
+ *
+ * @note This function assumes that the necessary helper functions (`directory_exists()`, `create_directory()`,
+ * `write_file()`, `file_exists()`, `path_is_staged()`, and `append_file()`) are defined and implemented correctly.
+ */
 void vcs_init() {
     // Check if .vcs directory already exists
     if (directory_exists(VCS_DIRECTORY) == 1) {
@@ -17,7 +43,7 @@ void vcs_init() {
         return;
     }
 
-        // Create .vcs directory
+    // Create .vcs directory
     if (create_directory(VCS_DIRECTORY) == 0) {
         printf("vcs: error: could not create .vcs directory\n");
         exit(EXIT_FAILURE);
@@ -50,6 +76,18 @@ void vcs_init() {
     printf("vcs: initialized empty vcs repository in %s\n", VCS_DIRECTORY);
 }
 
+/**
+ * @brief Adds a file to the VCS repository.
+ *
+ * This function adds a file to the VCS repository by verifying the validity of the VCS directory,
+ * checking if the path was provided, if the path exists, and if the path has already been added.
+ * If all conditions are met, it appends the path to the stage file.
+ *
+ * @param path The path of the file to be added.
+ *
+ * @note This function assumes that the necessary helper functions (`validate_directory()`, `file_exists()`,
+ * `path_is_staged()`, and `append_file()`) are defined and implemented correctly.
+ */
 void vcs_add(const char *path) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -84,6 +122,21 @@ void vcs_add(const char *path) {
     printf("vcs: added '%s'\n", path);
 }
 
+
+/**
+ * @brief Creates a commit in the VCS repository.
+ *
+ * This function creates a commit in the VCS repository by validating the VCS directory,
+ * checking if a commit message was provided, if the stage file is empty, and then performs
+ * the necessary operations to create the commit.
+ *
+ * @param message The commit message.
+ *
+ * @note This function assumes that the necessary helper functions (`validate_directory()`,
+ * `file_is_empty()`, `read_file()`, `strtok()`, `hash()`, `concat_strings()`, `write_file()`,
+ * `append_file()`, `file_create()`, `commit_tree_create()`, `file_insert()`, `file_display()`,
+ * `commit_tree_insert()`, `timestamp()`, and parsing commit to commits file) are defined and implemented correctly.
+ */
 void vcs_commit(const char *message) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -127,7 +180,7 @@ void vcs_commit(const char *message) {
             printf("vcs: error: could not write file to contents directory\n");
             exit(EXIT_FAILURE);
         }
-        
+
         // append file path to empty file
         if (append_file(file_path, stage_path) == 0) {
             printf("vcs: error: could not append file path to file\n");
@@ -157,9 +210,9 @@ void vcs_commit(const char *message) {
     free(stage_content);
 
     // display file head
-    file_display(file_head); 
+    file_display(file_head);
 
-    // empty stage 
+    // empty stage
     if (write_file(STAGE_FILE, EMPTY) == 0) {
         printf("vcs: error: could not empty stage\n");
         exit(EXIT_FAILURE);
@@ -169,9 +222,17 @@ void vcs_commit(const char *message) {
     commit_tree_insert(commit_tree, hash(), timestamp(), message, 0, 0, file_head, NULL);
 
     // parse commit to commits file
-    
+
 }
 
+
+/**
+ * @brief Displays the commit log of the VCS repository.
+ *
+ * This function displays the commit log of the VCS repository by validating the VCS directory.
+ *
+ * @note This function assumes that the necessary helper function (`validate_directory()`) is defined and implemented correctly.
+ */
 void vcs_log(void) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -179,6 +240,14 @@ void vcs_log(void) {
         exit(EXIT_FAILURE);
     }
 }
+
+/**
+ * @brief Displays the content of a commit in the VCS repository.
+ *
+ * This function displays the content of a commit in the VCS repository by validating the VCS directory.
+ *
+ * @note This function assumes that the necessary helper function (`validate_directory()`) is defined and implemented correctly.
+ */
 void vcs_log_content(void) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -186,6 +255,17 @@ void vcs_log_content(void) {
         exit(EXIT_FAILURE);
     }
 }
+
+/**
+ * @brief Checks out a specific commit in the VCS repository.
+ *
+ * This function checks out a specific commit in the VCS repository by validating the VCS directory
+ * and the provided commit hash.
+ *
+ * @param hash The hash of the commit to be checked out.
+ *
+ * @note This function assumes that the necessary helper function (`validate_directory()`) is defined and implemented correctly.
+ */
 void vcs_checkout(const char *hash) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -193,6 +273,14 @@ void vcs_checkout(const char *hash) {
         exit(EXIT_FAILURE);
     }
 }
+
+/**
+ * @brief Checks out the current commit in the VCS repository.
+ *
+ * This function checks out the current commit in the VCS repository by validating the VCS directory.
+ *
+ * @note This function assumes that the necessary helper function (`validate_directory()`) is defined and implemented correctly.
+ */
 void vcs_checkout_current(void) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -200,6 +288,17 @@ void vcs_checkout_current(void) {
         exit(EXIT_FAILURE);
     }
 }
+
+/**
+ * @brief Shows the details of a specific commit in the VCS repository.
+ *
+ * This function shows the details of a specific commit in the VCS repository by validating the VCS directory
+ * and the provided commit hash.
+ *
+ * @param hash The hash of the commit to be shown.
+ *
+ * @note This function assumes that the necessary helper function (`validate_directory()`) is defined and implemented correctly.
+ */
 void vcs_show(const char *hash) {
     // validate .vcs directory
     if (validate_directory(VCS_DIRECTORY) == 0) {
@@ -207,5 +306,6 @@ void vcs_show(const char *hash) {
         exit(EXIT_FAILURE);
     }
 }
+
 
 

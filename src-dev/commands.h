@@ -1,5 +1,4 @@
-# ifndef __COMMANDS_H__
-# define __COMMANDS_H__
+#define __COMMANDS_H__
 
 void vcs_init();
 void vcs_add(const char *path);
@@ -10,4 +9,3 @@ void vcs_checkout(const char *hash);
 void vcs_checkout_current(void);
 void vcs_show(const char *hash);
 
-# endif
